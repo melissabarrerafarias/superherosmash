@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks'; 
 import { ADD_USER } from '../utils/mutations';//mutation for adding a new user
 import Auth from '../utils/auth';//function to set token to localStorage
+import backgroundImage from "../../src/img/3.jpg";
 
 const Signup = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: ''}); 
@@ -27,12 +28,16 @@ const Signup = () => {
     }; 
 
     return (
-        <main> 
+        <body className="img" style={{backgroundImage: `url(${backgroundImage})` }}>  
             <div> 
-                <div> 
+            <div>
+                        <img src="https://media3.giphy.com/media/h2MouomJFCpMfWVfUj/source.gif"></img>
+                    </div>
+                <div className="login-box"> 
                     <h2>Sign Up</h2>
                     <div>
-                        <form onSubmit={onSubmit}> 
+                        <form onSubmit={onSubmit}>
+                            <div className = "user-box">
                             <input
                             placeholder='username'
                             name='username'
@@ -40,7 +45,9 @@ const Signup = () => {
                             id='username'
                             value={formState.username}
                             onChange={onChange}
-                            /> 
+                            />
+                            </div>
+                            <div className="user-box">
                             <input
                             placeholder='email'
                             name='email'
@@ -49,6 +56,8 @@ const Signup = () => {
                             value={formState.email}
                             onChange={onChange}
                             />
+                            </div>
+                            <div className = "user-box">
                             <input 
                             placeholder='password'
                             name='password'
@@ -57,15 +66,17 @@ const Signup = () => {
                             value={formState.password}
                             onChange={onChange}
                             />
+                            </div>
                             <button> 
                                 Enter
                             </button>
                         </form>
-                        {error && <div>Something went wrong...</div>}
+                        {error && <div><h2>Something went wrong...</h2></div>}
                     </div>
+                  
                 </div>
             </div>
-        </main>
+        </body>
     )
 }; 
 
