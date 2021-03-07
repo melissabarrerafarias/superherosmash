@@ -25,8 +25,10 @@ function App() {
       <Router>
         <div>
           <NavBar />
+          <div className="login-signup">
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          </div>
         </div>
       </Router>
     </ApolloProvider>
