@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.15"
   },
