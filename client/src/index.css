@@ -24,3 +24,9 @@ html {
 }
 
 
+.header {
+  height: 100px;
+  background-color: red;
+  text-align: center;
+   
+}

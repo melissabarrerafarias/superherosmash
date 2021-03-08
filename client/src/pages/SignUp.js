@@ -30,7 +30,7 @@ const Signup = () => {
     return (
         <body className="img" style={{backgroundImage: `url(${backgroundImage})` }}>  
             <div> 
-            <div>
+            <div className="spiderman">
                         <img src="https://media3.giphy.com/media/h2MouomJFCpMfWVfUj/source.gif"></img>
                     </div>
                 <div className="login-box"> 

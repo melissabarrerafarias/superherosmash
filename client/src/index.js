@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './login-signup.css';
+import 'semantic-ui-react';
+
+// import semantic.min.css from 'semantic-ui-css';
+
 
 ReactDOM.render(
   <React.StrictMode>

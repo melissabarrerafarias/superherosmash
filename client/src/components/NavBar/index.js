@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';//function to logout 
+import {Menu} from 'semantic-ui-react';
 
 const NavBar = () => {
     const logout = e => {
@@ -9,7 +10,7 @@ const NavBar = () => {
     };
 
     return (
-        <header style={{ backgroundColor: 'red' }}>
+        <header className="header" >
             <div>
                 <Link to='/'>
                     <h1>Superhero App</h1>
@@ -30,7 +31,10 @@ const NavBar = () => {
                 </nav>
             </div>
         </header>
-    );
+
+
+    
+        );
 };
 
 export default NavBar;

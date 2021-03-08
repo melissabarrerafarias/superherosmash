@@ -176,9 +176,21 @@
     border: none
 }
 
+
+
 @media (max-width: 700px) {
     .login-box {
         width: 80%
     }
+    .spiderman img{
+      width: 100%;
+      margin-top: 500px;
+    }
 }
 
+@media (max-width:1024px) {
+  .spiderman img{
+    width: 20%;
+    margin-top: 500px;
+  }
+}
