@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const replySchema = require('./Reply');// import reply schema for replies array 
+const replySchema = require('../models/Reply'); 
 const moment = require('moment');// import moment for date format
 
 const commentSchema = new Schema(
@@ -23,13 +23,14 @@ const commentSchema = new Schema(
     },
     {
         toJSON: {
-            getters: true, 
-            virtuals: true
-        }
+            virtuals: true,
+            getters: true
+        },
+        id: false
     }
 );
 
-commentSchema.virtual('repliesTotal').get(function () {//amount of replies a comment/discussion gets 
+commentSchema.virtual('replyCount').get(function () {
     return this.replies.length;
 });
 

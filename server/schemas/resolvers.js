@@ -69,6 +69,17 @@ const resolvers = {
                 return comment;
             }
             throw new AuthenticationError('You must be logged in to participate in the discussion!');
+        },
+        addReply: async (parent, { commentId, replyBody }, context) => {
+            if (context.user) {
+                const updatedComment = await Comment.findOneAndUpdate(
+                    { _id: commentId },
+                    { $push: { replies: { replyBody, username: context.user.username } } },
+                    { new: true }
+                );
+                return updatedComment;
+            }
+            throw new AuthenticationError('You need to be logged in!')
         }
     }
 };

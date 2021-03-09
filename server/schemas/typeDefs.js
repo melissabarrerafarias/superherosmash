@@ -13,7 +13,17 @@ const typeDefs = gql`
         commentBody: String
         createdAt: String
         username: String
+        replyCount: Int
+        replies: [Reply]
       }
+
+      
+    type Reply {
+        _id: ID
+        replyBody: String
+        createdAt: String
+        username: String
+    }
 
     type Auth {
         token: ID!
