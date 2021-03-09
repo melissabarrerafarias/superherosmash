@@ -30,7 +30,7 @@ function App() {
           <div className="login-signup">
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
-          <BattleGround />
+          <Route exact path="/battleground" component={BattleGround}/>
           </div>
         </div>
       </Router>
