@@ -19,3 +19,21 @@ export const QUERY_ME = gql`
         }
     }
 `; 
+
+export const QUERY_COMMENTS = gql`
+  query comments($username: String) {
+    comments(username: $username) {
+      _id
+      commentBody
+      createdAt
+      username
+      replyCount
+      replies {
+        _id
+        createdAt
+        username
+        replyBody
+      }
+    }
+  }
+`;
