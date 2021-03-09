@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import BattleGround from './components/BattelgroundMock'; 
 import DiscussionBoard from './pages/DiscussionBoard';
+import SingleThread from './pages/SingleThread'; 
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path='/discussionboard' component={DiscussionBoard} />
+          <Route exact path='/comment/:id' component={SingleThread} />
           <BattleGround />
           </div>
         </div>

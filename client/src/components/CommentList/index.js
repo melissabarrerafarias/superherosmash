@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CommentList = ({ comments, title }) => {
     if (!comments.length) {
@@ -14,13 +15,15 @@ const CommentList = ({ comments, title }) => {
                         <p>
                             {comment.username} commented on {comment.createdAt}
                         </p>
+                        <Link to={`/comment/${comment._id}`}>
                         <div>
                             <p>{comment.commentBody}</p>
-                            <p className="mb-0">
+                            <p>
                                 Replies in this thread: {comment.replyCount} - Go to{' '}
                                 {comment.replyCount ? 'see' : 'start'} the discussion!
               </p>
                         </div>
+                        </Link>
                     </div>
                 ))}
         </div>
