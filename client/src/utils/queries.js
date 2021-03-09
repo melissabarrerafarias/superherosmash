@@ -29,6 +29,7 @@ export const QUERY_HEROS = gql`
       durability
       power
       combat
+      imgurl
     }
   }
 `;
