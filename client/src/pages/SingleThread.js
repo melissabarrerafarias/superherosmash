@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_SINGLE_COMMENT } from '../utils/queries';
 
+import RepliesList from '../components/RepliesList'; 
+
 const SingleThread = () => {
     const { id: commentId } = useParams();
 
@@ -29,6 +31,7 @@ const SingleThread = () => {
                     <p>{comment.commentBody}</p>
                 </div>
             </div>
+            {comment.replyCount > 0 && <RepliesList replies={comment.replies} />}
         </div>
     )
 }

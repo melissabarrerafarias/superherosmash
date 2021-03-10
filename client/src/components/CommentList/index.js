@@ -21,7 +21,7 @@ const CommentList = ({ comments, title }) => {
                             <p>
                                 Replies in this thread: {comment.replyCount} - Go to{' '}
                                 {comment.replyCount ? 'see' : 'start'} the discussion!
-              </p>
+                            </p>
                         </div>
                         </Link>
                     </div>
