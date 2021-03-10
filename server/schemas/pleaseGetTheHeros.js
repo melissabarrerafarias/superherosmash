@@ -2,8 +2,8 @@ require("dotenv").config(); // environmental variable
 const fetch = require("node-fetch");
 async function getHerosPlease(heroId) {
   let accesstoken = process.env.HERO_API_KEY;
-  console.log(accesstoken);
-  console.log("Oh my goodness i think i found a work around");
+  //console.log(accesstoken);
+  console.log(`THe hero id is ${heroId}`);
   let heroData = await fetch(
     `https://superheroapi.com/api/${accesstoken}/${heroId}`
   );

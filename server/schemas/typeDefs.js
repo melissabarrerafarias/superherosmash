@@ -13,6 +13,7 @@ const typeDefs = gql`
     durability: String
     power: String
     combat: String
+    imgurl: String
   }
 
   type Auth {
@@ -25,6 +26,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     getAllHeros: Hero
+    getHeroById(id: Int): Hero
   }
 
   type Mutation {

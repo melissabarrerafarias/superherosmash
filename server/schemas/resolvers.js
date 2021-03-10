@@ -27,14 +27,17 @@ const resolvers = {
     },
     getAllHeros: async () => {
       let heroData = await getHerosPlease(1);
-      console.log(heroData.name + " IS MY NAME");
+      console.log(heroData);
+
+      console.log(heroData.powerstats.strength + " IS MY NAME");
       return {
         name: heroData.name,
-        strength: heroData.strength,
-        speed: heroData.speed,
-        durability: heroData.durability,
-        power: heroData.power,
-        combat: heroData.combat,
+        strength: heroData.powerstats.strength,
+        speed: heroData.powerstats.speed,
+        durability: heroData.powerstats.durability,
+        power: heroData.powerstats.power,
+        combat: heroData.powerstats.combat,
+        imgurl: heroData.image.url,
       };
       /* 
      name: String
@@ -44,6 +47,22 @@ const resolvers = {
     power: String
     combat: String
     */
+    },
+    getHeroById: async (parent, { id }) => {
+      console.log("ENTERED RESOLVER");
+      let heroData = await getHerosPlease(id);
+      //console.log(heroData);
+
+      //console.log(heroData.powerstats.strength + " IS MY NAME");
+      return {
+        name: heroData.name,
+        strength: heroData.powerstats.strength,
+        speed: heroData.powerstats.speed,
+        durability: heroData.powerstats.durability,
+        power: heroData.powerstats.power,
+        combat: heroData.powerstats.combat,
+        imgurl: heroData.image.url,
+      };
     },
   },
   Mutation: {
