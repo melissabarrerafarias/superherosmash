@@ -1,18 +1,11 @@
 /* write the keyframe rules to the document root */
 body {
-    /* background: wheat; */
     background: #FBE6c2;
-    /* overflow: hidden; */
     margin: 0;
     font-family: 'Passion One', impact;
 }
 
-
-
-
-
-
-/* **************************** home card********* */
+/* **************************** home cards ********* */
 
 :root{
     --background-dark: #2d3548;
@@ -103,11 +96,7 @@ body {
     transition: 
       filter 200ms linear,
       transform 200ms linear;
-    /* opacity: .0 ; */
-    /* transition: opacity 1s ease-in; */
-   
 
-    /* -webkit-transition: all 1s; */
   }
   .fade-in {
     animation: fadeIn ease 6s;
