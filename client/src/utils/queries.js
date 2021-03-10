@@ -33,3 +33,16 @@ export const QUERY_HEROS = gql`
     }
   }
 `;
+export const QUERY_HERO_BY_ID = gql`
+  query getHeroById($id: Int) {
+    getHeroById(id: $id) {
+      name
+      strength
+      speed
+      durability
+      power
+      combat
+      imgurl
+    }
+  }
+`;

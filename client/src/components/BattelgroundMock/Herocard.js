@@ -2,25 +2,30 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HEROS } from "../../utils/queries";
 
-const HeroCard = (hero) => {
+const HeroCard = ({ hero }) => {
   const { loading, data } = useQuery(QUERY_HEROS);
   if (loading) {
-    return <p>Still loadding</p>;
+    return <p>Still loading</p>;
   } else {
+    console.log("This heros name is ");
+    console.log(hero);
     return (
       <div className="HeroCard">
-        Hero Name: {data.getAllHeros.name} <br></br>
-        Hero strength: {data.getAllHeros.strength}
+        Hero Name: {hero.name} <br></br>
+        Hero Id:<br></br>
+        Hero strength: {hero.strength}
         <br></br>
-        Hero durability: {data.getAllHeros.durability}
+        Hero durability: {hero.durability}
         <br></br>
-        Hero power: {data.getAllHeros.power}
+        Hero power: {hero.power}
         <br></br>
-        Hero combat: {data.getAllHeros.combat}
+        Hero combat: {hero.combat}
+        <br></br>
+        Hero speed: {hero.speed}
         <br></br>
         <img
           style={{ width: "100px", height: "100px" }}
-          src={data.getAllHeros.imgurl}
+          src={hero.imgurl}
         ></img>
       </div>
     );
