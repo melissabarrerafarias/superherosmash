@@ -71,7 +71,7 @@ const Signup = () => {
                                 Enter
                             </button>
                         </form>
-                        {error && <div><h2>Something went wrong...</h2></div>}
+                        {error && <div><h2>Sign up failed! Please make sure all the fields are filled.</h2></div>}
                     </div>
                   
                 </div>

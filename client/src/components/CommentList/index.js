@@ -16,13 +16,13 @@ const CommentList = ({ comments, title }) => {
                             {comment.username} commented on {comment.createdAt}
                         </p>
                         <Link to={`/comment/${comment._id}`}>
-                        <div>
-                            <p>{comment.commentBody}</p>
-                            <p>
-                                Replies in this thread: {comment.replyCount} - Go to{' '}
-                                {comment.replyCount ? 'see' : 'start'} the discussion!
+                            <div>
+                                <p>{comment.commentBody}</p>
+                                <p>
+                                    Replies in this thread: {comment.replyCount} - Go to{' '}
+                                    {comment.replyCount ? 'see' : 'start'} the discussion!
                             </p>
-                        </div>
+                            </div>
                         </Link>
                     </div>
                 ))}
