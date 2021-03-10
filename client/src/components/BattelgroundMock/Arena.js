@@ -6,7 +6,8 @@ import "./style.css";
 
 const Arena = ({ heros }) => {
 
-  const [currentPlayers, serCurrentPlayers] = useState()
+  const [player1, setPlayer1] = useState()
+  const [player2, setPlayer2] = useState()
 
 
   const clickVote = (e) => {
