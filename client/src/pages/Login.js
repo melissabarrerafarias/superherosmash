@@ -4,7 +4,6 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';//function to save token to localStorage 
 import backgroundImage from "../../src/img/4-2.jpg";
 
-
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' }); 
     const [login, { error }] = useMutation(LOGIN);

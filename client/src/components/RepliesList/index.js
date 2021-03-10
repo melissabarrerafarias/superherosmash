@@ -7,7 +7,7 @@ const RepliesList = ({ replies }) => {
     const loggedIn = Auth.isLoggedIn();
 
     if(!loggedIn) {
-        return <h4>You need to be logged in to continue viewing the discussion!</h4>
+        return <h4>You need to be logged in to see what people are saying!</h4>
     }
 
     return (
