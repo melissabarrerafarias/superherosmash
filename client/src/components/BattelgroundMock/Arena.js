@@ -30,26 +30,8 @@ const Arena = ({ heros }) => {
             <span className="bigRedButton" id="arena2" onClick={clickVote}>Vote!</span>
       </a.div>
 
-
-
     </div>
-
-
   );
-
-
-  // return (
-  //   <div className="Arena">
-  //     {heros.map(hero => {
-  //       return (
-  //         <a.div style={props} className="RingCorner" id={hero.name} key = {Date.now() + hero.id}>
-  //           <HeroCard hero = {hero} />
-  //           <span className="bigRedButton" onClick={clickVote}>Vote!</span>
-  //         </a.div>
-  //       );
-  //     })}
-  //   </div>
-  // );
 };
 
 export default Arena;
