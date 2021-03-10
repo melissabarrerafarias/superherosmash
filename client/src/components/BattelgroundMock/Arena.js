@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import { useSpring, animated  as a } from 'react-spring';
+import React from "react";
+import { useSpring, animated as a } from "react-spring";
 
 import HeroCard from "./Herocard";
 import "./style.css";
+//to get the data for heros
 
 const Arena = ({ heros }) => {
 
@@ -33,10 +34,7 @@ const Arena = ({ heros }) => {
 
 
     </div>
-
-
   );
-
 
   // return (
   //   <div className="Arena">
