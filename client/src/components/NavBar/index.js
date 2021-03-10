@@ -20,11 +20,13 @@ const NavBar = () => {
                             <a href="/" onClick={logout}>
                                 Logout
                             </a>
+                            <Link to='/discussionboard'>Discussion Board</Link>
                         </>
                     ) : ( //else - render 
                         <>
                             <Link to="/login">Login</Link>
                             <Link to="/signup">Signup</Link>
+                            <Link to='/discussionboard'>Discussion Board</Link>
                         </>
                     )}
                 </nav>

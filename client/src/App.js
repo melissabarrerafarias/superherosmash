@@ -6,7 +6,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
-import BattleGround from './components/BattelgroundMock'
+import BattleGround from './components/BattelgroundMock'; 
+import DiscussionBoard from './pages/DiscussionBoard';
+import SingleThread from './pages/SingleThread'; 
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
           <div className="login-signup">
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path='/discussionboard' component={DiscussionBoard} />
+          <Route exact path='/comment/:id' component={SingleThread} />
           <BattleGround />
           </div>
         </div>
