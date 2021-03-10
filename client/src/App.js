@@ -32,9 +32,13 @@ function App() {
           <div className="login-signup">
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+
+          <Route exact path="/battleground" component={BattleGround}/>
+
           <Route exact path='/discussionboard' component={DiscussionBoard} />
           <Route exact path='/comment/:id' component={SingleThread} />
-          <BattleGround />
+          
+
           </div>
         </div>
       </Router>
