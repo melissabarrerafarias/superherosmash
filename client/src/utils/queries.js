@@ -46,3 +46,40 @@ export const QUERY_HERO_BY_ID = gql`
     }
   }
 `;
+ 
+
+export const QUERY_COMMENTS = gql`
+  query comments($username: String) {
+    comments(username: $username) {
+      _id
+      commentBody
+      createdAt
+      username
+      replyCount
+      replies {
+        _id
+        createdAt
+        username
+        replyBody
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_COMMENT = gql`
+  query comment($id: ID!) {
+    comment(_id: $id) {
+      _id
+      commentBody
+      createdAt
+      username
+      replyCount
+      replies {
+        _id
+        createdAt
+        username
+        replyBody
+      }
+    }
+  }
+`;

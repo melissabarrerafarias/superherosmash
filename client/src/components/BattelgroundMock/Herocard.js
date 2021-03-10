@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HEROS } from "../../utils/queries";
@@ -28,6 +29,15 @@ const HeroCard = ({ hero }) => {
           src={hero.imgurl}
         ></img>
       </div>
+
+    
+//     const propss = useSpring({width: '300px', from: {width: '10px'}})
+    
+//     return(
+//         <a.div className="HeroCard" style={propss}> 
+//         <div >Hero Name: {hero.name} Hero Id: {hero.id}</div>
+//         </a.div>
+// >>>>>>> develop-kj
     );
   }
 };
