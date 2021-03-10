@@ -4,7 +4,6 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';//function to save token to localStorage 
 import backgroundImage from "../../src/img/4-2.jpg";
 
-
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' }); 
     const [login, { error }] = useMutation(LOGIN);
@@ -61,7 +60,7 @@ const Login = (props) => {
                                 Enter
                             </button>
                         </form>
-                        {error && <div><h2>Something went wrong.... </h2></div>}
+                        {error && <div><h2>Login failed. Please make sure you have the correct information</h2></div>}
                     </div>
                 
                 </div>
