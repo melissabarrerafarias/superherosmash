@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { useSpring, animated  as a } from 'react-spring';
 
 import HeroCard from "./Herocard";
 import "./style.css";
 
 const Arena = ({ heros }) => {
+
+  const [currentPlayers, serCurrentPlayers] = useState()
+
 
   const clickVote = (e) => {
     e.preventDefault();
