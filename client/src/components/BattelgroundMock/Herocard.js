@@ -2,16 +2,37 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HEROS } from "../../utils/queries";
+import { useSpring, animated  as a } from 'react-spring';
 
-const HeroCard = ({ hero }) => {
+
+
+
+const HeroCard = ({ hero,voted, setVoted }) => {
+
+  const props = useSpring({
+    to: async (next,cancel) => {
+      await next({width:'300px', color:'blue'})
+      await next({color:'red'})
+     
+    },
+
+    from: {width: '0px'}
+  
+  
+  
+  
+  })
+
   const { loading, data } = useQuery(QUERY_HEROS);
   if (loading) {
     return <p>Still loading</p>;
   } else {
     console.log("This heros name is ");
     console.log(hero);
+
+    // if voted animate the card style = {voted ? props: {}}
     return (
-      <div className="HeroCard">
+      <a.div className="HeroCard" style = {voted ? props: {}}> 
         Hero Name: {hero.name} <br></br>
         Hero Id:<br></br>
         Hero strength: {hero.strength}
@@ -25,19 +46,13 @@ const HeroCard = ({ hero }) => {
         Hero speed: {hero.speed}
         <br></br>
         <img
-          style={{ width: "100px", height: "100px" }}
+          style={{ width: "100%", height: "100px" }}
           src={hero.imgurl}
         ></img>
-      </div>
+      </a.div>
 
     
-//     const propss = useSpring({width: '300px', from: {width: '10px'}})
-    
-//     return(
-//         <a.div className="HeroCard" style={propss}> 
-//         <div >Hero Name: {hero.name} Hero Id: {hero.id}</div>
-//         </a.div>
-// >>>>>>> develop-kj
+
     );
   }
 };

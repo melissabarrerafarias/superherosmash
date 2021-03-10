@@ -9,8 +9,8 @@ const HEROS = [
   //const MOCK_HEROS = [
 
   {
-    id: "",
-    name: "",
+    id: 1,
+    name: "Hero 1",
     strength: "",
     speed: "",
     power: "",
@@ -19,8 +19,8 @@ const HEROS = [
     imgurl: "",
   },
   {
-    id: "",
-    name: "",
+    id: 2,
+    name: "Hero 2",
     strength: "",
     speed: "",
     power: "",
