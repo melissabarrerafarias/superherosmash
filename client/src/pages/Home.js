@@ -14,8 +14,8 @@ const Home = () => {
            <div className ="fade-in">
         <section className="hero-section">
           <div className="cgrid">
-            <a className="card" href="#">
-              {/* <div className="cardbg" style={{backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuIFQdxvUqpgude0oKs3oZjHAEObeR-o7ieQ&usqp=CAU'}} /> */}
+            <a className="card" href="#">              {/* <div className="cardbg" style={{backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuIFQdxvUqpgude0oKs3oZjHAEObeR-o7ieQ&usqp=CAU'}} /> */}
+
               <div className="cardbg" style={{backgroundImage: 'url(https://www.pngarts.com/files/2/Ben-Affleck-Batman-PNG-Image-Background.png'}} />
 
               <div className="content">
