@@ -1,57 +1,48 @@
-import gql from 'graphql-tag'; 
+import gql from "graphql-tag";
 
 export const QUERY_USER = gql`
-    query user($username: String!) {
-        user(username: $username) {
-            _id 
-            username 
-            email 
-        }
-    }
-`;
-
-export const QUERY_ME = gql` 
-    {
-        me {
-            _id
-            username
-            email
-        }
-    }
-`; 
-
-export const QUERY_COMMENTS = gql`
-  query comments($username: String) {
-    comments(username: $username) {
+  query user($username: String!) {
+    user(username: $username) {
       _id
-      commentBody
-      createdAt
       username
-      replyCount
-      replies {
-        _id
-        createdAt
-        username
-        replyBody
-      }
+      email
     }
   }
 `;
 
-export const QUERY_SINGLE_COMMENT = gql`
-  query comment($id: ID!) {
-    comment(_id: $id) {
+export const QUERY_ME = gql`
+  {
+    me {
       _id
-      commentBody
-      createdAt
       username
-      replyCount
-      replies {
-        _id
-        createdAt
-        username
-        replyBody
-      }
+      email
+    }
+  }
+`;
+
+export const QUERY_HEROS = gql`
+  {
+    getAllHeros {
+      name
+      strength
+      speed
+      durability
+      power
+      combat
+      imgurl
+    }
+  }
+`;
+export const QUERY_HERO_BY_ID = gql`
+  query getHeroById($id: Int) {
+    getHeroById(id: $id) {
+      name
+      strength
+      speed
+      durability
+      power
+      combat
+      imgurl
     }
   }
 `;
