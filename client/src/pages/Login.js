@@ -32,7 +32,8 @@ const Login = (props) => {
 
     return (
         <body className="img" style={{backgroundImage: `url(${backgroundImage})` }}>  
-            <div>
+            <div className='login-signup'>
+    
                 <div className="login-box"> 
                     <h2>Login</h2>
                     <div>

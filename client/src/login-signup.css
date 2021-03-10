@@ -2,12 +2,11 @@
   
 
   .img {
-      background: transparent;
+      /* background: transparent; */
       /* opacity: 0.5; */
       background-repeat: none;
       background-size: cover;
       background-position: center;
-
   }
 
   .login-box {
@@ -104,7 +103,7 @@
     background: linear-gradient(90deg, transparent, #03e9f4);
     animation: btn-anim1 1s linear infinite;
   }
-   
+/*    
   @keyframes btn-anim1 {
     0% {
       left: -100%;
@@ -113,7 +112,7 @@
       left: 100%;
     }
   }
-   
+    */
   .login-box button span:nth-child(2) {
     top: -100%;
     right: 0;
@@ -124,14 +123,14 @@
     animation-delay: .25s
   }
    
-  @keyframes btn-anim2 {
+  /* @keyframes btn-anim2 {
     0% {
       top: -100%;
     }
     50%,100% {
       top: 100%;
     }
-  }
+  } */
    
   .login-box button span:nth-child(3) {
     bottom: 0;
@@ -143,14 +142,14 @@
     animation-delay: .5s
   }
    
-  @keyframes btn-anim3 {
+  /* @keyframes btn-anim3 {
     0% {
       right: -100%;
     }
     50%,100% {
       right: 100%;
     }
-  }
+  } */
    
   .login-box button span:nth-child(4) {
     bottom: -100%;
@@ -162,21 +161,23 @@
     animation-delay: .75s
   }
    
-  @keyframes btn-anim4 {
+  /* @keyframes btn-anim4 {
     0% {
       bottom: -100%;
     }
     50%,100% {
       bottom: 100%;
     }
-  }
+  } */
   
 .login-box button {
     background: none;
     border: none
 }
 
-
+.login-signup {
+  height: 1000px;
+} 
 
 @media (max-width: 700px) {
     .login-box {

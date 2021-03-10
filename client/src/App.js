@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import BattleGround from './components/BattelgroundMock'
+import Home from './pages/Home';
 
 
 function App() {
@@ -28,11 +29,10 @@ function App() {
       <Router>
         <div>
           <NavBar />
-          <div className="login-signup">
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <BattleGround />
-          </div>
         </div>
       </Router>
     </ApolloProvider>

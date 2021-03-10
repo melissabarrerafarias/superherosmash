@@ -1,0 +1,63 @@
+
+
+#login-id , #signup-id, #battle-id, #home-id, #discuss-id{ 
+    font-size: 20px;
+    
+}
+
+.menu {
+  text-align: center;
+}
+
+.header {
+    
+        /* padding: 50px; */
+        text-align: center;
+        /* background:#d00000; */
+        color: white;
+        font-size: 30px;
+        height: 150px;
+        align-items: center;
+        
+}
+
+
+
+ .navBtn  {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border:none
+  }
+   
+  .navBtn:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+   
+  .navBtn span {
+    position: absolute;
+    display: block;
+  }
+   
+  .header button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  } 

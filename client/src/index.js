@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './login-signup.css';
-import 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css'
+import '../src/components/NavBar/nav.css';
+import '../src/home.css';
 
-// import semantic.min.css from 'semantic-ui-css';
+
 
 
 ReactDOM.render(

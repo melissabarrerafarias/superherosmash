@@ -17,16 +17,12 @@ html {
   margin: 0;
   height: 100%;
 }
-
-.login-signup {
-  /* background-image: url("../../client/src/img/1.jpg"); */
-  height: 1000px;
-}
+ 
 
 
-.header {
+/* .header {
   height: 100px;
   background-color: red;
   text-align: center;
    
-}
+} */
