@@ -3,12 +3,14 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+
 import NavBar from './components/NavBar';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import BattleGround from './components/BattelgroundMock'; 
 import DiscussionBoard from './pages/DiscussionBoard';
 import SingleThread from './pages/SingleThread'; 
+import Home from './pages/Home';
 
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
       <Router>
         <div>
           <NavBar />
-          <div className="login-signup">
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
 
@@ -37,9 +39,6 @@ function App() {
 
           <Route exact path='/discussionboard' component={DiscussionBoard} />
           <Route exact path='/comment/:id' component={SingleThread} />
-          
-
-          </div>
         </div>
       </Router>
     </ApolloProvider>

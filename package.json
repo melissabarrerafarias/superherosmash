@@ -3,7 +3,8 @@
     "bcrypt": "^5.0.1",
     "graphql": "^15.5.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.11.19"
+    "mongoose": "^5.11.19",
+    "react-spring": "^8.0.27"
   },
   "name": "project-3",
   "description": "",
