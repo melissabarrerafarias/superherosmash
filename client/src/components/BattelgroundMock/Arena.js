@@ -1,53 +1,52 @@
-import React from "react";
-import { useSpring, animated as a } from "react-spring";
+import React, {useState} from "react";
+import { useSpring, animated  as a } from 'react-spring';
 
 import HeroCard from "./Herocard";
 import "./style.css";
 //to get the data for heros
 
 const Arena = ({ heros }) => {
+  
+  const [playerIndex, setPlayerIndex] = useState(2)
+  const [player1, setPlayer1] = useState(heros[0])
+  const [player2, setPlayer2] = useState(heros[1])
+  const [voted1, setVoted1] = useState(false)
+  const [voted2, setVoted2] = useState(false)
 
-  const [player1, setPlayer1] = useState()
-  const [player2, setPlayer2] = useState()
+  let n = 2;
+
+  const clickPlayer1 = () => {
+    setPlayer1(heros[playerIndex])
+    setPlayerIndex(playerIndex+1)
+    setVoted1(true)
+  }  
+  
+  const clickPlayer2 = () => {
+    setPlayer2(heros[playerIndex])
+    setPlayerIndex(playerIndex+1)
+    setVoted2(true)
+  }
 
 
-  const clickVote = (e) => {
-    e.preventDefault();
-    console.log("Vote clicked on " + e.target.id)
-  } 
+
 
   const props = useSpring({margin: 0, from:  {margin: -1000}})
 
 
   return(
     <div className="Arena">
-      <a.div style={props} className="RingCorner1" key = {Date.now() + heros[0].id}>
-            <HeroCard hero={heros[0]} />
-            <span className="bigRedButton" id="arena1" onClick={clickVote}>Vote!</span>
+      <a.div style={props} className="RingCorner" key = {Date.now() + player1.id}>
+            <HeroCard hero={player1} voted={voted1} setVoted = {setVoted1}  />
+            <span className="bigRedButton" id="arena1" onClick={clickPlayer1}>Vote!</span>
       </a.div>
 
-      <a.div style={props} className="RingCorner2" key = {Date.now() + heros[1].id}>
-            <HeroCard hero={heros[1]} />
-            <span className="bigRedButton" id="arena2" onClick={clickVote}>Vote!</span>
+      <a.div style={props} className="RingCorner" key = {Date.now() + player2.id}>
+            <HeroCard hero={player2} voted={voted2} setVoted = {setVoted2} />
+            <span className="bigRedButton" id="arena2" onClick={clickPlayer2}>Vote!</span>
       </a.div>
-
-
 
     </div>
   );
-
-  // return (
-  //   <div className="Arena">
-  //     {heros.map(hero => {
-  //       return (
-  //         <a.div style={props} className="RingCorner" id={hero.name} key = {Date.now() + hero.id}>
-  //           <HeroCard hero = {hero} />
-  //           <span className="bigRedButton" onClick={clickVote}>Vote!</span>
-  //         </a.div>
-  //       );
-  //     })}
-  //   </div>
-  // );
 };
 
 export default Arena;

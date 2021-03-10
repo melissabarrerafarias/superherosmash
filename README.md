@@ -25,7 +25,12 @@
   AS A Super Hero Fan\
   I WANT USERS to Compare Super Heros so we can determine once and for all who the best super hero is\
 
-  WHEN I log in\
+  WHEN I navigate to the page
+  THEN i am presented with a super hero landing page with 3 options
+   - I can to to the game (requires login)
+   - I can go the forum (requires login for writing comments)
+   - I can go to the hero statistics 
+  WHEN I go to the super hero battle page
   THEN I am presented with two super heros, for which i can cast a vote (using a big red button)\
   WHEN I vote for one of the superheros\
   THEN The winning Hero gets a point AND the loosing hero is removed in a dramatic way.\
@@ -35,9 +40,10 @@
   WHEN I loose network all my stats are still accessible, but the battle is now replaced by matches between Mozilla dino's with randomly generated superhero names.  
   ```
   ### See a mockup of the app below:
-  ![Main Page](assets/images/SuperHeroGame-1.png)
-  ![Main Page](assets/images/SuperHeroGame-2.png)
-  ![Main Page](assets/images/SuperHeroGame-3.png)
+  ![Landing Page](assets/images/SuperHeroGame-0.png)
+  ![Battle Page](assets/images/SuperHeroGame-1.png)
+  ![Home Page](assets/images/SuperHeroGame-2.png)
+  ![Stats and forum](assets/images/SuperHeroGame-3.png)
 
 
   ## Installation Instructions:
