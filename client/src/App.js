@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import BattleGround from './components/BattelgroundMock'; 
 import DiscussionBoard from './pages/DiscussionBoard';
 import SingleThread from './pages/SingleThread'; 
+import MyThreads from './pages/MyThreads'; 
 import Home from './pages/Home';
 
 
@@ -34,11 +35,10 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
-
           <Route exact path="/battleground" component={BattleGround}/>
-
           <Route exact path='/discussionboard' component={DiscussionBoard} />
           <Route exact path='/comment/:id' component={SingleThread} />
+          <Route exact path='/mythreads/:username?' component={MyThreads} />
         </div>
       </Router>
     </ApolloProvider>
