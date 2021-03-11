@@ -16,7 +16,7 @@ const typeDefs = gql`
     replyCount: Int
     replies: [Reply]
   }
-  
+
   type Reply {
     _id: ID
     replyBody: String
@@ -31,6 +31,7 @@ const typeDefs = gql`
     durability: String
     power: String
     combat: String
+    biography: String
     imgurl: String
   }
 
