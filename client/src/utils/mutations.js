@@ -23,3 +23,18 @@ export const ADD_USER = gql`
     }
 }
 `;
+
+export const ADD_REPLY = gql `
+    mutation addReply($commentId: ID!, $replyBody: String!) {
+        addReply(commentId: $commentId, replyBody: $replyBody) {
+            _id 
+            replyCount 
+            replies {
+                _id 
+                replyBody 
+                createdAt
+                username 
+            }
+        }
+    }
+`;

@@ -58,3 +58,21 @@
     background: linear-gradient(90deg, transparent, #03e9f4);
     animation: btn-anim1 1s linear infinite;
   } 
+
+  
+  /* @media only screen and (max-width: 700px) {
+    .ui.main.menu {
+      display: none !important;
+    }
+    .main.menu .item,
+    .main.menu .menu {
+      display: none;
+    }
+    .secondary.menu {
+      display: block!important;
+    }
+  }
+  
+ */
+
+  
