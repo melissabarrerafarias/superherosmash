@@ -1,6 +1,6 @@
 
 
-#login-id , #signup-id, #battle-id, #home-id, #discuss-id{ 
+#login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
     font-size: 20px;
     
 }
@@ -25,7 +25,7 @@
     display: inline-block;
     padding: 10px 20px;
     color: #03e9f4;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
@@ -59,20 +59,12 @@
     animation: btn-anim1 1s linear infinite;
   } 
 
-  
-  /* @media only screen and (max-width: 700px) {
-    .ui.main.menu {
-      display: none !important;
-    }
-    .main.menu .item,
-    .main.menu .menu {
-      display: none;
-    }
-    .secondary.menu {
-      display: block!important;
-    }
-  }
-  
- */
 
-  
+  @media (max-width:700px) {
+    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
+      font-size: 12px;
+      text-align: center;
+      margin: 0 auto
+      
+  }
+  }

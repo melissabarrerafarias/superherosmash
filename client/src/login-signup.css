@@ -139,15 +139,33 @@
 }
 
 .login-signup {
-  height: 1000px;
+  height: 1150px;
 } 
 
+.sp-img {
+  background-image: url(./img/spcomic.jpg);
+  height:1150px;
+}
+
+.login-img {
+  background-image: url(./img/redcomic.jpg);
+  height:1150px;
+}
 
 /* ******************** media queries **************** */
 
 @media (max-width: 700px) {
     .login-box {
-        width: 80%
+        width: 80%;
+        margin-top: 30px;
+    }
+    .sp-img {
+      height:700px;
+      margin: 0 auto;
+    }
+    .login-img {
+      height:700px;
+      margin: 0 auto;
     }
     .spiderman img{
       width: 100%;

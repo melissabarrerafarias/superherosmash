@@ -45,7 +45,7 @@ body {
  
   background-position: center;
   background-size: no-repeat;
-  background-image: url('img/sq1.png');
+  background-image: url('img/comicopacity.png');
 } 
 
   .hero-section{
@@ -62,7 +62,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: var(--spacing-xl);
     grid-row-gap: var(--spacing-l);
-    /* max-width: var(--width-container); */
     width: 100%;
     
   }

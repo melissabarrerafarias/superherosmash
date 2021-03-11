@@ -1,8 +1,8 @@
 import React from "react";
-import Marvel from '../../src/img/5.png';
-import Vision from '../../src/img/k.png';
-import Panther from '../../src/img/13.png'
-import Hulk from '../../src/img/22.png'
+import Marvel from '../../src/img/marvel.png'
+import Loki from '../../src/img/loki.png';
+import Antman from '../../src/img/antman.png'
+import Deadpool from '../../src/img/deadpool.png';
 
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
               <div className="cgrid">
                 <a className="card" href="#">
                   <div className="cardbg">
-                    <img id="img" src={Hulk}></img>
+                    <img id="img" src={Marvel}></img>
                   <div className="content">
                     <h3 className="textcard">Stats</h3>
                   </div>
@@ -23,7 +23,7 @@ const Home = () => {
                 </a>
                 <a className="card" href="/BattleGround">
                   <div className="cardbg">
-                   <img id="img" src={Marvel}></img> 
+                   <img id="img" src={Loki}></img> 
                   <div className="content">
                     <h3 className="textcard">BattleGround!</h3>
                   </div>
@@ -31,7 +31,7 @@ const Home = () => {
                 </a>
                 <a className="card" href="/#">
                   <div className="cardbg">
-                    <img id="img" src={Panther}></img>
+                    <img id="img" src={Antman}></img>
                   <div className="content">
                     <h3 className="textcard">Discussion!</h3>
                   </div>
@@ -40,7 +40,7 @@ const Home = () => {
 
                 <a className="card" href="/Login">
                   <div className="cardbg">
-                    <img id="img"src={Vision}></img>
+                    <img id="img"src={Deadpool}></img>
                     <div className="content">
                       <h3 className="textcard">Login/Signup</h3>
                     </div>
