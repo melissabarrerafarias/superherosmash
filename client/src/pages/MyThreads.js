@@ -27,7 +27,7 @@ const MyThreads = () => {
 
             <div>
                 <div>
-                    <CommentList comments={user.comments} title={`${user.username}'s thoughts...`} />
+                    <CommentList comments={user.comments} title={'Look back at what you said!'} />
                 </div>
             </div>
         </div>
