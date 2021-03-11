@@ -24,6 +24,21 @@ export const ADD_USER = gql`
 }
 `;
 
+export const ADD_COMMENT = gql ` 
+    mutation addComment($commentBody: String!) {
+        addComment(commentBody: $commentBody) {
+            _id 
+            commentBody
+            createdAt
+            username 
+            replyCount 
+            replies {
+                _id
+            }
+        }
+    }
+`; 
+
 export const ADD_REPLY = gql `
     mutation addReply($commentId: ID!, $replyBody: String!) {
         addReply(commentId: $commentId, replyBody: $replyBody) {
@@ -35,6 +50,15 @@ export const ADD_REPLY = gql `
                 createdAt
                 username 
             }
+        }
+    }
+`;
+
+export const DELETE_COMMENT = gql `
+    mutation deleteComment($commentId: ID!) {
+        deleteComment(commentId: $commentId) {
+            _id
+            commentBody
         }
     }
 `;
