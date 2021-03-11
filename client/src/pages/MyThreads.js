@@ -1,17 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USER } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import CommentList from '../components/CommentList';
 
 const MyThreads = () => {
+    
     const { username: userParam } = useParams();
 
-    const { loading, data } = useQuery(QUERY_USER, {
-        variables: { username: userParam }
-    });
+    const { loading, data } = useQuery(QUERY_ME); 
 
-    const user = data?.user || {};
+    const user = data?.me || {};
     console.log(data); 
 
     if (loading) {

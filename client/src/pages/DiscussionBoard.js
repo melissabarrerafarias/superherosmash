@@ -19,7 +19,7 @@ const DiscussionBoard = () => {
         <main>
             <div>
                 <div>
-                    {Auth.isLoggedIn() && <CommentForm /> && <a className="item" id="mythreads-id" name='threads' href='/mythreads'>My Threads</a>}
+                    {Auth.isLoggedIn() && <div><CommentForm /> <a className="item" id="mythreads-id" name='threads' href='/mythreads'>My Threads</a></div>}
                     <CommentList comments={comments} title="Discussion Threads" />
                 </div>
             </div>

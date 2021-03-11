@@ -22,6 +22,18 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      comments {
+        _id
+        commentBody 
+        createdAt
+        replyCount 
+        replies {
+          _id 
+          username 
+          createdAt
+          replyBody 
+        }
+      }
     }
   }
 `;
