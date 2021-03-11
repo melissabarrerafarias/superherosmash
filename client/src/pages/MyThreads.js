@@ -14,14 +14,15 @@ const MyThreads = () => {
     const handleDelete = async event => {
         event.preventDefault();
 
-        let commentId = this.comment._id
+        let commentId = user.data.comment._id
+        console.log(commentId)
 
-        try {
-            await deleteComment({ variables: { commentId } });
-        }
-        catch (e) {
-            console.log(e);
-        }
+        // try {
+        //     await deleteComment({ variables: { commentId } });
+        // }
+        // catch (e) {
+        //     console.log(e);
+        // }
     };
 
     if (loading) {
