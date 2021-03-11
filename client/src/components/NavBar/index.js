@@ -21,19 +21,18 @@ const NavBar = () => {
                             <a className= "item" href="/" onClick={logout}>
                                 Logout
                             </a>
-                            <Link to='/discussionboard'>Discussion Board</Link>
+                            <a className ="item" id="battle-id" name="Battle" href ="/BattleGround">BattleGround</a>
+                            <a className="item" id="home-id" name="home" href="/">Home </a>
+                            <a className= "item" id="discuss-id" name="discuss" href='/discussionboard'>Discussion</a>
                         </>
                     ) : ( //else - render 
                         <>
-                        
                             <a className= "item" id="login-id" name="login" href="/login">Login</a>
                             <a className="item" id="signup-id" name ="signup" href="/signup">Signup</a>
                             <a className ="item" id="battle-id" name="Battle" href ="/BattleGround">BattleGround</a>
                             <a className="item" id="home-id" name="home" href="/">Home </a>
                             <a className= "item" id="discuss-id" name="discuss" href='/discussionboard'>Discussion</a>
-                         
-                        </>
-                                
+                        </>     
                     )}
                 </div>  
                 </div>

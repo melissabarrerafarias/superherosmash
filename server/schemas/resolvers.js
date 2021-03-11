@@ -60,9 +60,9 @@ const resolvers = {
     getHeroById: async (parent, { id }) => {
       console.log("ENTERED RESOLVER");
       let heroData = await getHerosPlease(id);
-      //console.log(heroData);
+      console.log(heroData);
 
-      //console.log(heroData.powerstats.strength + " IS MY NAME");
+      console.log(heroData.powerstats.strength + " IS MY NAME");
       return {
         name: heroData.name,
         strength: heroData.powerstats.strength,
@@ -81,7 +81,7 @@ const resolvers = {
 
       return { token, user };
     },
-    login: async (parent, { email, password }) => {
+    login: async (parent, { email, password }, context) => {
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -121,6 +121,16 @@ const resolvers = {
         return updatedComment;
       }
       throw new AuthenticationError('You need to be logged in!')
+    }, 
+    deleteComment: async (parent, { commentId  }, context ) => {
+      if (context.user) {
+        const deletedComment = await Comment.findOneAndRemove(
+          { _id: commentId }, 
+          { new: true }
+        ); 
+        return deletedComment; 
+      }
+      throw new AuthenticationError('You need to be logged in to delete!')
     }
   },
 };
