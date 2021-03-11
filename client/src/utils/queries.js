@@ -24,14 +24,14 @@ export const QUERY_ME = gql`
       email
       comments {
         _id
-        commentBody 
+        commentBody
         createdAt
-        replyCount 
+        replyCount
         replies {
-          _id 
-          username 
+          _id
+          username
           createdAt
-          replyBody 
+          replyBody
         }
       }
     }
@@ -83,6 +83,7 @@ export const QUERY_HEROS = gql`
       durability
       power
       combat
+      biography
       imgurl
     }
   }
@@ -96,6 +97,7 @@ export const QUERY_HERO_BY_ID = gql`
       durability
       power
       combat
+      biography
       imgurl
     }
   }
