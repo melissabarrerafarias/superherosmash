@@ -1,12 +1,14 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
+
   type User {
     _id: ID
     username: String
     email: String
     comments: [Comment]
   }
+
 
   type Comment {
     _id: ID
@@ -24,6 +26,7 @@ const typeDefs = gql`
     username: String
   }
 
+
   type Hero {
     name: String
     strength: String
@@ -33,6 +36,30 @@ const typeDefs = gql`
     combat: String
     imgurl: String
   }
+
+  type User {
+    _id: ID
+    username: String
+    email: String
+    comments: [Comment]
+  }
+
+  type Comment {
+    _id: ID
+    commentBody: String
+    createdAt: String
+    username: String
+    replyCount: Int
+    replies: [Reply]
+  }
+
+  type Reply {
+    _id: ID
+    replyBody: String
+    createdAt: String
+    username: String
+  }
+
 
   type Auth {
     token: ID!
@@ -47,6 +74,8 @@ const typeDefs = gql`
     comment(_id: ID!): Comment
     getAllHeros: Hero
     getHeroById(id: Int): Hero
+    comments(username: String): [Comment]
+    comment(_id: ID!): Comment
   }
 
   type Mutation {
@@ -55,6 +84,7 @@ const typeDefs = gql`
     addComment(commentBody: String!): Comment
     addReply(commentId: ID!, replyBody: String!): Comment
     deleteComment(commentId: ID!): Comment
+
   }
 `;
 

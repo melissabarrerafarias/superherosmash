@@ -3,37 +3,12 @@ const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
 require("dotenv").config(); // environmental variable
+const { User, Comment } = require("../models");
+const { AuthenticationError } = require("apollo-server-express");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    me: async (parent, args, context) => {
-      if (context.user) {
-        const user = await User.findOne({ _id: context.user._id })
-          .select('-__v -password')//hide password 
-          .populate('comments')
-        return user;
-      }
-      throw new AuthenticationError('Oops! Not logged in!');
-    },
-    // get all users 
-    users: async () => {
-      return User.find()
-        .select('-__v -password')
-        .populate('comments');
-    },
-    // get single user
-    user: async (parent, { username }) => {
-      return User.findOne({ username })
-        .select('-__v -password')
-        .populate('comments');
-    },
-    comments: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Comment.find(params).sort({ createdAt: -1 });
-    },
-    comment: async (parent, { _id }) => {
-      return Comment.findOne({ _id });
-    },
     getAllHeros: async () => {
       let heroData = await getHerosPlease(1);
       console.log(heroData);
@@ -73,7 +48,35 @@ const resolvers = {
         imgurl: heroData.image.url,
       };
     },
+
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id })
+          .select("-__v -password") //hide password
+          .populate("comments");
+        return user;
+      }
+      throw new AuthenticationError("Oops! Not logged in!");
+    },
+    // get all users
+    users: async () => {
+      return User.find().select("-__v -password").populate("comments");
+    },
+    // get single user
+    user: async (parent, { username }) => {
+      return User.findOne({ username })
+        .select("-__v -password")
+        .populate("comments");
+    },
+    comments: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Comment.find(params).sort({ createdAt: -1 });
+    },
+    comment: async (parent, { _id }) => {
+      return Comment.findOne({ _id });
+    },
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -99,7 +102,10 @@ const resolvers = {
     },
     addComment: async (parent, args, context) => {
       if (context.user) {
-        const comment = await Comment.create({ ...args, username: context.user.username });
+        const comment = await Comment.create({
+          ...args,
+          username: context.user.username,
+        });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -109,29 +115,23 @@ const resolvers = {
 
         return comment;
       }
-      throw new AuthenticationError('You must be logged in to participate in the discussion!');
+      throw new AuthenticationError(
+        "You must be logged in to participate in the discussion!"
+      );
     },
     addReply: async (parent, { commentId, replyBody }, context) => {
       if (context.user) {
         const updatedComment = await Comment.findOneAndUpdate(
           { _id: commentId },
-          { $push: { replies: { replyBody, username: context.user.username } } },
+          {
+            $push: { replies: { replyBody, username: context.user.username } },
+          },
           { new: true }
         );
         return updatedComment;
       }
-      throw new AuthenticationError('You need to be logged in!')
-    }, 
-    deleteComment: async (parent, { commentId  }, context ) => {
-      if (context.user) {
-        const deletedComment = await Comment.findOneAndRemove(
-          { _id: commentId }, 
-          { new: true }
-        ); 
-        return deletedComment; 
-      }
-      throw new AuthenticationError('You need to be logged in to delete!')
-    }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

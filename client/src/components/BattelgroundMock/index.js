@@ -6,9 +6,11 @@ import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HEROS, QUERY_HERO_BY_ID } from "../../utils/queries";
 
 const HEROS = [
+  //const MOCK_HEROS = [
+
   {
-    id: "",
-    name: "",
+    id: 1,
+    name: "Hero 1",
     strength: "",
     speed: "",
     power: "",
@@ -17,8 +19,8 @@ const HEROS = [
     imgurl: "",
   },
   {
-    id: "",
-    name: "",
+    id: 2,
+    name: "Hero 2",
     strength: "",
     speed: "",
     power: "",
@@ -41,37 +43,45 @@ const HEROS = [
 ];
 
 const BattleGround = () => {
-  //let heroNumOne = Math.floor(Math.random() * (730 - 1) + 1);
-  // let heroNumTwo = Math.floor(Math.random() * (730 - 1) + 1);
-  let num1 = 10; // id of the first hero to display
-  let num2 = 20; // id of the second hero to display
+  //   //let heroNumOne = Math.floor(Math.random() * (730 - 1) + 1);
+  //   // let heroNumTwo = Math.floor(Math.random() * (730 - 1) + 1);
+  //   let num1 = 10; // id of the first hero to display
+  //   let num2 = 20; // id of the second hero to display
+  //   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  //   const { loading, data } = useQuery(QUERY_HERO_BY_ID, {
+  //     variables: { id: num1 },
+  //   });
+  //   const heroTwo = useQuery(QUERY_HERO_BY_ID, {
+  //     variables: { id: num2 },
+  //   });
+  //   let loadTwo = heroTwo.loading;
+  //   let dataTwo = heroTwo.data;
+  //   if (loading || loadTwo) {
+  //     return <p>Loading...</p>;
+  //   } else {
+  //     populateHeroObject(1, data);
+  //     console.log(dataTwo);
+  //     console.log("This is data two");
+  //     populateHeroObject(2, dataTwo);
+  //     return (
+  //       <div>
+  //         <p> Got the data! </p>
+  //         <a.div class="battleGround" style={props}>
+  //           <Arena heros={HEROS} />
+  //         </a.div>
+  //         ;
+  //       </div>
+  //     );
+  //     //}
+  //   }
+
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-  const { loading, data } = useQuery(QUERY_HERO_BY_ID, {
-    variables: { id: num1 },
-  });
-  const heroTwo = useQuery(QUERY_HERO_BY_ID, {
-    variables: { id: num2 },
-  });
-  let loadTwo = heroTwo.loading;
-  let dataTwo = heroTwo.data;
-  if (loading || loadTwo) {
-    return <p>Loading...</p>;
-  } else {
-    populateHeroObject(1, data);
-    console.log(dataTwo);
-    console.log("This is data two");
-    populateHeroObject(2, dataTwo);
-    return (
-      <div>
-        <p> Got the data! </p>
-        <a.div class="battleGround" style={props}>
-          <Arena heros={HEROS} />
-        </a.div>
-        ;
-      </div>
-    );
-    //}
-  }
+
+  return (
+    <a.div className="battleGround" style={props}>
+      <Arena heros={HEROS} />
+    </a.div>
+  );
 };
 
 function populateHeroObject(heroNum, heroData) {
