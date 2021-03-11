@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CommentList = ({ comments, title }) => {
     if (!comments.length) {
-        return <h3>Be the first to start a discussion!</h3>;
+        return <h3>Oops! Looks like there's nothing here yet!</h3>;
     }
 
     return (
