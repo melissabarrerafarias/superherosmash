@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CommentList = ({ comments, title }) => {
+
     if (!comments.length) {
         return <h3>Oops! Looks like there's nothing here yet!</h3>;
     }

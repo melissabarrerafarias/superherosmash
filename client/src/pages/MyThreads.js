@@ -1,24 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
-import { QUERY_ME } from '../utils/queries';//queries all of users data
+import { QUERY_ME, QUERY_COMMENTS } from '../utils/queries';//queries all of users data
 import { DELETE_COMMENT } from '../utils/mutations';//mutation to delete thread/comment
 
 
 const MyThreads = () => {
-    const { loading, data } = useQuery(QUERY_ME);
+    const { loading, data } = useQuery(QUERY_ME);//quering data
 
     const [deleteComment, { error }] = useMutation(DELETE_COMMENT);
 
     const user = data?.me || {};
 
     const handleDelete = async event => {//deletes thread/comment
-
         event.preventDefault();
-        const commentID = event.target.getAttribute("name")
-         
+
+        const commentID = event.target.getAttribute("name");
         try {
-            await deleteComment({ variables: { commentId: commentID } });
+            await deleteComment({ variables: { commentId: commentID }, update: cache => {
+                const { me } = cache.readQuery({ query: QUERY_ME });
+                // console.log(data)
+                const newData = me.comments.filter(comment => comment._id !== commentID); 
+                console.log(newData)
+                cache.writeQuery({ query: QUERY_ME, data: { me: { ...me, comments: newData}}})
+                // const newData = me.comments.filter(comment => comment._id !== commentID)
+                // console.log(newData); 
+
+                // cache.writeQuery({ query: QUERY_ME, me: { comments: [newData]}})
+
+                // cache.writeQuery({ query: QUERY_ME, data: { comments: newData } }); 
+                // data.me.comments = data.me.comments.filter(({commentID}) => commentID !== data.me.comments._id); 
+                // console.log(data.me.comments)
+                // cache.writeQuery({ query: QUERY_ME, data: {comments: newData}})
+            }});
         }
         catch (e) {
             console.log(e);
