@@ -11,6 +11,7 @@ const SingleThread = () => {
     const { id: commentId } = useParams();//gets id from params
 
     const { loading, data } = useQuery(QUERY_SINGLE_COMMENT, { variables: { id: commentId } });
+    console.log(data)
 
     const comment = data?.comment || {};
 

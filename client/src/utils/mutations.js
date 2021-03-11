@@ -53,3 +53,12 @@ export const ADD_REPLY = gql `
         }
     }
 `;
+
+export const DELETE_COMMENT = gql `
+    mutation deleteComment($commentId: ID!) {
+        deleteComment(commentId: $commentId) {
+            _id
+            commentBody
+        }
+    }
+`;
