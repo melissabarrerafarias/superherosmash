@@ -3,6 +3,8 @@ import Marvel from '../../src/img/marvel.png'
 import Loki from '../../src/img/loki.png';
 import Antman from '../../src/img/antman.png'
 import Deadpool from '../../src/img/deadpool.png';
+import '../../src/home.css'
+
 
 
 const Home = () => {
@@ -13,7 +15,7 @@ const Home = () => {
           <div className="fade-in">
             <section className="hero-section">
               <div className="cgrid">
-                <a className="card" href="#">
+                <a className="home-card" href="#">
                   <div className="cardbg">
                     <img id="img" src={Marvel}></img>
                   <div className="content">
@@ -21,7 +23,7 @@ const Home = () => {
                   </div>
                   </div>
                 </a>
-                <a className="card" href="/BattleGround">
+                <a className="home-card" href="/battleground">
                   <div className="cardbg">
                    <img id="img" src={Loki}></img> 
                   <div className="content">
@@ -29,7 +31,7 @@ const Home = () => {
                   </div>
                   </div>
                 </a>
-                <a className="card" href="/#">
+                <a className="home-card" href="/discussionboard">
                   <div className="cardbg">
                     <img id="img" src={Antman}></img>
                   <div className="content">
@@ -38,7 +40,7 @@ const Home = () => {
                   </div>
                 </a>
 
-                <a className="card" href="/Login">
+                <a className="home-card" href="/Login">
                   <div className="cardbg">
                     <img id="img"src={Deadpool}></img>
                     <div className="content">

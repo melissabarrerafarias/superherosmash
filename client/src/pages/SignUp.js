@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';//mutation for adding a new user
 import Auth from '../utils/auth';//function to set token to localStorage
 import backgroundImage from "../../src/img/spcomic.jpg";
+import '../../src/login-signup.css';
 
 const Signup = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: ''}); 

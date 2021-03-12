@@ -68,7 +68,7 @@ body {
   
   
   
-  .card{
+  .home-card{
     list-style: none;
     position: relative;
   }
@@ -79,6 +79,14 @@ body {
     padding-bottom: 150%;
     width: 100%;
   }
+
+  .home-card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+  
   
   .cardbg{
     border-radius: var(--spacing-l);
@@ -129,7 +137,7 @@ body {
 
  
 
-  .card:hover .cardbg{
+  .home-card:hover .cardbg{
     transform: scale(1.10) translateZ(0);
     box-shadow: 0 0 5px #03e9f4,
     0 0 25px #03e9f4,
