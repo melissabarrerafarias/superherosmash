@@ -15,11 +15,11 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
 
-console.log(process.env.NODE_ENV)
+// console.log(process.env.NODE_ENV)
 
 
 
