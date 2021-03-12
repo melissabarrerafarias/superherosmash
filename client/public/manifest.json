@@ -1,0 +1,16 @@
+{
+  "name": "Superhero Smash",
+  "short_name": "Superhero Smash",
+  "description": "A battleground to determine the most powerful superhero!",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ac0d0d",
+  "icons": [
+    {
+      "src": "/icons/superhero-icon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    }
+  ]
+}

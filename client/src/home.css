@@ -1,0 +1,233 @@
+/* write the keyframe rules to the document root */
+body {
+    /* background: #FBE6c2; */
+    background: #f6bd60;
+    max-width: 100%;
+    font-family: 'Passion One', impact;  
+  
+}
+
+/* **************************** home cards ********* */
+
+:root{
+    --background-dark: #2d3548;
+    --text-light: rgba(255,255,255,0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+  }
+  
+  *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: #00081a;
+    
+  }
+  
+  html{
+    height: 100%;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+  }
+  
+  body{
+    height: 100%;
+  }
+
+ 
+.image {
+ 
+  background-position: center;
+  background-size: no-repeat;
+  background-image: url('img/comicopacity.png');
+} 
+
+  .hero-section{
+    align-items:flex-end;
+    display: flex;
+    min-height: 100%;
+    margin-top: 40px;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+  
+  .cgrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: var(--spacing-xl);
+    grid-row-gap: var(--spacing-l);
+    width: 100%;
+    
+  }
+  
+  
+  
+  .home-card{
+    list-style: none;
+    position: relative;
+  }
+  
+  .card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+
+  .home-card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+  
+  
+  .cardbg{
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(1) saturate(1.1) contrast(1.2);
+    left: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,4);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    right: 0;
+    top: 0;
+    transform: scale(1) translateZ(0);
+    transition: 
+      filter 200ms linear,
+      transform 200ms linear;
+      
+
+  }
+ 
+    @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:2;}
+    }
+    
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:2;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:2}
+    }
+    
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:2;}
+    }
+    
+    @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:2;}
+    }
+
+ 
+
+  .home-card:hover .cardbg{
+    transform: scale(1.10) translateZ(0);
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+    
+  }
+  
+  .content{
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+  }
+  
+
+  .textcard{
+    color: var(--text-lighter);
+    font-size: 1.9rem;
+    font-weight: bold; 
+    text-shadow: 3px 3px 25px rgba(0,0,0,3);
+    line-height: 1.4;
+    word-spacing: 100vw;
+    /* background-color: #03e9f4; */
+  }
+
+
+  .home {
+    height: 1000px;
+    background-size: cover;
+    background-position: center;
+  }
+
+#img {
+max-width: 100%;
+margin-top: 50px;
+}
+
+
+
+
+/* ******************** media queries **************** */
+
+@media(min-width:320px) {
+  .textcard {
+    font: size 12px;
+  }
+  .cgrid{
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+  .home {
+    height: 1500px;
+  }
+  .cardbg {
+    bottom:10px;
+    left:10px;
+    right:10px;
+  }
+
+}
+
+
+@media(min-width: 540px){
+  .cgrid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+}
+@media(min-width: 768px){
+  .cgrid{
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  .textcard {
+    font: size 20px;
+  }
+  
+}
+
+@media(min-width: 960px){
+  .cgrid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .textcard {
+    font: size 20px;
+  }
+}
+
+@media(min-width:1370px){
+  .cgrid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
