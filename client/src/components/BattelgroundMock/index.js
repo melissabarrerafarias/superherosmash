@@ -32,7 +32,7 @@ const HEROS = [
 ];
 
 const BattleGround = () => {
-  //let heroNumOne = Math.floor(Math.random() * (730 - 1) + 1);
+  // let heroNumOne = Math.floor(Math.random() * (730 - 1) + 1);
   // let heroNumTwo = Math.floor(Math.random() * (730 - 1) + 1);
   let num1 = 510; // id of the first hero to display
   let num2 = 478; // id of the second hero to display
