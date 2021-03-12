@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
     "if-env": "^1.0.4",
+    "mongodb": "^3.6.4",
     "mongoose": "^5.11.19",
     "react-spring": "^8.0.27",
     "workbox-core": "^6.1.1",

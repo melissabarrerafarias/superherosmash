@@ -1,38 +1,31 @@
 
 
-#login-id , #signup-id, #battle-id, #home-id, #discuss-id{ 
+#login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
     font-size: 20px;
     
 }
 
 .menu {
-  text-align: center;
+  background-color: #f6bd60;
+  height: 100px;
 }
 
-.header {
-    
-        /* padding: 50px; */
-        text-align: center;
-        /* background:#d00000; */
-        color: white;
-        font-size: 30px;
-        height: 150px;
-        align-items: center;
-}
+
+
 
  .navBtn  {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
     color: #03e9f4;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px;
-    border:none
+    border:none;
   }
    
   .navBtn:hover {
@@ -58,3 +51,13 @@
     background: linear-gradient(90deg, transparent, #03e9f4);
     animation: btn-anim1 1s linear infinite;
   } 
+
+
+  @media (max-width:700px) {
+    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
+      font-size: 12px;
+      text-align: center;
+      margin: 0 auto
+      
+  }
+  }

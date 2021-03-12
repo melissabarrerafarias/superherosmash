@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks'; 
 import { ADD_USER } from '../utils/mutations';//mutation for adding a new user
 import Auth from '../utils/auth';//function to set token to localStorage
-import backgroundImage from "../../src/img/3.jpg";
+import backgroundImage from "../../src/img/spcomic.jpg";
+import '../../src/login-signup.css';
 
 const Signup = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: ''}); 
@@ -28,7 +29,8 @@ const Signup = () => {
     }; 
 
     return (
-        <body className="img" style={{backgroundImage: `url(${backgroundImage})` }}>  
+        <body className="sp-img">
+     
             <div> 
             <div className="spiderman">
                         <img src="https://media3.giphy.com/media/h2MouomJFCpMfWVfUj/source.gif"></img>

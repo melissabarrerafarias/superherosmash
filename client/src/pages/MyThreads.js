@@ -1,33 +1,36 @@
-import React, { useState } from 'react';  
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
-import { QUERY_ME } from '../utils/queries';
-import { DELETE_COMMENT } from '../utils/mutations';
+import { QUERY_ME, QUERY_COMMENTS } from '../utils/queries';//queries all of users data
+import { DELETE_COMMENT } from '../utils/mutations';//mutation to delete thread/comment
 
 
 const MyThreads = () => {
-    const { loading, data } = useQuery(QUERY_ME);
+    const { loading, data } = useQuery(QUERY_ME);//quering data
+
     const [deleteComment, { error }] = useMutation(DELETE_COMMENT);
 
     const user = data?.me || {};
 
-    const handleDelete = async event => {
+    const handleDelete = async event => {//deletes thread/comment
         event.preventDefault();
 
-        let commentId = user.data.comment._id
-        console.log(commentId)
-
-        // try {
-        //     await deleteComment({ variables: { commentId } });
-        // }
-        // catch (e) {
-        //     console.log(e);
-        // }
+        const commentID = event.target.getAttribute("name");
+        try {
+            await deleteComment({ variables: { commentId: commentID }, update: cache => {
+                const { me } = cache.readQuery({ query: QUERY_ME });
+                const newData = me.comments.filter(comment => comment._id !== commentID); 
+                cache.writeQuery({ query: QUERY_ME, data: { me: { ...me, comments: newData}}})
+            }});
+        }
+        catch (e) {
+            console.log(e);
+        }
     };
-
     if (loading) {
         return <div>Please hold on as we reheat our coffee...</div>;
     }
+
 
     return (
         <div>
@@ -55,7 +58,7 @@ const MyThreads = () => {
                                 </div>
                             </Link>
                             <div>
-                                <button onClick={handleDelete}>Delete</button>
+                                <button name={comment._id} onClick={handleDelete}>Delete</button>
                             </div>
                         </div>
                     ))}
