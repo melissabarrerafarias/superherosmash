@@ -48,13 +48,13 @@ const HeroCard = ({ hero }) => {
           <p className="offsetMove card__name">{hero.name}</p>
           <div class="grid-container offsetMove">
             <div class="grid-child-posts">Strength: {hero.strength}</div>
-            {/* <div class="meter red">
+           <div class="meter red">
                 <span style={{ width: "100%" }}></span>
-              </div> */}
-            <div class="grid-child-posts">Durability: {hero.durability}</div>
-            {/* <div class="meter">
+              </div> 
+            <div class="grid-child-posts">Durability: {hero.durability}</div> */}
+             <div class="meter">
                 <span style={{ width: "40%" }}></span>
-              </div> */}
+              </div> 
             <div class="grid-child-posts">Speed: {hero.speed}</div>
             {/* <div class="meter">
                 <span style={{ width: "100%" }}></span>
