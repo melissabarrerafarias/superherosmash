@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import './login-signup.css';
 import 'semantic-ui-css/semantic.min.css'
 import '../src/components/NavBar/nav.css';
-import '../src/home.css';
+
+
 
 
 

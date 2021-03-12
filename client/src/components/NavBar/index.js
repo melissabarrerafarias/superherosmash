@@ -18,7 +18,7 @@ const NavBar = () => {
             <div className ='ui secondary menu'>    
                         {Auth.isLoggedIn() ? ( //if user is logged in - render
                         <>
-                            <a className= "item" href="/" onClick={logout}>
+                            <a className="item" id="logout" href="/" onClick={logout}>
                                 Logout
                             </a>
                             <a className ="item" id="battle-id" name="Battle" href ="/BattleGround">BattleGround</a>
