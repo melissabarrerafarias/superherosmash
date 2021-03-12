@@ -34,6 +34,13 @@ const typeDefs = gql`
     biography: String
     imgurl: String
   }
+  type HeroStats {
+    name: String
+    id: ID
+    votes: Int
+    wins: Int
+    losses: Int
+  }
 
   type Auth {
     token: ID!
@@ -51,6 +58,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    addVote(id: Int!): HeroStats
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentBody: String!): Comment
