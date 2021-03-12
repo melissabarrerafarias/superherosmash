@@ -19,19 +19,8 @@ const MyThreads = () => {
         try {
             await deleteComment({ variables: { commentId: commentID }, update: cache => {
                 const { me } = cache.readQuery({ query: QUERY_ME });
-                // console.log(data)
                 const newData = me.comments.filter(comment => comment._id !== commentID); 
-                console.log(newData)
                 cache.writeQuery({ query: QUERY_ME, data: { me: { ...me, comments: newData}}})
-                // const newData = me.comments.filter(comment => comment._id !== commentID)
-                // console.log(newData); 
-
-                // cache.writeQuery({ query: QUERY_ME, me: { comments: [newData]}})
-
-                // cache.writeQuery({ query: QUERY_ME, data: { comments: newData } }); 
-                // data.me.comments = data.me.comments.filter(({commentID}) => commentID !== data.me.comments._id); 
-                // console.log(data.me.comments)
-                // cache.writeQuery({ query: QUERY_ME, data: {comments: newData}})
             }});
         }
         catch (e) {
