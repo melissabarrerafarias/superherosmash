@@ -2,15 +2,51 @@
   "name": "Superhero Smash",
   "short_name": "Superhero Smash",
   "description": "A battleground to determine the most powerful superhero!",
-  "start_url": ".",
+  "start_url": "index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ac0d0d",
   "icons": [
     {
-      "src": "/icons/superhero-icon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/icons/superhero-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ]
 }
