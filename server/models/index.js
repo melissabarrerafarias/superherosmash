@@ -1,5 +1,6 @@
-//package models for later use 
-const User = require('./User');
-const Comment = require('./Comment');
+//package models for later use
+const User = require("./User");
+const Comment = require("./Comment");
+const Hero = require("./Hero");
 
-module.exports = { User, Comment };
+module.exports = { User, Comment, Hero };

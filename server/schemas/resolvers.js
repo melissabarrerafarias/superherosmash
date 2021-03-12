@@ -1,4 +1,4 @@
-const { User, Comment } = require("../models");
+const { User, Comment, Hero } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
@@ -47,14 +47,6 @@ const resolvers = {
         biography: heroData.biography.alignment,
         imgurl: heroData.image.url,
       };
-      /* 
-     name: String
-    strength: String
-    speed: String
-    durability: String
-    power: String
-    combat: String
-    */
     },
     getHeroById: async (parent, { id }) => {
       console.log("ENTERED RESOLVER");
@@ -137,6 +129,20 @@ const resolvers = {
         return deletedComment;
       }
       throw new AuthenticationError("You need to be logged in to delete!");
+    },
+    addVote: async (parent, { id }) => {
+      console.log("In add vote mutation");
+      // https://docs.mongodb.com/manual/reference/operator/update/inc/
+      //we need to find the hero who has the matching id in the
+      let update = await Hero.findOneAndUpdate(
+        { _id: id },
+        { $inc: { votes: "1" } },
+        { new: true }
+      );
+      console.log(update);
+      console.log(`Hero has this ${update.votes} votes`);
+
+      return update;
     },
   },
 };
