@@ -7,9 +7,7 @@ import { ADD_VOTE } from "../../utils/mutations";
 import { Card, Icon, Image } from "semantic-ui-react";
 
 const HeroCard = ({ hero, setNew }) => {
-  console.log("SetNew")
-  console.log(setNew)  
-  
+
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
