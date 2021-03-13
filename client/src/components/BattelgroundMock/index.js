@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import { useSpring, animated as a } from "react-spring";
 import Arena from "./Arena";
+
 // Hero stuff
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HERO_BY_ID } from "../../utils/queries";
@@ -31,11 +32,37 @@ const HEROS = [
   },
 ];
 
+
+const randomHero = () =>{
+  return(Math.floor(Math.random() * (730 - 1) + 1))
+}  
+
 const BattleGround = () => {
-  // let heroNumOne = Math.floor(Math.random() * (730 - 1) + 1);
-  // let heroNumTwo = Math.floor(Math.random() * (730 - 1) + 1);
-  let num1 = 510; // id of the first hero to display
-  let num2 = 478; // id of the second hero to display
+
+  // Hooks for hero id generation defaulting to random
+  const [heroId1, setHeroId1] = useState(randomHero);
+  const [heroId2, setHeroId2] = useState(randomHero);
+  
+
+  // keeping the randomness to index js by wrapping the set state functions
+  const setHero1 = () => {
+    return(setHeroId1(randomHero))
+  }
+
+  const setHero2 = () => {
+    return(setHeroId2(randomHero))
+  }
+
+
+  // original name convention
+  let num1 = heroId1
+  let num2 = heroId2
+
+
+
+ 
+ 
+  console.log(num1,num2);
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const { loading, data } = useQuery(QUERY_HERO_BY_ID, {
     variables: { id: num1 },
@@ -59,10 +86,11 @@ const BattleGround = () => {
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
+       
         <div>
           <p> Got the data! </p>
           <a.div class="battleGround" style={props}>
-            <Arena heros={HEROS} />
+            <Arena heros={HEROS} setters = {{"setHeroId1":setHero1, "setHeroId2":setHero2}}/>
           </a.div>
           ;
         </div>
@@ -89,4 +117,5 @@ function populateHeroObject(heroNum, heroData) {
 function trimWhiteSpace(stringToTrim) {
   return stringToTrim.trim();
 }
+
 export default BattleGround;
