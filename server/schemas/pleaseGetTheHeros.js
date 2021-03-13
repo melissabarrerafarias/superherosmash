@@ -1,5 +1,6 @@
 require("dotenv").config(); // environmental variable
 const fetch = require("node-fetch");
+
 async function getHerosPlease(heroId) {
   let accesstoken = process.env.HERO_API_KEY;
   //console.log(accesstoken);
@@ -16,4 +17,11 @@ async function getHerosPlease(heroId) {
     return null;
   }
 }
-module.exports = getHerosPlease;
+
+
+
+
+
+
+
+module.exports = getHerosPlease 
