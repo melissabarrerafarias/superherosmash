@@ -6,7 +6,10 @@ import { ADD_VOTE } from "../../utils/mutations";
 //semantic ui
 import { Card, Icon, Image } from "semantic-ui-react";
 
-const HeroCard = ({ hero }) => {
+const HeroCard = ({ hero, setNew }) => {
+  console.log("SetNew")
+  console.log(setNew)  
+  
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
@@ -14,6 +17,11 @@ const HeroCard = ({ hero }) => {
     e.preventDefault();
     console.log("Voted for me!");
     // use try/catch instead of promises to handle errors
+    
+
+    // Set the other hero to something else
+    setNew();
+    
     try {
       // execute addUser mutation and pass in variable data from form
       const { data } = await addVote({
