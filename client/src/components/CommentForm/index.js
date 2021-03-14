@@ -49,13 +49,16 @@ const CommentForm = () => {
 
     return (
         <div>
+            <br/>
             <form onSubmit={onSubmit} className="ui reply form">
                <div className="field">
+                   <h2>
                 <textarea id="comment-textarea"
                     placeholder="Start a thread..."
                     value={commentBody}
                     onChange={onChange}
                 ></textarea>
+                </h2>
                 </div>
 
                 <button type="submit"> 

@@ -27,12 +27,15 @@ const ReplyForm = ({ commentId }) => {
 
   return (
         <div>
+          <br/>
         <form  onSubmit={onSubmit} className="ui reply form">
         <div className="field">
+          <h3>
           <textarea id="comment-textarea" placeholder="Do you agree or disagree?"
           value={replyBody}
           onChange={onChange}
           ></textarea>
+          </h3>
         </div>
         
         <button id="replybtn" type ="submit">

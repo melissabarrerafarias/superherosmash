@@ -4,29 +4,16 @@
    text-align: left; 
 }
 
+#cmt-user {
+    font-size: 14px;
+    margin-top:15px;
+}
 
 #date{ 
     font-size:13px
 }
 
-/* #st-card {
-    width: 50%;
-    margin: 0 auto;
-    float: center;
-    margin-top:20px;
-    position: relative;
-    height: auto;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d; 
-    -webkit-transition: all 600ms; 
-    transition: all 600ms;
-    z-index: 20;
-    overflow: none;
-    opacity: 0.95;
-    background: white;
-    font-size: large;
 
-}  */
 #st-card {
     overflow:auto;
     width: 50%;
@@ -35,6 +22,7 @@
     color: black;
     height: 800px;
     margin-top:100px;
+    
 
 }
 
