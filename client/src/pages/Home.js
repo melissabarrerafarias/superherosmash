@@ -10,7 +10,7 @@ import '../../src/home.css'
 const Home = () => {
   return (
     <body className="image">
-      <div className="home">
+      {/* <div className="home"> */}
         <div className="buttons">
           <div className="fade-in">
             <section className="hero-section">
@@ -52,7 +52,7 @@ const Home = () => {
             </section>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </body>
   );
 };
