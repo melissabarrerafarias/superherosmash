@@ -1,70 +1,86 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { QUERY_ME } from '../utils/queries';//queries all of users data
-import { DELETE_COMMENT } from '../utils/mutations';//mutation to delete thread/comment
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import { QUERY_ME, QUERY_COMMENTS } from "../utils/queries"; //queries all of users data
+import { DELETE_COMMENT } from "../utils/mutations"; //mutation to delete thread/comment
+import "../../src/discuss.css";
 
 const MyThreads = () => {
-    const { loading, data } = useQuery(QUERY_ME);//quering data
+  const { loading, data } = useQuery(QUERY_ME); //quering data
 
-    const [deleteComment, { error }] = useMutation(DELETE_COMMENT);
+  const [deleteComment, { error }] = useMutation(DELETE_COMMENT);
 
-    const user = data?.me || {};
+  const user = data?.me || {};
 
-    const handleDelete = async event => {//deletes thread/comment
-        event.preventDefault();
-        const commentID = event.target.getAttribute("name");
-        try {
-            await deleteComment({
-                variables: { commentId: commentID },
-                update: cache => {//update cache after deleted comment
-                    const { me } = cache.readQuery({ query: QUERY_ME });//destructure 'me' from query
-                    const newData = me.comments.filter(comment => comment._id !== commentID);//filter out deleted comment
-                    cache.writeQuery({ query: QUERY_ME, data: { me: { ...me, comments: newData } } })//writeQuery to include new data
-                }
-            });
-        }
-        catch (e) {
-            console.log(e);
-        }
-    };
-    if (loading) {
-        return <div>Please hold on as we reheat our coffee...</div>;
+  const handleDelete = async (event) => {
+    //deletes thread/comment
+    event.preventDefault();
+
+    const commentID = event.target.getAttribute("name");
+    try {
+      await deleteComment({
+        variables: { commentId: commentID },
+        update: (cache) => {
+          const { me } = cache.readQuery({ query: QUERY_ME });
+          const newData = me.comments.filter(
+            (comment) => comment._id !== commentID
+          );
+          cache.writeQuery({
+            query: QUERY_ME,
+            data: { me: { ...me, comments: newData } },
+          });
+        },
+      });
+    } catch (e) {
+      console.log(e);
     }
-    return (
-        <div>
-            <div>
-                <h2>
-                    {user.username}'s threads
-          </h2>
-            </div>
+  };
+  if (loading) {
+    return <div>Please hold on as we reheat our coffee...</div>;
+  }
 
-            <div>
-                <h3>Look back at what you said!</h3>
-                {user.comments &&
-                    user.comments.map(comment => (
-                        <div key={comment._id}>
-                            <p>
-                                {comment.username} commented on {comment.createdAt}
-                            </p>
-                            <Link to={`/comment/${comment._id}`}>
-                                <div>
-                                    <p>{comment.commentBody}</p>
-                                    <p>
-                                        Replies in this thread: {comment.replyCount} - Go to{' '}
-                                        {comment.replyCount ? 'see' : 'start'} the discussion!
-                            </p>
-                                </div>
-                            </Link>
-                            <div>
-                                <button name={comment._id} onClick={handleDelete}>Delete</button>
-                            </div>
-                        </div>
-                    ))}
+  return (
+    <body className="background-image">
+      <div id="st-card" className="ui card">
+        <div className="content">
+          <h2 className="title">
+            {user.username} Threads
+            <br />
+            <div className="ui dividing header">
+              <h3>Look back at what you said!</h3>
             </div>
+          </h2>
+
+          <div>
+            {user.comments &&
+              user.comments.map((comment) => (
+                <div key={comment._id}>
+                  <div className="ui dividing header">
+                    <p>thread started on {comment.createdAt}</p>
+                    <Link to={`/comment/${comment._id}`}>
+                      <div>
+                        <p>{comment.commentBody}</p>
+                        <p>
+                          Replies in this thread: {comment.replyCount} - Go to{" "}
+                          {comment.replyCount ? "see" : "start"} the discussion!
+                        </p>
+                      </div>
+                    </Link>
+                    <br />
+                    <div>
+                      <button name={comment._id} onClick={handleDelete}>
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
-    );
+        
+      </div>
+    </body>
+  );
 };
 
 export default MyThreads;

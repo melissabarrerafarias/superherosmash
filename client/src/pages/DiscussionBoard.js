@@ -1,31 +1,37 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { QUERY_COMMENTS } from '../utils/queries';
-import Auth from '../utils/auth';
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { QUERY_COMMENTS } from "../utils/queries";
+import Auth from "../utils/auth";
+import "../../src/discuss.css";
 
-import CommentForm from '../components/CommentForm';
-import CommentList from '../components/CommentList';
+import CommentForm from "../components/CommentForm";
+import CommentList from "../components/CommentList";
 
 const DiscussionBoard = () => {
+  const { loading, data } = useQuery(QUERY_COMMENTS);
 
-    const { loading, data } = useQuery(QUERY_COMMENTS);
+  const comments = data?.comments || []; //if object exists save into 'comments', else save as empty array
 
-    const comments = data?.comments || []; //if object exists save into 'comments', else save as empty array 
+  if (loading) {
+    return <div>We're testing your patience...</div>;
+  }
 
-    if (loading) {
-        return <div>We're testing your patience...</div>; 
-    }
-
-    return (
-        <main>
+  return (
+    <body className="background-image">
+      <div id="st-card" className="ui card">
+        <div className="content">
+          {Auth.isLoggedIn() && (
             <div>
-                <div>
-                    {Auth.isLoggedIn() && <div><CommentForm /> <a className="item" id="mythreads-id" name='threads' href='/mythreads'>My Threads</a></div>}
-                    <CommentList comments={comments} title="Discussion Threads" />
-                </div>
+              <CommentForm /> <br />
+              <br />
             </div>
-        </main>
-    );
+          )}
+
+          <CommentList comments={comments} title="Discussion Threads" />
+        </div>
+      </div>
+    </body>
+  );
 };
 
 export default DiscussionBoard;
