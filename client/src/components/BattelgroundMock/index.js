@@ -84,6 +84,7 @@ const BattleGround = () => {
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
+          minHeight: "1000px" // added minheight for image full cover of page (can be taken off)
         }}
       >
 

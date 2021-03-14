@@ -1,4 +1,7 @@
-import React from 'react'; 
+import React from 'react';
+import '../../loading.css';
+import backgroundImage from "../../img/2.jpg";
+
 const loadingMsgs = [
     "...and enjoy the elevator music...",
     "Please wait while the little elves draw your map",
@@ -13,7 +16,6 @@ const loadingMsgs = [
     "Please wait while a larger software vendor in Seattle takes over the world",
     "We're testing your patience",
     "As if you had any other choice",
-    "Follow the white rabbit",
     "Why don't you order a sandwich?",
     "While the satellite moves into position",
     "keep calm and npm install",
@@ -21,13 +23,11 @@ const loadingMsgs = [
     "Dig on the 'X' for buried treasure... ARRR!",
     "It's still faster than you could draw it",
     "The last time I tried this the monkey didn't survive. Let's hope it works better this time.",
-    "I should have had a V8 this morning.",
     "My other loading screen is much faster.",
     "Testing on Timmy... We're going to need another Timmy.",
     "Reconfoobling energymotron...",
     "(Insert quarter)",
     "Are we there yet?",
-    "Have you lost weight?",
     "Just count to 10",
     "Why so serious?",
     "It's not you. It's me.",
@@ -67,14 +67,45 @@ const loadingMsgs = [
     "Granting wishes...",
     "Time flies when you’re having fun.",
     "Get some coffee and come back in ten minutes..",
-  ];
+    "Where do most superheroes live? Cape Town",
+    "What is a superhero's favorite drink? Fruit Punch!",
+    "What does Peter Parker tell people when they ask what he does for a living? He's a web designer...",
+    "Why didn't Tony Stark like his new assistant? He wasn't Happy!",
+    "I am Groot",
+    "TODO: Insert elevator music",
+    "Still faster than Windows update",
+    "Sooooo... Have you seen my vacation photos yet?",
+    "Sorry we are busy catching em' all, we're done soon",
+    "Patience! This is difficult, you know...",
+    "Discovering new ways of making you wait...",
+    "Running with scissors...",
+    "Reading Terms and Conditions for you.",
+    "Shovelling coal into the server",
+    "Pushing pixels...",
+    "How about this weather, eh?",
+    "Go ahead, hold your breath and do an ironman plank till loading complete",
+    "Feel free to spin in your chair",
+    "Whatever you do, don't look behind you...",
+    "Please wait... Consulting the manual...",
+
+];
 
 const Loading = () => {
-    let funnyLoading = loadingMsgs[Math.floor(Math.random()*loadingMsgs.length)];
+    let funnyLoading = loadingMsgs[Math.floor(Math.random() * loadingMsgs.length)];
 
     return (
-        <div>{funnyLoading}</div>
+
+        <body
+            style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${backgroundImage})`,
+                minHeight: "1000px"
+            }}
+        >
+            <div className='loading-html'>{funnyLoading}</div>
+        </body>
+
     )
 }
 
-export default Loading; 
+export default Loading;
