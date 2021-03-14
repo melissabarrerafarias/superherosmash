@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/stripe-js": "^1.13.1",
     "apollo-server-express": "^2.21.0",
     "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
@@ -22,7 +23,8 @@
     "moment": "^2.29.1",
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.19",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "stripe": "^8.138.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

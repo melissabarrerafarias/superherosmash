@@ -10,6 +10,7 @@ import BattleGround from "./components/BattelgroundMock";
 import DiscussionBoard from "./pages/DiscussionBoard";
 import SingleThread from "./pages/SingleThread";
 import MyThreads from "./pages/MyThreads";
+import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 //Semantic ui
 import "semantic-ui-css/semantic.min.css";
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/discussionboard" component={DiscussionBoard} />
           <Route exact path="/comment/:id" component={SingleThread} />
           <Route exact path="/mythreads/:username?" component={MyThreads} />
+          <Route exact path="/checkout" component={Checkout} />
         </div>
       </Router>
     </ApolloProvider>
