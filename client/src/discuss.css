@@ -22,7 +22,10 @@
     color: black;
     height: 800px;
     margin-top:100px;
-    
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
+
 
 }
 
@@ -39,7 +42,7 @@ padding-bottom: 0;
 
 
 .background-image{
-    background-image: url(../src/img/comicopacity.png);
+ background-image: url(../src/img/comicopacity.png);
   background-position: center;
   background-size: no-repeat;
   height:1100px;

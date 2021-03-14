@@ -154,51 +154,6 @@
 
 /* ******************** media queries **************** */
 
-/* @media (max-width: 700px) {
-    .login-box {
-        width: 80%;
-        margin-top: 30px;
-    }
-    .sp-img {
-      height:700px;
-      margin: 0 auto;
-    }
-    .login-img {
-      height:700px;
-      margin: 0 auto;
-    }
-    .spiderman img{
-      width: 100%;
-      margin-top: 500px;
-    }
-    
-}
-
-@media (max-width:1024px) {
-  .spiderman img{
-    width: 20%;
-    margin-top: 500px;
-  }
-}
-
-
-@media(min-width: 320px) {
-  .login-box {
-    bottom: 30%;
-    margin-top: 150px;
-  }
-  .login-signup{
-  height: 500px;
-  margin-top: 70px;
-
-  }
-  .spiderman img {
-    width:25%;
-    
-    margin-top: auto;
-
-  }
-}  */
 
 @media (min-width:320px) and (max-width:700px){
   .login-box {
