@@ -32,9 +32,6 @@ const HeroCard = ({ hero, setNew }) => {
       console.error(e);
     }
   };
-  if (loading) {
-    return <p>Still loading</p>;
-  } else {
     // console.log("This heros name is ");
     console.log(hero);
     return (
@@ -51,7 +48,7 @@ const HeroCard = ({ hero, setNew }) => {
            <div class="meter red">
                 <span style={{ width: "100%" }}></span>
               </div> 
-            <div class="grid-child-posts">Durability: {hero.durability}</div> */}
+            <div class="grid-child-posts">Durability: {hero.durability}</div>
              <div class="meter">
                 <span style={{ width: "40%" }}></span>
               </div> 
@@ -79,7 +76,6 @@ const HeroCard = ({ hero, setNew }) => {
         </div>
       </div>
     );
-  }
 };
 
 export default HeroCard;
