@@ -6,7 +6,7 @@ import "../../src/discuss.css";
 
 import CommentForm from "../components/CommentForm";
 import CommentList from "../components/CommentList";
-import Loading from '../components/Loading'; 
+import Loading from '../components/Loading';
 
 const DiscussionBoard = () => {
   const { loading, data } = useQuery(QUERY_COMMENTS);

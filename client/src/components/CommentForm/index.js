@@ -21,7 +21,7 @@ const CommentForm = () => {
                 });
             }
             catch (e) {
-                console.log(e); 
+                console.log(e);
             }
         }
     });
@@ -49,21 +49,25 @@ const CommentForm = () => {
 
     return (
         <div>
-            <br/>
+            <br />
             <form onSubmit={onSubmit} className="ui reply form">
-               <div className="field">
-                   <h2>
-                <textarea id="comment-textarea"
-                    placeholder="Start a thread..."
-                    value={commentBody}
-                    onChange={onChange}
-                ></textarea>
-                </h2>
+                <div className="field">
+                    <h2>
+                        <textarea id="comment-textarea"
+                            placeholder="Start a thread..."
+                            value={commentBody}
+                            onChange={onChange}
+                        ></textarea>
+                    </h2>
                 </div>
-
-                <button type="submit"> 
-                    Enter
-        </button>
+                <div className='commentList-button-div'>
+                    <button type="submit">
+                        Enter
+                    </button>
+                    
+                        <a href='mythreads' className='my-threads-title'>My Threads</a>
+                  
+                </div>
             </form>
         </div>
     );

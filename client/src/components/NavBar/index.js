@@ -22,17 +22,6 @@ const NavBar = () => {
               <a className="item" id="home-id" name="home" href="/">
                 Home{" "}
               </a>
-              <a
-                className="item"
-                id="donate-id"
-                name="donate"
-                href="/mythreads/:username?"
-              >
-                My Threads
-              </a>
-              {/* <a className="item" id="donate-id" name="donate" href="/">
-                Donate
-              </a> */}
             </>
           ) : (
             //else - render

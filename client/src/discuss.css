@@ -4,6 +4,27 @@
    text-align: left; 
 }
 
+.commentList-button-div {
+    display: inline;
+}
+
+.my-threads-title {
+    font-size: 16px;
+    margin: auto !important; 
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #03e9f4;
+    overflow: hidden;
+    transition: .5s;
+    margin: auto !important;
+    letter-spacing: 2px; 
+    float: right;
+    background-color: #EFEFEF;
+}
+
 #cmt-user {
     font-size: 14px;
     margin-top:15px;
@@ -73,7 +94,7 @@ button {
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin: auto !important;
     letter-spacing: 4px
 }
 
