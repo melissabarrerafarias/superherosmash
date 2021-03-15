@@ -43,6 +43,9 @@ const MyThreads = () => {
 
   return (
     <body className="background-image">
+      <div className="return-to">
+      <a href="/discussionboard" className="return-a"> ⭍  Return to Discussion Page</a>
+      </div>
       <div id="st-card" className="ui card">
         <div className="content">
           <h2 className="title">

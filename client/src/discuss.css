@@ -4,6 +4,23 @@
    text-align: left; 
 }
 
+.return-to {
+   margin-top: 20px;
+   margin-left: 10px
+}
+
+.return-a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black; 
+    font-weight: bold;
+    letter-spacing: 1px; 
+}
+
+.return-a:hover {
+    color: black
+}
+
 .commentList-button-div {
     display: inline;
 }
@@ -14,7 +31,6 @@
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
     text-decoration: none;
     color: #03e9f4;
     overflow: hidden;
@@ -23,6 +39,10 @@
     letter-spacing: 2px; 
     float: right;
     background-color: #EFEFEF;
+}
+
+.my-threads-title:hover {
+    color: black;           
 }
 
 #cmt-user {
@@ -207,5 +227,11 @@ button span:nth-child(2) {
     }
 }
 
+@media(max-width: 320px) {
+    .return-to {
+        text-align: center;
+        font-size: 16px
+     }
+}
 
 
