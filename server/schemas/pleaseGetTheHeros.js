@@ -10,7 +10,7 @@ async function getHerosPlease(heroId) {
   );
   if (heroData.ok) {
     let parsedHeroData = await heroData.json();
-    // console.log("first", parsedHeroData);
+    //console.log("first", parsedHeroData);
     return parsedHeroData;
   } else {
     console.log("You messed up");
@@ -18,10 +18,4 @@ async function getHerosPlease(heroId) {
   }
 }
 
-
-
-
-
-
-
-module.exports = getHerosPlease 
+module.exports = getHerosPlease;

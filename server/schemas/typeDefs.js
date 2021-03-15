@@ -25,6 +25,7 @@ const typeDefs = gql`
   }
 
   type Hero {
+    id: Int
     name: String
     strength: String
     speed: String
@@ -53,12 +54,12 @@ const typeDefs = gql`
     user(username: String!): User
     comments(username: String): [Comment]
     comment(_id: ID!): Comment
-    getAllHeros: Hero
+    getAllHeros: [Hero]
     getHeroById(id: Int): Hero
   }
 
   type Mutation {
-    addVote(id: Int!): HeroStats
+    addVote(id: Int!, name: String!): HeroStats
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentBody: String!): Comment
