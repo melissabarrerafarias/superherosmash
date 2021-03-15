@@ -46,26 +46,41 @@ const HeroCard = ({ hero, setNew }) => {
           ></img>
           <p className="offsetMove card__name">{hero.name}</p>
           <div class="grid-container offsetMove">
-            <div class="grid-child-posts">Strength: {hero.strength}</div>
-            {/* <div class="meter red">
-                <span style={{ width: "100%" }}></span>
-              </div>  */}
-            <div class="grid-child-posts">Durability: {hero.durability}</div>{" "}
-            {/* <div class="meter">
-              <span style={{ width: "40%" }}></span>
-            </div> */}
-            <div class="grid-child-posts">Speed: {hero.speed}</div>
-            {/* <div class="meter">
-                <span style={{ width: "100%" }}></span>
-              </div> */}
-            <div class="grid-child-posts">Power: {hero.power}</div>
-            {/* <div class="meter">
-                <span style={{ width: "100%" }}></span>
-              </div> */}
-            <div class="grid-child-posts">Combat: {hero.combat}</div>
-            {/* <div class="meter">
-                <span style={{ width: "100%" }}></span>
-              </div> */}
+            <div class="grid-child-posts">Strength:</div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.strength}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Durability:</div>{" "}
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.durability}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Speed: </div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.speed}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Power:</div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.power}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Combat:</div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.combat}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
           </div>
 
           <button
@@ -74,7 +89,6 @@ const HeroCard = ({ hero, setNew }) => {
           >
             Vote
           </button>
-          <button className="offsetMove btn draw-border">More Info</button>
         </div>
       </div>
     );

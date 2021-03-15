@@ -97,33 +97,33 @@ const BattleGround = () => {
 function populateHeroObject(heroNum, heroData) {
   let currentHero = HEROS[heroNum - 1];
   console.log(heroData);
-
+  const nullReplace = "Unknown";
   currentHero.id = heroData.getHeroById.id;
   currentHero.name = trimWhiteSpace(heroData.getHeroById.name);
   if (heroData.getHeroById.speed == "null") {
-    currentHero.speed = "∞";
+    currentHero.speed = nullReplace;
   } else {
     currentHero.speed = heroData.getHeroById.speed;
   }
 
   if (heroData.getHeroById.power == "null") {
-    currentHero.power = "∞";
+    currentHero.power = nullReplace;
   } else {
     currentHero.power = heroData.getHeroById.power;
     currentHero.durability = "∞";
   }
   if (heroData.getHeroById.combat == "null") {
-    currentHero.combat = "∞";
+    currentHero.combat = nullReplace;
   } else {
     currentHero.combat = heroData.getHeroById.combat;
   }
   if (heroData.getHeroById.durability == "null") {
-    currentHero.durability = "∞";
+    currentHero.durability = nullReplace;
   } else {
     currentHero.durability = heroData.getHeroById.durability;
   }
   if (heroData.getHeroById.strength == "null") {
-    currentHero.strength = "∞";
+    currentHero.strength = nullReplace;
   } else {
     currentHero.strength = heroData.getHeroById.strength;
   }
