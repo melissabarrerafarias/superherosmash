@@ -93,37 +93,37 @@ const CheckoutForm = ({ products }) => {
                     ))}
                 </section>
                 <section className="payment">
-                <form id="payment-form" onSubmit={handleSubmit}>
-                    <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
-                    <button
-                        disabled={processing || disabled || succeeded}
-                        id="submit"
-                    >
-                        <span id="button-text">
-                            {
-                            processing 
-                            ? <div className="spinner" id="spinner"></div>
-                             : "Donate"
-                            }
-                        </span>
-                    </button>
-                    {/* Show any error that happens when processing the payment */}
-                    {error && (
-                        <div className="card-error" role="alert">
-                            {error}
-                        </div>
-                    )}
-                    {/* Show a success message upon completion */}
-                    <p className={succeeded ? "result-message" : "result-message hidden"}>
-                        Payment succeeded, see the result in your
-                        <a
-                            href={`https://dashboard.stripe.com/test/payments`}
+                    <form id="payment-form" onSubmit={handleSubmit}>
+                        <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
+                        <button
+                            disabled={processing || disabled || succeeded}
+                            id="donate"
                         >
-                            {" "}
+                            <span id="button-text">
+                                {processing? (
+                                    <div className="spinner" id="spinner"></div>
+                                ) : (
+                                    "Donate"
+                                )}
+                            </span>
+                        </button>
+                        {/* Show any error that happens when processing the payment */}
+                        {error && (
+                            <div className="card-error" role="alert">
+                                {error}
+                            </div>
+                        )}
+                        {/* Show a success message upon completion */}
+                        <p className={succeeded ? "result-message" : "result-message hidden"}>
+                            Payment succeeded, see the result in your
+                        <a
+                                href={`https://dashboard.stripe.com/test/payments`}
+                            >
+                                {" "}
                             Stripe dashboard.
                         </a> Refresh the page to pay again.
                     </p>
-                </form>
+                    </form>
                 </section>
             </body>
         </>
