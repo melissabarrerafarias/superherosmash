@@ -1,5 +1,6 @@
 import React from "react";
 import { useSpring, animated as a } from "react-spring";
+import Auth from '../../utils/auth'; 
 
 import HeroCard from "./Herocard";
 import "./style.css";
@@ -11,6 +12,12 @@ const Arena = ({ heros, setters }) => {
   const props = useSpring({ margin: 0, from: { margin: -1000 } });
   console.log("Arena Rendered");
   console.log(heros);
+  const loggedIn = Auth.isLoggedIn();
+
+  if (!loggedIn) {
+    return <h4 className='notLoggedIn'>You need to be logged in to play!</h4>
+  }
+
   return (
     <div class="Arena">
       <a.div style={props} class="RingCorner" key={Date.now() + heros[0].id}>
@@ -20,7 +27,7 @@ const Arena = ({ heros, setters }) => {
       <a.div style={props} class="RingCorner" key={Date.now() + heros[1].id}>
         <HeroCard hero={heros[1]} setNew={setters.setHeroId1} />
       </a.div>
-      );
+      )
       {/* {heros.map((hero) => {
         return (
           <a.div style={props} class="RingCorner" key={Date.now() + hero.id}>

@@ -42,7 +42,6 @@ body {
 
  
 .image {
- 
   background-position: center;
   background-size: no-repeat;
   background-image: url('img/comicopacity.png');
@@ -188,7 +187,6 @@ margin-top: 50px;
   }
   .cgrid{
     grid-template-columns: repeat(1, 1fr);
-
   }
   .home {
     height: 1500px;
@@ -199,6 +197,12 @@ margin-top: 50px;
     right:10px;
   }
 
+}
+
+@media screen and (max-width: 320px) {
+  .cgrid{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 

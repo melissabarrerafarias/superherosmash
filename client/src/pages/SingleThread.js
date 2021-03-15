@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_SINGLE_COMMENT } from '../utils/queries';
 import Auth from '../utils/auth';//for isLoggedIn function
+
+import Loading from '../components/Loading'; 
 import '../../src/discuss.css';
 
 import RepliesList from '../components/RepliesList'; 
@@ -16,7 +18,7 @@ const SingleThread = () => {
     const comment = data?.comment || {};
 
     if (loading) {
-        return <div>Adjusting flux capacitor...</div>; 
+        return <Loading />; 
     }
 
     return (
