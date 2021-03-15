@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   /* margin-top: 5rem; */
   justify-content: space-around;
+  margin-left: 15%;
 }
 
 /* .HeroCard {
@@ -19,7 +20,7 @@
   flex-direction: column;
   align-items: center;
 }
-*/
+
 
 /* .bigRedButton {
   display: flex;
@@ -102,8 +103,9 @@
 }
 .offsetMove {
   /* PLEASE FIX THIS THIS IS HARD CODED  BUT IT IS 2am*/
-  transform: translate(0px, -380px);
+   transform: translate(0px, -310px);
 }
+
 /* Bars for the amount of stats out of 100 */
 .container-bar {
   background-color: rgb(192, 192, 192);
@@ -138,13 +140,14 @@
 
 .card {
   background-color: #222831;
-  height: 37rem;
+  height: 42rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
+  margin-top: 60%;
 }
 
 .card__name {
@@ -301,4 +304,18 @@
     background-color: #A21126;
     padding: 50px; 
     margin-top: 10% !important;
+}
+
+
+
+
+/* ****** media queries transform translate ***********************/
+
+@media (max-width: 500px) {
+  .Arena {
+    flex-direction: row;
+    display: block;
+    justify-content: space-around;
+    margin: 0 auto;
+ }
 }

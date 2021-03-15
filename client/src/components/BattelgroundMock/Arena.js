@@ -22,7 +22,7 @@ const Arena = ({ heros, setters }) => {
     <div class="Arena">
       <a.div style={props} class="RingCorner" key={Date.now() + heros[0].id}>
         <HeroCard hero={heros[0]} setNew={setters.setHeroId2} />
-        <span class="bigRedButton">Vote!</span>
+        {/* <span class="bigRedButton">Vote</span> */}
       </a.div>
       <a.div style={props} class="RingCorner" key={Date.now() + heros[1].id}>
         <HeroCard hero={heros[1]} setNew={setters.setHeroId1} />
@@ -31,11 +31,11 @@ const Arena = ({ heros, setters }) => {
       {/* {heros.map((hero) => {
         return (
           <a.div style={props} class="RingCorner" key={Date.now() + hero.id}>
-            <HeroCard hero={hero} setters = {setters} />
-            <span class="bigRedButton">Vote!</span>
+          <HeroCard hero={hero} setters = {setters} />
+          <span class="bigRedButton">Vote!</span>
           </a.div>
-        );
-      })} */}
+          );
+        })} */}
     </div>
   );
 
