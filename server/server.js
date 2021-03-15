@@ -44,7 +44,7 @@ app.post("/api/payment-intent", async (req, res, next) => {
     const { items } = req.body;
     // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 100,
+      amount: 500,
       currency: "usd"
     });
     res.status(201).json({
@@ -67,7 +67,7 @@ app.post('/api/checkout-session', async (req, res, next) => {
             name: 'Stubborn Attachments',
             images: ['https://i.imgur.com/EHyR2nP.png'],
           },
-          unit_amount: 2000,
+          unit_amount: 500,
         },
         quantity: 1,
       },

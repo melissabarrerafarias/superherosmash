@@ -1,10 +1,10 @@
 import React from "react";
 import CheckoutForm from "../CheckoutForm";
-import "../../index.css";
+import "./donation.css";
 
 const products = [
     {
-        name: "Donation"
+        name: "Donate $5 To Keep Our Arc Reactor Running"
     }
 ]
 

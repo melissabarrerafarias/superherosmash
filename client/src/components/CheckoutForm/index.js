@@ -5,6 +5,7 @@ import {
     useElements
 } from "@stripe/react-stripe-js";
 import { createPaymentIntent } from "../../api";
+import './checkout.css';
 
 const cardStyle = {
     style: {
@@ -75,12 +76,12 @@ const CheckoutForm = ({ products }) => {
                 
                     <div className="product">
                         <img
-                            src="https://i.imgur.com/EHyR2nP.png"
-                            alt="The cover of Stubborn Attachments"
+                            src="https://images5.fanpop.com/image/photos/32000000/Iron-Man-gifs-iron-man-3-32065653-500-282.gif"
+                            alt="Arc Reactor Gif"
                         />
                         <div className="description">
                             <h3>{product.name}</h3>
-                            <h5>$20.00</h5>
+                            <h5>$5.00</h5>
                         </div>
                     </div>
                 
