@@ -74,15 +74,19 @@ const CheckoutForm = ({ products }) => {
             <body className="checkout-img">
                 <section>
                     {products?.map(product => (
-
-                        <div className="product">
-                            <img
-                                src="https://images5.fanpop.com/image/photos/32000000/Iron-Man-gifs-iron-man-3-32065653-500-282.gif"
-                                alt="Arc Reactor Gif"
-                            />
+                        <div>
+                            <div className="product">
+                                <img
+                                    className="product-img"
+                                    src="https://images5.fanpop.com/image/photos/32000000/Iron-Man-gifs-iron-man-3-32065653-500-282.gif"
+                                    alt="Arc Reactor Gif"
+                                />
+                            </div>
                             <div className="description">
-                                <h3>{product.name}</h3>
-                                <h5>$5.00</h5>
+                                <h2>{product.name}</h2>
+                            </div>
+                            <div className="price">
+                                <h3>$5.00</h3>
                             </div>
                         </div>
 

@@ -39,6 +39,24 @@
     background-image: url(./img/checkout-opacity.png);
     height:1150px;
   }
+
+  .product {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .description {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .price {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
   
   .result-message {
     line-height: 22px;
