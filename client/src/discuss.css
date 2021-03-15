@@ -200,6 +200,11 @@ button span:nth-child(2) {
     #cmt-user{
         font-size: 15px;
     }
+
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
 }
 
 
