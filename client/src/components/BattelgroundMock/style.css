@@ -291,3 +291,14 @@
   grid-gap: 20px;
   font-size: 1.2em;
 }
+
+/* in case user isn't logged in... they can't play */
+.notLoggedIn {
+    font-size: 100%; 
+    font-family: 'Comic Sans MS'; 
+    color: black; 
+    text-align: center;
+    background-color: #A21126;
+    padding: 50px; 
+    margin-top: 10% !important;
+}

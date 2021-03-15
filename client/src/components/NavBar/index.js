@@ -24,34 +24,15 @@ const NavBar = () => {
               </a>
               <a
                 className="item"
-                id="battle-id"
-                name="Battle"
-                href="/BattleGround"
-              >
-                Battle Ground
-              </a>
-              <a
-                className="item"
-                id="discuss-id"
-                name="discuss"
-                href="/discussionboard"
-              >
-                Discussion
-              </a>
-              <a
-                className="item"
                 id="donate-id"
                 name="donate"
                 href="/mythreads/:username?"
               >
                 My Threads
               </a>
-              <a className="item" id="stats-id" name="stats" href="/stats">
-                Stats
-              </a>
-              <a className="item" id="donate-id" name="donate" href="/">
+              {/* <a className="item" id="donate-id" name="donate" href="/">
                 Donate
-              </a>
+              </a> */}
             </>
           ) : (
             //else - render
@@ -65,33 +46,9 @@ const NavBar = () => {
               <a className="item" id="signup-id" name="signup" href="/signup">
                 Signup
               </a>
-              <a
-                className="item"
-                id="battle-id"
-                name="Battle"
-                href="/BattleGround"
-              >
-                BattleGround
-              </a>
-              <a
-                className="item"
-                id="discuss-id"
-                name="discuss"
-                href="/discussionboard"
-              >
-                Discussion
-              </a>
-              <a
-                className="item"
-                id="stats-id"
-                name="Stats"
-                href="/discussionboard"
-              >
-                Stats
-              </a>
-              <a className="item" id="donate-id" name="donate" href="/">
+              {/* <a className="item" id="donate-id" name="donate" href="/">
                 Donate
-              </a>
+              </a> */}
             </>
           )}
         </div>
