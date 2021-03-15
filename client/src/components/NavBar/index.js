@@ -36,7 +36,7 @@ const NavBar = () => {
                             <a className="item" id="signup-id" name ="signup" href="/signup">Signup</a>
                             <a className ="item" id="battle-id" name="Battle" href ="/BattleGround">BattleGround</a>
                             <a className= "item" id="discuss-id" name="discuss" href='/discussionboard'>Discussion</a>
-                            <a className="item" id="donate-id" name="donate" href="/">Donate</a>
+                            <a className="item" id="donate-id" name="donate" href="/checkout">Donate</a>
 
                         </>     
                     )}

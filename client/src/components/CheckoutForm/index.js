@@ -5,7 +5,7 @@ import {
     useElements
 } from "@stripe/react-stripe-js";
 import { createPaymentIntent } from "../../api";
-import './checkout.css';
+import '../../checkout.css';
 
 const cardStyle = {
     style: {
@@ -71,53 +71,55 @@ const CheckoutForm = ({ products }) => {
 
     return (
         <>
-            <section>
-            {products?.map(product => (
-                
-                    <div className="product">
-                        <img
-                            src="https://images5.fanpop.com/image/photos/32000000/Iron-Man-gifs-iron-man-3-32065653-500-282.gif"
-                            alt="Arc Reactor Gif"
-                        />
-                        <div className="description">
-                            <h3>{product.name}</h3>
-                            <h5>$5.00</h5>
+            <body className="checkout-img">
+                <section>
+                    {products?.map(product => (
+
+                        <div className="product">
+                            <img
+                                src="https://images5.fanpop.com/image/photos/32000000/Iron-Man-gifs-iron-man-3-32065653-500-282.gif"
+                                alt="Arc Reactor Gif"
+                            />
+                            <div className="description">
+                                <h3>{product.name}</h3>
+                                <h5>$5.00</h5>
+                            </div>
                         </div>
-                    </div>
-                
-            ))}
-            </section>
-            <form id="payment-form" onSubmit={handleSubmit}>
-                <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
-                <button
-                    disabled={processing || disabled || succeeded}
-                    id="submit"
-                >
-                    <span id="button-text">
-                        {processing ? (
-                            <div className="spinner" id="spinner"></div>
-                        ) : (
-                                "Pay now"
-                            )}
-                    </span>
-                </button>
-                {/* Show any error that happens when processing the payment */}
-                {error && (
-                    <div className="card-error" role="alert">
-                        {error}
-                    </div>
-                )}
-                {/* Show a success message upon completion */}
-                <p className={succeeded ? "result-message" : "result-message hidden"}>
-                    Payment succeeded, see the result in your
-        <a
-                        href={`https://dashboard.stripe.com/test/payments`}
+
+                    ))}
+                </section>
+                <form id="payment-form" onSubmit={handleSubmit}>
+                    <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
+                    <button
+                        disabled={processing || disabled || succeeded}
+                        id="submit"
                     >
-                        {" "}
-          Stripe dashboard.
-        </a> Refresh the page to pay again.
-      </p>
-            </form>
+                        <span id="button-text">
+                            {processing ? (
+                                <div className="spinner" id="spinner"></div>
+                            ) : (
+                                    "Pay now"
+                                )}
+                        </span>
+                    </button>
+                    {/* Show any error that happens when processing the payment */}
+                    {error && (
+                        <div className="card-error" role="alert">
+                            {error}
+                        </div>
+                    )}
+                    {/* Show a success message upon completion */}
+                    <p className={succeeded ? "result-message" : "result-message hidden"}>
+                        Payment succeeded, see the result in your
+                        <a
+                            href={`https://dashboard.stripe.com/test/payments`}
+                        >
+                            {" "}
+                            Stripe dashboard.
+                        </a> Refresh the page to pay again.
+                    </p>
+                </form>
+            </body>
         </>
     );
 }

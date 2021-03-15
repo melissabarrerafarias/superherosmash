@@ -34,6 +34,11 @@
     background: white;
     box-sizing: border-box;
   }
+
+  .checkout-img {
+    background-image: url(./img/checkout-opacity.png);
+    height:1150px;
+  }
   
   .result-message {
     line-height: 22px;
