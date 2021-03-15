@@ -86,12 +86,13 @@ const CheckoutForm = ({ products }) => {
                                 <h2>{product.name}</h2>
                             </div>
                             <div className="price">
-                                <h3>$5.00</h3>
+                                <h2>$5.00</h2>
                             </div>
                         </div>
 
                     ))}
                 </section>
+                <section className="payment">
                 <form id="payment-form" onSubmit={handleSubmit}>
                     <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
                     <button
@@ -99,11 +100,11 @@ const CheckoutForm = ({ products }) => {
                         id="submit"
                     >
                         <span id="button-text">
-                            {processing ? (
-                                <div className="spinner" id="spinner"></div>
-                            ) : (
-                                    "Pay now"
-                                )}
+                            {
+                            processing 
+                            ? <div className="spinner" id="spinner"></div>
+                             : "Donate"
+                            }
                         </span>
                     </button>
                     {/* Show any error that happens when processing the payment */}
@@ -123,6 +124,7 @@ const CheckoutForm = ({ products }) => {
                         </a> Refresh the page to pay again.
                     </p>
                 </form>
+                </section>
             </body>
         </>
     );

@@ -4,7 +4,7 @@ import "./donation.css";
 
 const products = [
     {
-        name: "Donate $5 To Keep Our Arc Reactor Running"
+        name: "Donate To Keep Our Arc Reactor Running"
     }
 ]
 
