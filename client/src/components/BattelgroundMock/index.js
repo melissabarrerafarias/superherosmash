@@ -5,7 +5,8 @@ import Arena from "./Arena";
 // Hero stuff
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HERO_BY_ID } from "../../utils/queries";
-import backgroundImage from "../../../src/img/2.png";
+// import backgroundImage from "../../../src/img/testing.png";
+import '../../components/BattelgroundMock/style.css';
 
 const HEROS = [
   {
@@ -73,11 +74,11 @@ const BattleGround = () => {
     console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
-      <body
-        style={{
-          backgroundSize: "cover",
-          backgroundImage: `url(${backgroundImage})`,
-        }}
+      <body className="gameBackgroundImage"
+        // style={{
+        //   backgroundSize: "cover",
+        //   backgroundImage: `url(${backgroundImage})`,
+        // }}
       >
         <div>
           <p> Got the data! </p>

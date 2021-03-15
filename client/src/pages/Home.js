@@ -7,13 +7,15 @@ import "../../src/home.css";
 
 const Home = () => {
   return (
+
     <body className="image">
+
       {/* <div className="home"> */}
       <div className="buttons">
         <div className="fade-in">
           <section className="hero-section">
             <div className="cgrid">
-              <a className="home-card" href="#">
+              <a className="home-card" href="/stats">
                 <div className="cardbg">
                   <img id="img" alt="captain marvel" src={Marvel}></img>
                   <div className="content">

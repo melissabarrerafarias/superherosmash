@@ -291,3 +291,14 @@
   grid-gap: 20px;
   font-size: 1.2em;
 }
+
+.gameBackgroundImage {
+  background-image: url(../../img/hulk.png) ;
+  background-repeat: no-repeat; 
+  height:1100px;
+  background-position: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; 
+  background-size: cover;
+}

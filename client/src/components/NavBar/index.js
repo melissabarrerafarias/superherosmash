@@ -14,6 +14,7 @@ const NavBar = () => {
     <header>
       <div className="menu">
         <div className="ui secondary menu">
+          
           {Auth.isLoggedIn() ? ( //if user is logged in - render
             <>
               <a className="item" id="logout" href="/" onClick={logout}>
@@ -85,7 +86,7 @@ const NavBar = () => {
                 className="item"
                 id="stats-id"
                 name="Stats"
-                href="/discussionboard"
+                href="/stats"
               >
                 Stats
               </a>
@@ -94,6 +95,7 @@ const NavBar = () => {
               </a>
             </>
           )}
+          <headers className="title">SuperHeroSmash</headers>
         </div>
       </div>
     </header>
