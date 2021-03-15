@@ -64,8 +64,8 @@ export const DELETE_COMMENT = gql`
 `;
 
 export const ADD_VOTE = gql`
-  mutation addVote($id: Int!) {
-    addVote(id: $id) {
+  mutation addVote($id: Int!, $name: String!) {
+    addVote(id: $id, name: $name) {
       id
       name
       votes

@@ -8,8 +8,7 @@ const heroSchema = new Schema({
   },
   id: {
     type: Number,
-    required: true,
-    unique: true,
+    required: false,
   },
   votes: {
     type: Number,

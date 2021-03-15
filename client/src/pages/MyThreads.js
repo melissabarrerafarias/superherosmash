@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";  <-- Import never used
 import { Link } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/react-hooks";
-import { QUERY_ME, QUERY_COMMENTS } from "../utils/queries"; //queries all of users data
+import { QUERY_ME } from "../utils/queries"; //queries all of users data , QUERY_COMMENTS was not being used
 import { DELETE_COMMENT } from "../utils/mutations"; //mutation to delete thread/comment
 import "../../src/discuss.css";
 
@@ -77,7 +77,6 @@ const MyThreads = () => {
               ))}
           </div>
         </div>
-        
       </div>
     </body>
   );
