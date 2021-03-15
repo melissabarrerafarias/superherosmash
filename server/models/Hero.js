@@ -7,7 +7,7 @@ const heroSchema = new Schema({
     trim: true,
   },
   id: {
-    type: Number,
+    type: String,
     required: true,
     unique: true,
   },

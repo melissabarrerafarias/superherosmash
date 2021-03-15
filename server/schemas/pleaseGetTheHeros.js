@@ -18,10 +18,4 @@ async function getHerosPlease(heroId) {
   }
 }
 
-
-
-
-
-
-
-module.exports = getHerosPlease 
+module.exports = getHerosPlease;

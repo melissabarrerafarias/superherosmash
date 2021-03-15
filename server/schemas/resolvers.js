@@ -33,27 +33,17 @@ const resolvers = {
       return Comment.findOne({ _id });
     },
     getAllHeros: async () => {
-      let heroData = await getHerosPlease(1);
-      console.log(heroData.biography.alignment);
+      console.log("In get all heros");
+      const data = await User.find();
 
-      console.log(heroData.powerstats.strength + " IS MY NAME");
-      return {
-        name: heroData.name,
-        strength: heroData.powerstats.strength,
-        speed: heroData.powerstats.speed,
-        durability: heroData.powerstats.durability,
-        power: heroData.powerstats.power,
-        combat: heroData.powerstats.combat,
-        biography: heroData.biography.alignment,
-        imgurl: heroData.image.url,
-      };
+      console.log(data);
     },
     getHeroById: async (parent, { id }) => {
       console.log("ENTERED RESOLVER");
       let heroData = await getHerosPlease(id);
-      console.log(heroData);
+      //console.log(heroData);
 
-      console.log(heroData.powerstats.strength + " IS MY NAME");
+      //console.log(heroData.powerstats.strength + " IS MY NAME");
       return {
         name: heroData.name,
         strength: heroData.powerstats.strength,
@@ -132,10 +122,11 @@ const resolvers = {
     },
     addVote: async (parent, { id }) => {
       console.log("In add vote mutation");
+      console.log(id);
       // https://docs.mongodb.com/manual/reference/operator/update/inc/
       //we need to find the hero who has the matching id in the
       let update = await Hero.findOneAndUpdate(
-        { _id: id },
+        { id: this.id },
         { $inc: { votes: "1" } },
         { new: true }
       );

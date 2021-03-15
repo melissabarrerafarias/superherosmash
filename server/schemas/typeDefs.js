@@ -53,7 +53,7 @@ const typeDefs = gql`
     user(username: String!): User
     comments(username: String): [Comment]
     comment(_id: ID!): Comment
-    getAllHeros: Hero
+    getAllHeros: [Hero]
     getHeroById(id: Int): Hero
   }
 
