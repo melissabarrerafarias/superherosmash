@@ -14,7 +14,9 @@ const HeroCard = ({ hero, setNew }) => {
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
-  const props = useSpring({ "height": 3000, from: { "height": 0  } });
+
+  // mock props
+  const props = useSpring({ "opacity": 1, from: { "opcaity": 0  } });
   
   const addVoteHandler = async (e) => {
     e.preventDefault();
