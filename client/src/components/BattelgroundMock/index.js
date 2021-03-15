@@ -5,7 +5,7 @@ import Arena from "./Arena";
 // Hero stuff
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HERO_BY_ID } from "../../utils/queries";
-import backgroundImage from "../../../src/img/2.jpg";
+import backgroundImage from "../../../src/img/2.png";
 
 const HEROS = [
   {
