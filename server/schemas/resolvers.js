@@ -103,7 +103,7 @@ const resolvers = {
         const updatedComment = await Comment.findOneAndUpdate(
           { _id: commentId },
           {
-            $push: { replies: { replyBody, username: context.user.username } },
+            $push: { replies: { $each: [ {replyBody, username: context.user.username} ], $sort: { createdAt: -1 } } },
           },
           { new: true }
         );
