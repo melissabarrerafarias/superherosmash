@@ -31,9 +31,6 @@ const HeroCard = ({ hero, setNew }) => {
       console.error(e);
     }
   };
-  if (loading) {
-    return <p>Still loading</p>;
-  } else {
     // console.log("This heros name is ");
     console.log(hero);
     return (
@@ -94,7 +91,6 @@ const HeroCard = ({ hero, setNew }) => {
         </div>
       </div>
     );
-  }
 };
 
 export default HeroCard;

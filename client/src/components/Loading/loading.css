@@ -1,0 +1,9 @@
+  .loading-html {
+    font-size: 100%; 
+    font-family: 'Comic Sans MS'; 
+    color: black; 
+    text-align: center; 
+    margin-top: 10%;
+    background-color: #D7B88D;
+    padding: 50px
+  }

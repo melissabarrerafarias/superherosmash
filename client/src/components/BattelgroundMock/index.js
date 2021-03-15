@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSpring, animated as a } from "react-spring";
 import Arena from "./Arena";
+import Loading from '../Loading'; 
 
 // Hero stuff
 import { useQuery } from "@apollo/react-hooks";
@@ -65,7 +66,7 @@ const BattleGround = () => {
   let loadTwo = heroTwo.loading;
   let dataTwo = heroTwo.data;
   if (loading || loadTwo) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>
   } else {
     //console.log(data);
     populateHeroObject(1, data);
@@ -77,10 +78,10 @@ const BattleGround = () => {
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
+          minHeight: "1000px" // added minheight for image full cover of page (can be taken off)
         }}
       >
         <div>
-          <p> Got the data! </p>
           <a.div class="battleGround" style={props}>
             <Arena
               heros={HEROS}
@@ -91,7 +92,6 @@ const BattleGround = () => {
         </div>
       </body>
     );
-    //}
   }
 };
 
