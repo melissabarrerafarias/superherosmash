@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../loading.css';
+import '../Loading/loading.css';
 import backgroundImage from "../../img/2.jpg";
 
 const loadingMsgs = [
