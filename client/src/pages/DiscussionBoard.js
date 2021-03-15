@@ -6,6 +6,7 @@ import "../../src/discuss.css";
 
 import CommentForm from "../components/CommentForm";
 import CommentList from "../components/CommentList";
+import Loading from '../components/Loading'; 
 
 const DiscussionBoard = () => {
   const { loading, data } = useQuery(QUERY_COMMENTS);
@@ -13,7 +14,7 @@ const DiscussionBoard = () => {
   const comments = data?.comments || []; //if object exists save into 'comments', else save as empty array
 
   if (loading) {
-    return <div>We're testing your patience...</div>;
+    return <Loading />;
   }
 
   return (

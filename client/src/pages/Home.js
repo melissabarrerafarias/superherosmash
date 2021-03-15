@@ -13,7 +13,7 @@ const Home = () => {
         <div className="fade-in">
           <section className="hero-section">
             <div className="cgrid">
-              <a className="home-card" href="#">
+              <a className="home-card" href="/stats">
                 <div className="cardbg">
                   <img id="img" alt="captain marvel" src={Marvel}></img>
                   <div className="content">
@@ -38,11 +38,11 @@ const Home = () => {
                 </div>
               </a>
 
-              <a className="home-card" href="/Login">
+              <a className="home-card" href="/donate">{/* /login -- replaced*/}
                 <div className="cardbg">
                   <img id="img" alt="Deadpool" src={Deadpool}></img>
                   <div className="content">
-                    <h3 className="textcard">Login/Signup</h3>
+                    <h3 className="textcard">Donate</h3>{/*Login/Signup -- replaced*/}
                   </div>
                 </div>
               </a>
