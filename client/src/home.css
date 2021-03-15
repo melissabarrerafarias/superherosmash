@@ -1,10 +1,10 @@
 /* write the keyframe rules to the document root */
 body {
-    /* background: #FBE6c2; */
-    background: #f6bd60;
-    max-width: 100%;
-    font-family: 'Passion One', impact;  
-  
+  /* background: #FBE6c2; */
+  background: #f6bd60;
+  max-width: 100%;
+  font-family: 'Passion One', impact;  
+
 }
 
 /* **************************** home cards ********* */
@@ -46,6 +46,7 @@ body {
   background-position: center;
   background-size: no-repeat;
   background-image: url('img/comicopacity.png');
+  height:1100px
 } 
 
   .hero-section{
@@ -164,12 +165,12 @@ body {
     /* background-color: #03e9f4; */
   }
 
-
+/* 
   .home {
-    height: 1000px;
+    height: 400px;
     background-size: cover;
     background-position: center;
-  }
+  } */
 
 #img {
 max-width: 100%;

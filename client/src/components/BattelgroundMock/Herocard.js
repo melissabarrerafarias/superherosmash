@@ -4,10 +4,16 @@ import { QUERY_HEROS } from "../../utils/queries";
 import { ADD_VOTE } from "../../utils/mutations";
 
 //semantic ui
-import { Card, Icon, Image } from "semantic-ui-react";
+// import { Card, Icon, Image } from "semantic-ui-react"; <- Not being used but might end up being used
 
 const HeroCard = ({ hero, setNew }) => {
+<<<<<<< HEAD
 
+=======
+  console.log("SetNew");
+  console.log(setNew);
+  console.log("HeroCard", hero);
+>>>>>>> a0614bf3bca6829830128c88bc59c04c199d4162
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
@@ -15,15 +21,14 @@ const HeroCard = ({ hero, setNew }) => {
     e.preventDefault();
     console.log("Voted for me!");
     // use try/catch instead of promises to handle errors
-    
 
     // Set the other hero to something else
     setNew();
-    
+
     try {
       // execute addUser mutation and pass in variable data from form
       const { data } = await addVote({
-        variables: { id: 1 },
+        variables: { id: hero.id, name: hero.name },
       });
       console.log(data);
     } catch (e) {
@@ -43,28 +48,45 @@ const HeroCard = ({ hero, setNew }) => {
             alt="Person"
             className="card__image offsetMove"
           ></img>
-          <p className="offsetMove card__name">{hero.name}</p>
+          <p id="heroName" className="offsetMove card__name">
+            {hero.name}
+          </p>
           <div class="grid-container offsetMove">
-            <div class="grid-child-posts">Strength: {hero.strength}</div>
-           <div class="meter red">
-                <span style={{ width: "100%" }}></span>
-              </div> 
-            <div class="grid-child-posts">Durability: {hero.durability}</div> */}
-             <div class="meter">
-                <span style={{ width: "40%" }}></span>
-              </div> 
-            <div class="grid-child-posts">Speed: {hero.speed}</div>
-            {/* <div class="meter">
-                <span style={{ width: "100%" }}></span>
-              </div> */}
-            <div class="grid-child-posts">Power: {hero.power}</div>
-            {/* <div class="meter">
-                <span style={{ width: "100%" }}></span>
-              </div> */}
-            <div class="grid-child-posts">Combat: {hero.combat}</div>
-            {/* <div class="meter">
-                <span style={{ width: "100%" }}></span>
-              </div> */}
+            <div class="grid-child-posts">Strength:</div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.strength}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Durability:</div>{" "}
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.durability}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Speed: </div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.speed}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Power:</div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.power}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
+            <div class="grid-child-posts">Combat:</div>
+            <div className="container-bar">
+              <div className="skill " style={{ width: `${hero.combat}%` }}>
+                {" "}
+                <p>Secret</p>
+              </div>
+            </div>
           </div>
 
           <button
@@ -73,7 +95,6 @@ const HeroCard = ({ hero, setNew }) => {
           >
             Vote
           </button>
-          <button className="offsetMove btn draw-border">More Info</button>
         </div>
       </div>
     );
