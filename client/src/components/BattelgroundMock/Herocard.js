@@ -7,13 +7,9 @@ import { ADD_VOTE } from "../../utils/mutations";
 // import { Card, Icon, Image } from "semantic-ui-react"; <- Not being used but might end up being used
 
 const HeroCard = ({ hero, setNew }) => {
-<<<<<<< HEAD
-
-=======
   console.log("SetNew");
   console.log(setNew);
   console.log("HeroCard", hero);
->>>>>>> a0614bf3bca6829830128c88bc59c04c199d4162
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 

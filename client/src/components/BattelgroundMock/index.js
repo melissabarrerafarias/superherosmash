@@ -40,13 +40,10 @@ const BattleGround = () => {
   // Hooks for hero id generation defaulting to random
   const [heroId1, setHeroId1] = useState(randomHero);
   const [heroId2, setHeroId2] = useState(randomHero);
-<<<<<<< HEAD
   
   // keep tally of matched done and their results
   const [matches, addMatch] = useState([])
   
-=======
->>>>>>> a0614bf3bca6829830128c88bc59c04c199d4162
 
   // keeping the randomness to index js by wrapping the set state functions
   const setHero1 = () => {
