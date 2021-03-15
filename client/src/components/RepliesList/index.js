@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom"; <-- Import not used
 import Auth from "../../utils/auth";
-import '../../../src/discuss.css';
-
+import "../../../src/discuss.css";
 
 const RepliesList = ({ replies }) => {
   const loggedIn = Auth.isLoggedIn();
@@ -13,7 +12,7 @@ const RepliesList = ({ replies }) => {
 
   return (
     <div>
-      <br/>
+      <br />
       <div>
         <h3 className="ui dividing header">Replies: </h3>
       </div>
@@ -22,23 +21,23 @@ const RepliesList = ({ replies }) => {
           <div className="ui dividing header">
             <p key={reply._id}> </p>
             <div>
-              <div >
-              <div className="ui comments">
-                <div className="comment">
-                  <p className="author">{reply.username} 
-                  
-                  <div className="metadata">
-                    <span id="date" className="data">
-                     
-                      {reply.createdAt}
-                    </span>
+              <div>
+                <div className="ui comments">
+                  <div className="comment">
+                    <p className="author">
+                      {reply.username}
+
+                      <div className="metadata">
+                        <span id="date" className="data">
+                          {reply.createdAt}
+                        </span>
+                      </div>
+                    </p>
+                    <div className="commentlist">{reply.replyBody}</div>
                   </div>
-                  </p>
-                  <div className="commentlist">{reply.replyBody}</div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         ))}
     </div>

@@ -4,7 +4,7 @@ import { QUERY_HEROS } from "../../utils/queries";
 import { ADD_VOTE } from "../../utils/mutations";
 
 //semantic ui
-import { Card, Icon, Image } from "semantic-ui-react";
+// import { Card, Icon, Image } from "semantic-ui-react"; <- Not being used but might end up being used
 
 const HeroCard = ({ hero, setNew }) => {
   console.log("SetNew");
@@ -22,7 +22,6 @@ const HeroCard = ({ hero, setNew }) => {
     setNew();
 
     try {
-      let heroName = document.getElementById("heroName").innerHTML;
       // execute addUser mutation and pass in variable data from form
       const { data } = await addVote({
         variables: { id: hero.id, name: hero.name },

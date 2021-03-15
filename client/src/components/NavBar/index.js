@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Home from "../../pages/Home";
+// import { Link } from "react-router-dom"; <-- IMPORT NEVER USED
+// import Home from "../../pages/Home"; <-- IMPORT NEVER USED
 import Auth from "../../utils/auth"; //function to logout
-import BattleGround from "../../components/BattelgroundMock";
+//import BattleGround from "../../components/BattelgroundMock"; //<-- IMPORT NEVER USED
 
 const NavBar = () => {
   const logout = (e) => {

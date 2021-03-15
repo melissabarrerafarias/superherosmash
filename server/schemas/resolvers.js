@@ -144,7 +144,7 @@ const resolvers = {
       } else {
         //need to create the hero, and then run the update
         console.log("creating new hero");
-        const newHero = await Hero.create({
+        const update = await Hero.create({
           name: newHeroName,
           id: newHeroId, //<-- THis might need to be added in later TODO
           votes: 1,
