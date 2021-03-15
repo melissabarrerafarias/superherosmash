@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_SINGLE_COMMENT } from '../utils/queries';
 import Auth from '../utils/auth';//for isLoggedIn function
+import '../../src/discuss.css';
 
 import RepliesList from '../components/RepliesList'; 
 import ReplyForm from '../components/ReplyForm'; 
@@ -19,22 +20,41 @@ const SingleThread = () => {
     }
 
     return (
-        <div>
-            {Auth.isLoggedIn() && <ReplyForm commentId={comment._id} />}
-            <div>
-                <p>
-                    <span>
-                        {comment.username}
-                    </span>{' '}
-                        posted on {comment.createdAt}
-                </p>
-                <div>
-                    <p>{comment.commentBody}</p>
+            <body className="background-image">  
+ 
+                <div id="st-card" className="ui card">
+                    <div className="content">
+                        
+                        <div className="meta">
+                        {comment.username} {" "}{" "} {comment.createdAt}
+                          
+                        </div>
+                        <br></br>
+                        <div className="header">
+                        {comment.commentBody} 
+                        
+                        </div>
+                        
+                        {Auth.isLoggedIn() && <ReplyForm commentId={comment._id} />}
+                  
+
+                        {comment.replyCount > 0 && <RepliesList replies={comment.replies} />} 
+                        </div>
+                        
+                        
+                        
                 </div>
-            </div>
-            {comment.replyCount > 0 && <RepliesList replies={comment.replies} />}
-        </div>
+              
+
+                
+            
+            </body>
     )
+
 }
+
+
+
+
 
 export default SingleThread; 

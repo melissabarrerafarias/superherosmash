@@ -1,14 +1,21 @@
 
 
-#login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
+#login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
     font-size: 20px;
+    font-weight: 900;
     
 }
 
 .menu {
-  background-color: #f6bd60;
+  /* background-color:#45c0db; */
+  /* background-color:#2195cb; */
   height: 100px;
+  /* background-image: radial-gradient(ellipse, #0000, #0007); */
+  filter:  saturate(1) contrast(2) brightness(.9);
+background-image: url(https://images.assetsdelivery.com/compings_v2/studiostoks/studiostoks1605/studiostoks160500262.jpg);
 }
+
+
 
 
 
@@ -53,11 +60,22 @@
   } 
 
 
-  @media (max-width:700px) {
-    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
+  /* @media (max-width:700px) {
+    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
       font-size: 12px;
       text-align: center;
       margin: 0 auto
       
   }
+  } */
+
+  @media (min-width:320px) and (max-width:700px){
+    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
+      font-size: 10px;
+      text-align: center;
+      margin: 0 auto;
   }
+  .menu {
+    height:40px;
+  }
+}

@@ -154,50 +154,25 @@
 
 /* ******************** media queries **************** */
 
-@media (max-width: 700px) {
-    .login-box {
-        width: 80%;
-        margin-top: 30px;
-    }
-    .sp-img {
-      height:700px;
-      margin: 0 auto;
-    }
-    .login-img {
-      height:700px;
-      margin: 0 auto;
-    }
-    .spiderman img{
-      width: 100%;
-      margin-top: 500px;
-    }
-    
-}
 
-@media (max-width:1024px) {
-  .spiderman img{
-    width: 20%;
-    margin-top: 500px;
-  }
-}
-/* 
-
-@media(min-width: 320px) {
+@media (min-width:320px) and (max-width:700px){
   .login-box {
-    bottom: 50%;
+    width: 80%;
+    margin-top: 80px;
+}
+
+  .login-img, .sp-img {
+    height:750px;
+    margin: 0 auto;
   }
-  .login-signup{
-  height: 800px;
-  
+  .spiderman img {
+    display: none;
   }
 }
 
-
-@media(min-width: 540px) {
+@media (max-width:320px) {
   .login-box {
-    width: 50%;
-  }
-  .login-signup{
-    height: 500px;
-  }
-} */
+    width: 80%;
+    margin-top: 120px;
+}
+}
