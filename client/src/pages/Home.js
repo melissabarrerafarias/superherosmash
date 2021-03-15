@@ -7,7 +7,9 @@ import "../../src/home.css";
 
 const Home = () => {
   return (
+
     <body className="image">
+
       {/* <div className="home"> */}
       <div className="buttons">
         <div className="fade-in">

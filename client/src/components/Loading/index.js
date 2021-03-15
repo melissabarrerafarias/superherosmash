@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Loading/loading.css';
-import backgroundImage from "../../img/2.jpg";
+import backgroundImage from "../../img/hulk.png";
 
 const loadingMsgs = [
     "...and enjoy the elevator music...",
