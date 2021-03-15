@@ -7,9 +7,9 @@ import { ADD_VOTE } from "../../utils/mutations";
 import { Card, Icon, Image } from "semantic-ui-react";
 
 const HeroCard = ({ hero, setNew }) => {
-  console.log("SetNew")
-  console.log(setNew)  
-  
+  console.log("SetNew");
+  console.log(setNew);
+
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
@@ -17,11 +17,10 @@ const HeroCard = ({ hero, setNew }) => {
     e.preventDefault();
     console.log("Voted for me!");
     // use try/catch instead of promises to handle errors
-    
 
     // Set the other hero to something else
     setNew();
-    
+
     try {
       // execute addUser mutation and pass in variable data from form
       const { data } = await addVote({
@@ -48,13 +47,13 @@ const HeroCard = ({ hero, setNew }) => {
           <p className="offsetMove card__name">{hero.name}</p>
           <div class="grid-container offsetMove">
             <div class="grid-child-posts">Strength: {hero.strength}</div>
-           <div class="meter red">
+            {/* <div class="meter red">
                 <span style={{ width: "100%" }}></span>
-              </div> 
-            <div class="grid-child-posts">Durability: {hero.durability}</div> */}
-             <div class="meter">
-                <span style={{ width: "40%" }}></span>
-              </div> 
+              </div>  */}
+            <div class="grid-child-posts">Durability: {hero.durability}</div>{" "}
+            {/* <div class="meter">
+              <span style={{ width: "40%" }}></span>
+            </div> */}
             <div class="grid-child-posts">Speed: {hero.speed}</div>
             {/* <div class="meter">
                 <span style={{ width: "100%" }}></span>
