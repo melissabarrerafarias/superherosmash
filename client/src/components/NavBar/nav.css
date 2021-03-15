@@ -59,7 +59,7 @@
 
   @media (min-width:320px) and (max-width:700px){
     #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
-      font-size: 10px;
+      font-size: 15px;
       text-align: center;
       margin: 0 auto;
   }
@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 320px) {
   #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
-    font-size: 10px;
+    font-size: 15px;
     text-align: center;
     padding: 0
 }
