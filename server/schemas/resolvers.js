@@ -45,6 +45,7 @@ const resolvers = {
 
       //console.log(heroData.powerstats.strength + " IS MY NAME");
       return {
+        id: heroData.id,
         name: heroData.name,
         strength: heroData.powerstats.strength,
         speed: heroData.powerstats.speed,
@@ -120,18 +121,38 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in to delete!");
     },
-    addVote: async (parent, { id }) => {
+    addVote: async (parent, { id, name }) => {
       console.log("In add vote mutation");
       console.log(id);
+      let newHeroId = id;
+      let newHeroName = name;
+      console.log(name);
       // https://docs.mongodb.com/manual/reference/operator/update/inc/
-      //we need to find the hero who has the matching id in the
-      let update = await Hero.findOneAndUpdate(
-        { id: this.id },
-        { $inc: { votes: "1" } },
-        { new: true }
-      );
-      console.log(update);
-      console.log(`Hero has this ${update.votes} votes`);
+      //add a check to see if the hero exists in the local db
+      const heroExists = await Hero.exists({ name: newHeroName });
+      console.log("Hero exists?", heroExists);
+      //if hero exists we can do the same method as usual
+      if (heroExists) {
+        //we need to find the hero who has the matching id in the
+        let update = await Hero.findOneAndUpdate(
+          { name: newHeroName },
+          { $inc: { votes: "1" } },
+          { new: true }
+        );
+        console.log(update);
+        console.log(`Hero has this ${update.votes} votes`);
+      } else {
+        //need to create the hero, and then run the update
+        console.log("creating new hero");
+        const newHero = await Hero.create({
+          name: newHeroName,
+          id: newHeroId, //<-- THis might need to be added in later TODO
+          votes: 1,
+          wins: 0,
+          losses: 0,
+        });
+        console.log("created new hero: ", newHero);
+      }
 
       return update;
     },

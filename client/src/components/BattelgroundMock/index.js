@@ -67,8 +67,9 @@ const BattleGround = () => {
   if (loading || loadTwo) {
     return <p>Loading...</p>;
   } else {
+    //console.log(data);
     populateHeroObject(1, data);
-    console.log(dataTwo);
+    //console.log(dataTwo);
     console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
@@ -96,33 +97,32 @@ const BattleGround = () => {
 
 function populateHeroObject(heroNum, heroData) {
   let currentHero = HEROS[heroNum - 1];
-  console.log(heroData);
   const nullReplace = "Unknown";
   currentHero.id = heroData.getHeroById.id;
   currentHero.name = trimWhiteSpace(heroData.getHeroById.name);
-  if (heroData.getHeroById.speed == "null") {
+  if (heroData.getHeroById.speed === "null") {
     currentHero.speed = nullReplace;
   } else {
     currentHero.speed = heroData.getHeroById.speed;
   }
 
-  if (heroData.getHeroById.power == "null") {
+  if (heroData.getHeroById.power === "null") {
     currentHero.power = nullReplace;
   } else {
     currentHero.power = heroData.getHeroById.power;
     currentHero.durability = "∞";
   }
-  if (heroData.getHeroById.combat == "null") {
+  if (heroData.getHeroById.combat === "null") {
     currentHero.combat = nullReplace;
   } else {
     currentHero.combat = heroData.getHeroById.combat;
   }
-  if (heroData.getHeroById.durability == "null") {
+  if (heroData.getHeroById.durability === "null") {
     currentHero.durability = nullReplace;
   } else {
     currentHero.durability = heroData.getHeroById.durability;
   }
-  if (heroData.getHeroById.strength == "null") {
+  if (heroData.getHeroById.strength === "null") {
     currentHero.strength = nullReplace;
   } else {
     currentHero.strength = heroData.getHeroById.strength;

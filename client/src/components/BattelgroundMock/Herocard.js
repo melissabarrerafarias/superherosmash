@@ -9,7 +9,7 @@ import { Card, Icon, Image } from "semantic-ui-react";
 const HeroCard = ({ hero, setNew }) => {
   console.log("SetNew");
   console.log(setNew);
-
+  console.log("HeroCard", hero);
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
@@ -22,9 +22,10 @@ const HeroCard = ({ hero, setNew }) => {
     setNew();
 
     try {
+      let heroName = document.getElementById("heroName").innerHTML;
       // execute addUser mutation and pass in variable data from form
       const { data } = await addVote({
-        variables: { id: 1 },
+        variables: { id: hero.id, name: hero.name },
       });
       console.log(data);
     } catch (e) {
@@ -44,7 +45,9 @@ const HeroCard = ({ hero, setNew }) => {
             alt="Person"
             className="card__image offsetMove"
           ></img>
-          <p className="offsetMove card__name">{hero.name}</p>
+          <p id="heroName" className="offsetMove card__name">
+            {hero.name}
+          </p>
           <div class="grid-container offsetMove">
             <div class="grid-child-posts">Strength:</div>
             <div className="container-bar">
