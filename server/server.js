@@ -18,12 +18,18 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app });
 
-
-
-
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(express.static("."));
+app.use(express.json());
+
+const calculateOrderAmount = items => {
+  // Replace this constant with a calculation of the order's amount
+  // Calculate the order total on the server to prevent
+  // people from directly manipulating the amount on the client
+  return 1400;
+};
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -33,7 +39,24 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-app.post('/create-checkout-session', async (req, res) => {
+app.post("/api/payment-intent", async (req, res, next) => {
+  try {
+    const { items } = req.body;
+    // Create a PaymentIntent with the order amount and currency
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 100,
+      currency: "usd"
+    });
+    res.status(201).json({
+      clientSecret: paymentIntent.client_secret
+    });
+  } catch(err) {
+    next(err);
+  }
+});
+
+app.post('/api/checkout-session', async (req, res, next) => {
+  try {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
@@ -53,7 +76,10 @@ app.post('/create-checkout-session', async (req, res) => {
     success_url: `${YOUR_DOMAIN}?success=true`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
-  res.json({ id: session.id });
+  res.status(201).json({ id: session.id });
+} catch(err) {
+  next(err);
+}
 });
 
 
