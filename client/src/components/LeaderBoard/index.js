@@ -26,7 +26,7 @@ const LeaderBoard = () => {
               <div className = "votes_bar">
                 <div className="container-bar">
                   <div
-                    className="skill "
+                    className="skill "oi
                     style={{ width: `${hero.votes}%` }}
                   ></div>
                 </div>
