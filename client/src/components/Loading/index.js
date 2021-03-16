@@ -102,7 +102,10 @@ const Loading = () => {
                 minHeight: "1000px"
             }}
         >
-            <div className='loading-html'>{funnyLoading}</div>
+            <div className='loading-html'>
+            <h4>Loading...</h4>
+                <p>{funnyLoading}</p>
+            </div>
         </body>
 
     )
