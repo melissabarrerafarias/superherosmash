@@ -78,13 +78,10 @@ export const QUERY_HEROS = gql`
   {
     getAllHeros {
       name
-      strength
-      speed
-      durability
-      power
-      combat
-      biography
-      imgurl
+      id
+      votes
+      wins
+      losses
     }
   }
 `;
