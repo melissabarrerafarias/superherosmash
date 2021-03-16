@@ -14,7 +14,7 @@
     width: 100vw;
   } */
   
-  form {
+  /* form {
     width: 30vw;
     align-self: center;
     box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
@@ -70,10 +70,10 @@
   
   #payment-request-button {
     margin-bottom: 32px;
-  }
+  } */
   
   /* Buttons and links */
-  button {
+  /* button {
     background: #5469d4;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -96,10 +96,10 @@
   button:disabled {
     opacity: 0.5;
     cursor: default;
-  }
+  } */
   
   /* spinner/processing state, errors */
-  .spinner,
+  /* .spinner,
   .spinner:before,
   .spinner:after {
     border-radius: 50%;
@@ -166,5 +166,5 @@
     form {
       width: 80vw;
     }
-  }
+  } */
   
