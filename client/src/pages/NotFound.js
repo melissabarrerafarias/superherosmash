@@ -3,7 +3,6 @@ import QuantumRealm from '../img/quantumrealm.jpg';
 import "../../src/NotFound.css";
 
 const NotFound = () => {
-    
     return (
         <body className="quantum-realm">
             <div className="not-found">
