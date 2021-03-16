@@ -1,4 +1,4 @@
-const { User, Comment, Hero } = require("../models");
+const { User, Comment, Hero, HeroStats } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
@@ -32,12 +32,21 @@ const resolvers = {
     comment: async (parent, { _id }) => {
       return Comment.findOne({ _id });
     },
-    getAllHeros: async () => {
-      console.log("In get all heros");
-      const data = await User.find();
+    // getAllHeros: async () => {
+    //   console.log("In get all heros");
+    //   const data = await User.find();
 
-      console.log(data);
+    //   console.log(data);
+    // },
+
+    getAllHeros: async () => {
+      console.log("Getting Heros From Db");
+      const data = await Hero.find();
+      
+      //console.log(data);
+      return(data)
     },
+
     getHeroById: async (parent, { id }) => {
       console.log("ENTERED RESOLVER");
       let heroData = await getHerosPlease(id);

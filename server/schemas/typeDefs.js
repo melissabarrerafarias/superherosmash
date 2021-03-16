@@ -35,6 +35,9 @@ const typeDefs = gql`
     biography: String
     imgurl: String
   }
+
+
+
   type HeroStats {
     name: String
     id: ID
