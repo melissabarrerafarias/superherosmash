@@ -4,6 +4,47 @@
    text-align: left; 
 }
 
+.return-to {
+   margin-top: 20px;
+   margin-left: 10px
+}
+
+.return-a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black; 
+    font-weight: bold;
+    letter-spacing: 1px; 
+}
+
+.return-a:hover {
+    color: black
+}
+
+.commentList-button-div {
+    display: inline;
+}
+
+.my-threads-title {
+    font-size: 16px;
+    margin: auto !important; 
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #03e9f4;
+    overflow: hidden;
+    transition: .5s;
+    margin: auto !important;
+    letter-spacing: 2px; 
+    float: right;
+    background-color: #EFEFEF;
+}
+
+.my-threads-title:hover {
+    color: black;           
+}
+
 #cmt-user {
     font-size: 14px;
     margin-top:15px;
@@ -73,7 +114,7 @@ button {
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin: auto !important;
     letter-spacing: 4px
 }
 
@@ -139,10 +180,6 @@ button span:nth-child(2) {
 
 
 
-
-
-
-
 /* ************* Media queries *************************************** */
 @media(max-width: 320px){
     .background-image {
@@ -179,7 +216,18 @@ button span:nth-child(2) {
     #cmt-user{
         font-size: 15px;
     }
+
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
 }
 
+@media(max-width: 320px) {
+    .return-to {
+        text-align: center;
+        font-size: 16px
+     }
+}
 
 

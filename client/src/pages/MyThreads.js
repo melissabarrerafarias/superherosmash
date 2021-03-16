@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";  <-- Import never used
 import { Link } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/react-hooks";
-import { QUERY_ME, QUERY_COMMENTS } from "../utils/queries"; //queries all of users data
+import { QUERY_ME } from "../utils/queries"; //queries all of users data , QUERY_COMMENTS was not being used
 import { DELETE_COMMENT } from "../utils/mutations"; //mutation to delete thread/comment
+
+import Loading from '../components/Loading'; 
 import "../../src/discuss.css";
 
 const MyThreads = () => {
@@ -36,11 +38,14 @@ const MyThreads = () => {
     }
   };
   if (loading) {
-    return <div>Please hold on as we reheat our coffee...</div>;
+    return <Loading />;
   }
 
   return (
     <body className="background-image">
+      <div className="return-to">
+      <a href="/discussionboard" className="return-a"> ⭍  Return to Discussion Board</a>
+      </div>
       <div id="st-card" className="ui card">
         <div className="content">
           <h2 className="title">
@@ -77,7 +82,6 @@ const MyThreads = () => {
               ))}
           </div>
         </div>
-        
       </div>
     </body>
   );
