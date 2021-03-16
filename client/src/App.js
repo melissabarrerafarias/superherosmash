@@ -13,6 +13,7 @@ import MyThreads from "./pages/MyThreads";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import StatsPage from "./pages/Stats";
+import NotFound from './pages/NotFound';
 //Semantic ui
 import "semantic-ui-css/semantic.min.css";
 
@@ -29,11 +30,13 @@ function App() {
     },
     uri: "/graphql",
   });
+
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <NavBar />
+          <NavBar/>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
@@ -43,6 +46,9 @@ function App() {
           <Route exact path="/mythreads/:username?" component={MyThreads} />
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/stats" component={StatsPage} />
+        </div>
+        <div>
+        <Route component={NotFound} />
         </div>
       </Router>
     </ApolloProvider>

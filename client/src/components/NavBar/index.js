@@ -5,6 +5,7 @@ import Auth from "../../utils/auth"; //function to logout
 //import BattleGround from "../../components/BattelgroundMock"; //<-- IMPORT NEVER USED
 
 const NavBar = () => {
+
   const logout = (e) => {
     e.preventDefault();
     Auth.logout();
