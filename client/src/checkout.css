@@ -120,7 +120,7 @@
     color: #ffffff;
     border-radius: 0 0 4px 4px;
     border: 0;
-    padding: 12px 16px;
+    padding: 16px 16px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -137,6 +137,11 @@
   #donate:disabled {
     opacity: 0.5;
     cursor: default;
+  }
+
+  #button-text {
+    position:static;
+    line-height: 0.25;
   }
   
   /* spinner/processing state, errors */
