@@ -41,11 +41,8 @@ function App() {
           <Route exact path="/discussionboard" component={DiscussionBoard} />
           <Route exact path="/comment/:id" component={SingleThread} />
           <Route exact path="/mythreads/:username?" component={MyThreads} />
-<<<<<<< HEAD
           <Route exact path="/checkout" component={Checkout} />
-=======
           <Route exact path="/stats" component={StatsPage} />
->>>>>>> develop
         </div>
       </Router>
     </ApolloProvider>
