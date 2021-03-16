@@ -37,9 +37,9 @@ const NavBar = () => {
               <a className="item" id="signup-id" name="signup" href="/signup">
                 Signup
               </a>
-              {/* <a className="item" id="donate-id" name="donate" href="/">
+              <a className="item" id="donate-id" name="donate" href="/checkout">
                 Donate
-              </a> */}
+              </a>
             </>
           )}
        

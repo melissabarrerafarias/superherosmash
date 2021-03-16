@@ -2,6 +2,7 @@ const { User, Comment, Hero } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 require("dotenv").config(); // environmental variable
 
 const resolvers = {
@@ -54,7 +55,7 @@ const resolvers = {
         combat: heroData.powerstats.combat,
         imgurl: heroData.image.url,
       };
-    },
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
