@@ -59,10 +59,12 @@ const Login = (props) => {
               <button>Enter</button>
             </form>
             {error && (
-              <div>
+              <div style={{marginTop:"10%"}}>
                 <h2>
-                  Login failed. Please make sure you have the correct
-                  information
+                  Login failed. 
+
+                  <a href='/signup'> Sign up?</a>
+                  
                 </h2>
               </div>
             )}
