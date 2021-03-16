@@ -23,11 +23,9 @@ const DiscussionBoard = () => {
         <div className="content">
           {Auth.isLoggedIn() && (
             <div>
-              <CommentForm /> <br />
-              <br />
+              <CommentForm />
             </div>
           )}
-
           <CommentList comments={comments} title="Discussion Threads" />
         </div>
       </div>
