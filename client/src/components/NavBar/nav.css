@@ -6,9 +6,11 @@
 
 .menu {
   height: 100px;
+  height: 100px;
   filter:  saturate(1) contrast(2) brightness(.9);
   background-image: url(https://images.assetsdelivery.com/compings_v2/studiostoks/studiostoks1605/studiostoks160500262.jpg);
   overflow: hidden;
+  ;
 }
 
  .navBtn  {
@@ -87,10 +89,11 @@
 }
 }
 
-/* .title {
-  font-size: 15px;
+#title {
+  font-size: 50px;
   text-align: left;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-weight: 900;
+  /* background-color:steelblue; */
 
-} */
+}

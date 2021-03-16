@@ -14,7 +14,15 @@ const NavBar = () => {
     <header>
       <div className="menu">
         <div className="ui secondary menu">
+       <div className="item" id="title">
+      
+        <img src="https://thumbs.gfycat.com/AltruisticFondGibbon-max-1mb.gif"></img>  
        
+
+
+         SuperHeroSmash
+         <img style= {{transform: "scaleX(-1)"}} src="https://thumbs.gfycat.com/AltruisticFondGibbon-max-1mb.gif"></img>  
+       </div>
           
           {Auth.isLoggedIn() ? ( //if user is logged in - render
             <>
