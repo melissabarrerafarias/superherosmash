@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_COMMENT } from '../../utils/mutations';
 import { QUERY_COMMENTS } from '../../utils/queries';
+import '../../../src/discuss.css';
 
 const CommentForm = () => {
     const [commentBody, setBody] = useState('');
@@ -20,7 +21,7 @@ const CommentForm = () => {
                 });
             }
             catch (e) {
-                console.log(e); 
+                console.log(e);
             }
         }
     });
@@ -48,15 +49,25 @@ const CommentForm = () => {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
-                <textarea
-                    placeholder="Start a thread..."
-                    value={commentBody}
-                    onChange={onChange}
-                ></textarea>
-                <button>
-                    Enter
-        </button>
+            <br />
+            <form onSubmit={onSubmit} className="ui reply form">
+                <div className="field">
+                    <h2>
+                        <textarea id="comment-textarea"
+                            placeholder="Start a thread..."
+                            value={commentBody}
+                            onChange={onChange}
+                        ></textarea>
+                    </h2>
+                </div>
+                <div className='commentList-button-div'>
+                    <button type="submit">
+                        Enter
+                    </button>
+                    
+                        <a href='mythreads' className='my-threads-title'>My Threads</a>
+                  
+                </div>
             </form>
         </div>
     );

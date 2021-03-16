@@ -1,10 +1,10 @@
 /* write the keyframe rules to the document root */
 body {
-    /* background: #FBE6c2; */
-    background: #f6bd60;
-    max-width: 100%;
-    font-family: 'Passion One', impact;  
-  
+  /* background: #FBE6c2; */
+  background: #f6bd60;
+  max-width: 100%;
+  font-family: 'Passion One', impact;  
+
 }
 
 /* **************************** home cards ********* */
@@ -42,10 +42,10 @@ body {
 
  
 .image {
- 
   background-position: center;
   background-size: no-repeat;
   background-image: url('img/comicopacity.png');
+  height:1100px
 } 
 
   .hero-section{
@@ -87,7 +87,7 @@ body {
     width: 100%;
   }
   
-  
+/******site for card code reference  https://webdevtrick.com/login-form-card/: original code by Webdevtrick**********/
   .cardbg{
     border-radius: var(--spacing-l);
     bottom: 0;
@@ -164,12 +164,12 @@ body {
     /* background-color: #03e9f4; */
   }
 
-
+/* 
   .home {
-    height: 1000px;
+    height: 400px;
     background-size: cover;
     background-position: center;
-  }
+  } */
 
 #img {
 max-width: 100%;
@@ -187,7 +187,6 @@ margin-top: 50px;
   }
   .cgrid{
     grid-template-columns: repeat(1, 1fr);
-
   }
   .home {
     height: 1500px;
@@ -198,6 +197,12 @@ margin-top: 50px;
     right:10px;
   }
 
+}
+
+@media screen and (max-width: 320px) {
+  .cgrid{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 

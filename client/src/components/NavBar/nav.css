@@ -1,17 +1,15 @@
-
-
-#login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
+#login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
     font-size: 20px;
+    font-weight: 900;
     
 }
 
 .menu {
-  background-color: #f6bd60;
   height: 100px;
+  filter:  saturate(1) contrast(2) brightness(.9);
+  background-image: url(https://images.assetsdelivery.com/compings_v2/studiostoks/studiostoks1605/studiostoks160500262.jpg);
+  overflow: hidden;
 }
-
-
-
 
  .navBtn  {
     position: relative;
@@ -26,6 +24,12 @@
     margin-top: 40px;
     letter-spacing: 4px;
     border:none;
+  }
+
+  #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
   }
    
   .navBtn:hover {
@@ -53,11 +57,32 @@
   } 
 
 
-  @media (max-width:700px) {
-    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout{ 
-      font-size: 12px;
+  @media (min-width:320px) and (max-width:700px){
+    #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
+      font-size: 15px;
       text-align: center;
-      margin: 0 auto
-      
+      margin: 0 auto;
   }
+  .menu {
+    height:40px;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .menu a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #login-id , #signup-id, #battle-id, #home-id, #discuss-id, #logout, #donate-id{ 
+    font-size: 15px;
+    text-align: center;
+    padding: 0
+}
+.menu {
+  height: auto;
+}
+}

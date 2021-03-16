@@ -1,7 +1,8 @@
-const { User, Comment } = require("../models");
+const { User, Comment, Hero } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 require("dotenv").config(); // environmental variable
 
 const resolvers = {
@@ -33,36 +34,19 @@ const resolvers = {
       return Comment.findOne({ _id });
     },
     getAllHeros: async () => {
-      let heroData = await getHerosPlease(1);
-      console.log(heroData.biography.alignment);
+      console.log("In get all heros");
+      const data = await User.find();
 
-      console.log(heroData.powerstats.strength + " IS MY NAME");
-      return {
-        name: heroData.name,
-        strength: heroData.powerstats.strength,
-        speed: heroData.powerstats.speed,
-        durability: heroData.powerstats.durability,
-        power: heroData.powerstats.power,
-        combat: heroData.powerstats.combat,
-        biography: heroData.biography.alignment,
-        imgurl: heroData.image.url,
-      };
-      /* 
-     name: String
-    strength: String
-    speed: String
-    durability: String
-    power: String
-    combat: String
-    */
+      console.log(data);
     },
     getHeroById: async (parent, { id }) => {
       console.log("ENTERED RESOLVER");
       let heroData = await getHerosPlease(id);
-      console.log(heroData);
+      //console.log(heroData);
 
-      console.log(heroData.powerstats.strength + " IS MY NAME");
+      //console.log(heroData.powerstats.strength + " IS MY NAME");
       return {
+        id: heroData.id,
         name: heroData.name,
         strength: heroData.powerstats.strength,
         speed: heroData.powerstats.speed,
@@ -71,7 +55,7 @@ const resolvers = {
         combat: heroData.powerstats.combat,
         imgurl: heroData.image.url,
       };
-    },
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -120,7 +104,7 @@ const resolvers = {
         const updatedComment = await Comment.findOneAndUpdate(
           { _id: commentId },
           {
-            $push: { replies: { replyBody, username: context.user.username } },
+            $push: { replies: { $each: [ {replyBody, username: context.user.username} ], $sort: { createdAt: -1 } } },
           },
           { new: true }
         );
@@ -137,6 +121,41 @@ const resolvers = {
         return deletedComment;
       }
       throw new AuthenticationError("You need to be logged in to delete!");
+    },
+    addVote: async (parent, { id, name }) => {
+      console.log("In add vote mutation");
+      console.log(id);
+      let newHeroId = id;
+      let newHeroName = name;
+      console.log(name);
+      // https://docs.mongodb.com/manual/reference/operator/update/inc/
+      //add a check to see if the hero exists in the local db
+      const heroExists = await Hero.exists({ name: newHeroName });
+      console.log("Hero exists?", heroExists);
+      //if hero exists we can do the same method as usual
+      if (heroExists) {
+        //we need to find the hero who has the matching id in the
+        let update = await Hero.findOneAndUpdate(
+          { name: newHeroName },
+          { $inc: { votes: "1" } },
+          { new: true }
+        );
+        console.log(update);
+        console.log(`Hero has this ${update.votes} votes`);
+      } else {
+        //need to create the hero, and then run the update
+        console.log("creating new hero");
+        const update = await Hero.create({
+          name: newHeroName,
+          id: newHeroId, //<-- THis might need to be added in later TODO
+          votes: 1,
+          wins: 0,
+          losses: 0,
+        });
+        console.log("created new hero: ", newHero);
+      }
+
+      return update;
     },
   },
 };
