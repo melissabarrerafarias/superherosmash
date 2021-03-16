@@ -14,6 +14,7 @@ const NavBar = () => {
     <header>
       <div className="menu">
         <div className="ui secondary menu">
+       
           
           {Auth.isLoggedIn() ? ( //if user is logged in - render
             <>

@@ -34,7 +34,7 @@ const HeroCard = ({ hero, setNew }) => {
     // console.log("This heros name is ");
     console.log(hero);
     return (
-      <div className="wrapper ">
+      <div className="wrapper">
         <div class="card ">
           <img
             src={hero.imgurl}
@@ -81,7 +81,7 @@ const HeroCard = ({ hero, setNew }) => {
               </div>
             </div>
           </div>
-
+          <br/>
           <button
             onClick={addVoteHandler}
             className="offsetMove btn draw-border"

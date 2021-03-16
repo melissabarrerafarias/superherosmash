@@ -75,7 +75,7 @@ const BattleGround = () => {
     console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
-      <body
+      <body className="background-i"
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
