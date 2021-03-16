@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 
-const DOMAIN = 'http://localhost:3000/checkout'
+const DOMAIN = 'https://superherosmash.herokuapp.com/checkout'
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -22,11 +21,6 @@ server.applyMiddleware({ app });
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-<<<<<<< HEAD
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
-=======
 app.use(express.static("."));
 app.use(express.json());
 
@@ -34,13 +28,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
->>>>>>> 0f1d9b94665f4f5b1fdb6b2be41e03c8d989bd3a
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-<<<<<<< HEAD
-=======
 app.post("/api/payment-intent", async (req, res, next) => {
   try {
     const { items } = req.body;
@@ -75,8 +66,8 @@ app.post('/api/checkout-session', async (req, res, next) => {
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}?success=true`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    success_url: `${DOMAIN}?success=true`,
+    cancel_url: `${DOMAIN}?canceled=true`,
   });
   res.status(201).json({ id: session.id });
 } catch(err) {
@@ -84,7 +75,6 @@ app.post('/api/checkout-session', async (req, res, next) => {
 }
 });
 
->>>>>>> 0f1d9b94665f4f5b1fdb6b2be41e03c8d989bd3a
 
 db.once('open', () => {
   app.listen(PORT, () => {
