@@ -40,7 +40,7 @@ const Home = () => {
                 </div>
               </a>
 
-              <a className="home-card" href="/donate">{/* /login -- replaced*/}
+              <a className="home-card" href="/checkout">{/* /login -- replaced*/}
                 <div className="cardbg">
                   <img id="img" alt="Deadpool" src={Deadpool}></img>
                   <div className="content">
