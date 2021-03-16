@@ -89,7 +89,6 @@ const BattleGround = () => {
               setters={{ setHeroId1: setHero1, setHeroId2: setHero2 }}
             />
           </a.div>
-          ;
         </div>
       </body>
     );
