@@ -1,6 +1,6 @@
 import React from "react";
 import CheckoutForm from "../CheckoutForm";
-import "./donation.css";
+import "../../checkout.css";
 
 const products = [
     {
