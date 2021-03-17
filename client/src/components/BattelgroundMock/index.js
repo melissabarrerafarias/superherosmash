@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useSpring, animated as a } from "react-spring";
 import Arena from "./Arena";
-import Loading from '../Loading'; 
+import Loading from "../Loading";
 
 // Hero stuff
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HERO_BY_ID } from "../../utils/queries";
 import backgroundImage from "../../../src/img/hulk.png";
-import '../../components/BattelgroundMock/style.css';
+import "../../components/BattelgroundMock/style.css";
 
 const HEROS = [
   {
@@ -55,8 +55,11 @@ const BattleGround = () => {
   // original name convention
   let num1 = heroId1;
   let num2 = heroId2;
+  if (num1 === num2) {
+    num1++; // Avoid having the same hero twice
+  }
 
-  console.log(num1, num2);
+  //console.log(num1, num2);
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const { loading, data } = useQuery(QUERY_HERO_BY_ID, {
     variables: { id: num1 },
@@ -67,19 +70,19 @@ const BattleGround = () => {
   let loadTwo = heroTwo.loading;
   let dataTwo = heroTwo.data;
   if (loading || loadTwo) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   } else {
     //console.log(data);
     populateHeroObject(1, data);
     //console.log(dataTwo);
-    console.log("This is data two");
+    // console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
       <body
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
-          minHeight: "1000px" // added minheight for image full cover of page (can be taken off)
+          minHeight: "1000px", // added minheight for image full cover of page (can be taken off)
         }}
       >
         <div>
@@ -98,6 +101,7 @@ const BattleGround = () => {
 function populateHeroObject(heroNum, heroData) {
   let currentHero = HEROS[heroNum - 1];
   const nullReplace = "Unknown";
+  let doesImageExist = ImageExist(currentHero.imgurl);
   currentHero.id = heroData.getHeroById.id;
   currentHero.name = trimWhiteSpace(heroData.getHeroById.name);
   if (heroData.getHeroById.speed === "null") {
@@ -127,12 +131,26 @@ function populateHeroObject(heroNum, heroData) {
   } else {
     currentHero.strength = heroData.getHeroById.strength;
   }
+
+  //if (doesImageExist) {
   currentHero.imgurl = heroData.getHeroById.imgurl;
+  //} else {
+  //console.log("Image does not exist!");
+  //currentHero.imgurl = "https://i.imgur.com/Kv5BdNk.png";
+  //}
+
   currentHero.biography = heroData.getHeroById.biography;
-  console.log(heroData.getHeroById.biography); //TODO Data is here on back end but not front for some reason
+  //console.log(heroData.getHeroById.biography); //TODO Data is here on back end but not front for some reason
 }
 function trimWhiteSpace(stringToTrim) {
   return stringToTrim.trim();
+}
+
+function ImageExist(url) {
+  var img = new Image();
+  img.src = url;
+  console.log(img.height != 0, img.height);
+  return img.height != 0; //if not exist, return false
 }
 
 export default BattleGround;
