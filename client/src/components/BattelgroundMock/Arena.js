@@ -19,25 +19,33 @@ const Arena = ({ heros, setters }) => {
   }
 
   return (
-    
-    <div class="Arena">
-      <a.div style={props} class="RingCorner" key={Date.now() + heros[0].id}>
-        <HeroCard hero={heros[0]} setNew={setters.setHeroId2} />
-        {/* <span class="bigRedButton">Vote</span> */}
-      </a.div>
-      <a.div style={props} class="RingCorner" key={Date.now() + heros[1].id}>
-        <HeroCard hero={heros[1]} setNew={setters.setHeroId1} />
-      </a.div>
+    <>
+      <div className="battle-description">
+        Vote for your favorite superhero in each matchup. The winner gets a vote added to their total and stays to battle the next opponent.
+        <br />
+        <br />
+        When you're done in the Battleground, see how your choices are doing on the Leaderboard or head to
+        the Discussion area to make your case!
+      </div>
+      <div class="Arena">
+        <a.div style={props} class="RingCorner" key={Date.now() + heros[0].id}>
+          <HeroCard hero={heros[0]} setNew={setters.setHeroId2} />
+          {/* <span class="bigRedButton">Vote</span> */}
+        </a.div>
+        <a.div style={props} class="RingCorner" key={Date.now() + heros[1].id}>
+          <HeroCard hero={heros[1]} setNew={setters.setHeroId1} />
+        </a.div>
 
-      {/* {heros.map((hero) => {
-        return (
-          <a.div style={props} class="RingCorner" key={Date.now() + hero.id}>
-          <HeroCard hero={hero} setters = {setters} />
-          <span class="bigRedButton">Vote!</span>
-          </a.div>
-          );
-        })} */}
-    </div>
+        {/* {heros.map((hero) => {
+          return (
+            <a.div style={props} class="RingCorner" key={Date.now() + hero.id}>
+            <HeroCard hero={hero} setters = {setters} />
+            <span class="bigRedButton">Vote!</span>
+            </a.div>
+            );
+          })} */}
+      </div>
+    </>
   );
 
   // return (
