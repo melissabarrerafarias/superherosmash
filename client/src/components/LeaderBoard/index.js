@@ -16,7 +16,7 @@ const LeaderBoard = () => {
 
     return (
         <div>
-        <p className="leader-title">Leader Board </p>
+        <div className="leader-title">Leader Board </div>
       <div className="ui centered card" id="leaderboard-card">
         <div className="content" id="leaderboard-card-content">
 

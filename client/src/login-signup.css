@@ -158,6 +158,8 @@
 
 /* ********* new media q- from scratch****** */
 
+
+
 /* ----------- Non-Retina Screens ----------- */
 @media screen 
   and (min-device-width: 1200px) 
@@ -185,7 +187,7 @@
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
     .login-box {
-      width: 20%;
+      width: 30%;
       margin-top: 150px;
   }
   
@@ -237,15 +239,13 @@
   }
   
     .login-img, .sp-img {
-      height:750px;
+      height: 1500px;;
       margin: 0 auto;
     }
     .spiderman img {
       display: none;
     }
-    .sp-img {
-      height: 1500px
-    }
+
 }
 
 
@@ -259,7 +259,7 @@
   and (-webkit-min-device-pixel-ratio: 2) {
     .login-box {
       width: 30%;
-      margin-top: 0px;
+      margin-top: 110px;
   }
   
     .login-img, .sp-img {
@@ -267,7 +267,7 @@
       margin: 0 auto;
     }
     .spiderman img {
-      display: inline;
+      display: none;
     }
     .sp-img {
       height: 900px;

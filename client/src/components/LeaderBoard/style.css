@@ -81,10 +81,28 @@
 
 .leader-title{
   text-align:center;
-  top:50px;
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  text-align: center;
+  /* font-size: large; */
+  background-color:white;
+  opacity: .7;
+  border-radius: 10px;
+  border-color: #272133;
+  border-style: solid;
+  border-width: 5px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
+
+
 
 /* ****** media queries transform translate ***********************/
 
@@ -99,6 +117,30 @@
 
 
 /* ********* new media q- from scratch****** */
+
+
+/* ----------- Desktop/Big  Screens ----------- */
+
+@media (min-width:1200px){
+  #leaderboard-card{
+    width:900px;
+    overflow:scroll;
+    height:800px;
+    margin-top:20px;
+    overflow:auto;
+  }
+  #leaderboard-card-content{
+    width:100%;
+    float: none;
+    margin: 0 auto;
+    padding:40px;
+  }
+  .leader-title{
+    text-align:center;
+    font-size: 40px;
+    font-weight: 900;
+  }
+}
 
 /* ----------- Non-Retina Screens ----------- */
 @media screen 
@@ -139,6 +181,7 @@
       height:30%;
       margin-top:20px;
       overflow:auto;
+      margin-bottom:30px
     }
     #leaderboard-card-content{
       width:100%;
@@ -180,9 +223,9 @@
     }
     .leader-title{
       text-align:center;
-      top:50px;
-      font-size: 50px;
+      font-size: 20px;
       font-weight: 900;
+      width: 50%;
     }
 }
 
@@ -208,9 +251,9 @@
     }
     .leader-title{
       text-align:center;
-      top:50px;
-      font-size: 50px;
+      font-size: 30px;
       font-weight: 900;
+      width: 50%;
     }
 }
 
@@ -226,21 +269,22 @@
     #leaderboard-card{
       width: 900px;
       overflow:scroll;
-      height:800%;
+      height:600%;
       margin-top:20px;
       overflow:auto;
+      margin-bottom:40px;
     }
     #leaderboard-card-content{
       width:100%;
       float: none;
       margin: 0 auto;
-      padding:40px;
+      padding:30px;
     }
     .leader-title{
       text-align:center;
       top:50px;
-      font-size: 50px;
-      font-weight: 900;
+      font-size: 40px;
+      font-weight: 800;
     }
 }
 /* have questions about this / laptop and ipad are different sizes but same pixel and conflict */
@@ -264,14 +308,15 @@
       width:280px;
       float: none;
       margin: 0 auto;
-      padding:40px;
+      padding: 15px;
       padding-left: 6px;
     }
     .leader-title{
       text-align:center;
-      top:30px;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 900;
+      width: 270px;
+      padding: 10
     }
 }
 
@@ -374,22 +419,24 @@
   and (max-device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) {
     #leaderboard-card{
-      width:60%;
+      width:300px;
       overflow:scroll;
-      height:30%;
-      margin-top:20px;
+      height:700px;
+      /* margin-top:20px; */
       overflow:auto;
+   
     }
     #leaderboard-card-content{
-      width:100%;
+      width: 300px;
       float: none;
       margin: 0 auto;
-      padding:40px;
+      padding:15px;
+      padding-left:15px;
     }
     .leader-title{
       text-align:center;
-      top:50px;
-      font-size: 50px;
+      top:10px;
+      font-size: 20px;
       font-weight: 900;
     }
    
