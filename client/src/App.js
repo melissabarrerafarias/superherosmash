@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import StatsPage from "./pages/Stats";
 import NotFound from './pages/NotFound';
+import Footer from './components/Footer'; 
 //Semantic ui
 import "semantic-ui-css/semantic.min.css";
 
@@ -52,6 +53,7 @@ function App() {
               <Route component={NotFound} />
             </Switch>
           </div>
+          <Footer/>
         </div>
 
       </Router>

@@ -1,0 +1,30 @@
+.footer {
+    height: 80px;
+    filter:  saturate(1) contrast(1) brightness(1);
+    background-image: url(https://images.assetsdelivery.com/compings_v2/studiostoks/studiostoks1605/studiostoks160500262.jpg);
+    overflow: hidden;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+ }
+
+ .creators {
+    margin: 30px 
+ }
+
+ .creator {
+    margin: 50px;
+    padding: auto; 
+    text-decoration: none;
+    color: black; 
+    font-size: 20px;
+    font-weight: bold; 
+    transition-duration: 1s;
+ }
+
+ .creator:hover {
+    color: white; 
+    opacity: 80%;
+ }
