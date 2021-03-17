@@ -5,7 +5,7 @@ import {
     useElements
 } from "@stripe/react-stripe-js";
 import { createPaymentIntent } from "../../api";
-import '../CheckoutForm/checkout.css';
+import '../../checkout.css';
 
 const cardStyle = {
     style: {
