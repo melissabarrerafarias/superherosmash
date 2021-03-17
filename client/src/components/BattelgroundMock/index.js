@@ -131,26 +131,12 @@ function populateHeroObject(heroNum, heroData) {
   } else {
     currentHero.strength = heroData.getHeroById.strength;
   }
-
-  //if (doesImageExist) {
   currentHero.imgurl = heroData.getHeroById.imgurl;
-  //} else {
-  //console.log("Image does not exist!");
-  //currentHero.imgurl = "https://i.imgur.com/Kv5BdNk.png";
-  //}
-
   currentHero.biography = heroData.getHeroById.biography;
   //console.log(heroData.getHeroById.biography); //TODO Data is here on back end but not front for some reason
 }
 function trimWhiteSpace(stringToTrim) {
   return stringToTrim.trim();
-}
-
-function ImageExist(url) {
-  var img = new Image();
-  img.src = url;
-  console.log(img.height != 0, img.height);
-  return img.height != 0; //if not exist, return false
 }
 
 export default BattleGround;
