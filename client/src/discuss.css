@@ -177,13 +177,6 @@ button span:nth-child(2) {
 
 
 
-.discussion-dp{
-    width: 260px;
-    position:absolute;
-    right:21%;
-    margin-top:-100px;
-}
-
 .mythread-dp{
     width: 350px;
     position:absolute;
@@ -191,14 +184,73 @@ button span:nth-child(2) {
     margin-top:-965px;
 }
 
-/* ************* Media queries *************************************** */
-@media(max-width: 320px){
-    .background-image {
-        /* height:800px */
+
+
+/* ********* new media q- from scratch****** */
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    #st-card {
+        width: 50%;
     }
+    .commentlist{
+        font-size:20px;
+    }
+    #cmt-header {
+        font-size: 25px;
+    }
+    #cmt-user{
+        font-size: 15px;
+    }
+   
+   
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+  }
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+
+    #st-card {
+        width: 50%;
+    }
+    .commentlist{
+        font-size:20px;
+    }
+    #cmt-header {
+        font-size: 25px;
+    }
+    #cmt-user{
+        font-size: 15px;
+    }
+    
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+   
+}
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
     #st-card {
         width: 90%;
-        /* height: 100% */
     }
     .commentlist{
         font-size:13px;
@@ -209,46 +261,60 @@ button span:nth-child(2) {
     #cmt-user{
         font-size: 12px;
     }
-    .mythread-dp {
-        display: none
+
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
     }
-    .discussion-dp{
-        display: none
-    }
+
 }
 
-@media(max-width: 320px) {
-    .return-to {
-        text-align: center;
-        font-size: 16px
-     }
-     .mythread-dp {
-        display: none
-    }
-    .discussion-dp{
-        display: none
-    }
-}
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 
-
-@media (min-width: 540px){
-    .discussion-dp{
-        display: none
-    }
-}
-
-@media (min-width:)
-
-@media(max-width: 768px){
-    .background-image {
-        /* height: 1000px */
-    }
-    #cmt-header {
-        font-size: 12px;
-    }
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
     #st-card {
         width: 90%;
-        /* height: 100% */
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+
+
+
+/* ----------- iPad Pro 12.9" -----------  Small Laptop */ 
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+   
+    #st-card {
+        width: 70%;
+        height:80%
+    }
+    .commentlist{
+        font-size:20px;
+    }
+    #cmt-header {
+        font-size: 25px;
     }
     #cmt-user{
         font-size: 15px;
@@ -258,13 +324,172 @@ button span:nth-child(2) {
         font-size: 14px;
         padding: 8px 20px;
     }
-    .mythread-dp {
-        display: none
+
+    .background-image{
+        height:1300px
     }
-    .discussion-dp{
-        display: none
+}
+/* have questions about this / laptop and ipad are different sizes but same pixel and conflict */
+
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #st-card {
+        width: 90%;
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+   
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    #st-card {
+        width: 90%;
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+    
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+  }
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    #st-card {
+        width: 90%;
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+  
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    
+    }
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    
+    #st-card {
+        width: 90%;
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+   
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
     }
 }
 
 
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 320px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    #st-card {
+        width: 90%;
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+   
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+   
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 360px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+    #st-card {
+        width: 90%;
+    }
+    .commentlist{
+        font-size:13px;
+    }
+    #cmt-header {
+        font-size: 15px;
+    }
+    #cmt-user{
+        font-size: 12px;
+    }
+   
+    .my-threads-title {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
 

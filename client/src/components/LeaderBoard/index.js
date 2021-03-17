@@ -15,7 +15,12 @@ const LeaderBoard = () => {
 
 
     return (
-      <div className="leader_board_container">
+        <div>
+        <p className="leader-title">Leader Board </p>
+      <div className="ui centered card" id="leaderboard-card">
+        <div className="content" id="leaderboard-card-content">
+
+      
         {heros.map((hero) => {
           return (
             <div key={hero.id} className="scorecard">
@@ -38,6 +43,8 @@ const LeaderBoard = () => {
           );
         })}
       </div>
+      </div>
+       </div>
     );
   }
 };

@@ -258,7 +258,7 @@
   and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .login-box {
-      width: 0%;
+      width: 30%;
       margin-top: 0px;
   }
   
