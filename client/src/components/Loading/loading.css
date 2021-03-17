@@ -7,3 +7,8 @@
     background-color: #D7B88D;
     padding: 50px
   }
+
+  .loading-html h4 {
+    text-align: center;
+    font-family: 'Comic Sans MS'; ;
+  }

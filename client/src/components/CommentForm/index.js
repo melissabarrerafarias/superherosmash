@@ -61,12 +61,10 @@ const CommentForm = () => {
                     </h2>
                 </div>
                 <div className='commentList-button-div'>
-                    <button type="submit">
+                    <button type="submit" className='thread-button'>
                         Enter
                     </button>
-                    
                         <a href='mythreads' className='my-threads-title'>My Threads</a>
-                  
                 </div>
             </form>
         </div>

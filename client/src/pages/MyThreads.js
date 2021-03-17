@@ -6,6 +6,8 @@ import { DELETE_COMMENT } from "../utils/mutations"; //mutation to delete thread
 
 import Loading from '../components/Loading'; 
 import "../../src/discuss.css";
+import dp from "../../src/img/dp2.png"
+
 
 const MyThreads = () => {
   const { loading, data } = useQuery(QUERY_ME); //quering data
@@ -83,6 +85,7 @@ const MyThreads = () => {
           </div>
         </div>
       </div>
+       <img className="mythread-dp" src={dp}></img>
     </body>
   );
 };

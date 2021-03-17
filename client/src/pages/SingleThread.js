@@ -7,6 +7,8 @@ import Auth from '../utils/auth';//for isLoggedIn function
 import Loading from '../components/Loading';
 import '../../src/discuss.css';
 
+
+
 import RepliesList from '../components/RepliesList';
 import ReplyForm from '../components/ReplyForm';
 
@@ -54,6 +56,7 @@ const SingleThread = () => {
 
             </div>
 
+          
 
 
 

@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { QUERY_HEROS } from "../../utils/queries";
 import { ADD_VOTE } from "../../utils/mutations";
+import { useSpring, animated as a } from "react-spring";
 
 //semantic ui
 // import { Card, Icon, Image } from "semantic-ui-react"; <- Not being used but might end up being used
@@ -13,6 +14,10 @@ const HeroCard = ({ hero, setNew }) => {
   const { loading, data } = useQuery(QUERY_HEROS);
   const [addVote, { error }] = useMutation(ADD_VOTE);
 
+
+  // mock props
+  const props = useSpring({ "opacity": 1, from: { "opcaity": 0  } });
+  
   const addVoteHandler = async (e) => {
     e.preventDefault();
     console.log("Voted for me!");
@@ -34,8 +39,8 @@ const HeroCard = ({ hero, setNew }) => {
     // console.log("This heros name is ");
     console.log(hero);
     return (
-      <div className="wrapper ">
-        <div class="card ">
+      <div  className="wrapper ">
+        <a.div style={props} class="card ">
           <img
             src={hero.imgurl}
             alt="Person"
@@ -81,14 +86,14 @@ const HeroCard = ({ hero, setNew }) => {
               </div>
             </div>
           </div>
-
+          <br/>
           <button
             onClick={addVoteHandler}
             className="offsetMove btn draw-border"
           >
             Vote
           </button>
-        </div>
+        </a.div>
       </div>
     );
 };

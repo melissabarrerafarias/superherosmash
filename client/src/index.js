@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
-
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -11,13 +8,9 @@ import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css'
 import '../src/components/NavBar/nav.css';
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
-
 ReactDOM.render(
   <React.StrictMode>
-    <Elements stripe={stripePromise}>
       <App />
-    </Elements>
   </React.StrictMode>,
   document.getElementById('root')
 );

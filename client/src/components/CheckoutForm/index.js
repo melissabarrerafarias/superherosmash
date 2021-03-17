@@ -71,10 +71,10 @@ const CheckoutForm = ({ products }) => {
 
     return (
         <>
-            <body className="checkout-img">
+            <div className="checkout-img">
                 <section>
                     {products?.map(product => (
-                        <div>
+                        <div key={product.name}>
                             <div className="product">
                                 <img
                                     className="product-img"
@@ -125,7 +125,7 @@ const CheckoutForm = ({ products }) => {
                     </p>
                     </form>
                 </section>
-            </body>
+            </div>
         </>
     );
 }

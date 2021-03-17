@@ -9,6 +9,7 @@ import { QUERY_HERO_BY_ID } from "../../utils/queries";
 import backgroundImage from "../../../src/img/hulk.png";
 import '../../components/BattelgroundMock/style.css';
 
+
 const HEROS = [
   {
     id: "",
@@ -42,6 +43,10 @@ const BattleGround = () => {
   // Hooks for hero id generation defaulting to random
   const [heroId1, setHeroId1] = useState(randomHero);
   const [heroId2, setHeroId2] = useState(randomHero);
+  
+  // keep tally of matched done and their results
+  const [matches, addMatch] = useState([])
+  
 
   // keeping the randomness to index js by wrapping the set state functions
   const setHero1 = () => {
@@ -75,7 +80,7 @@ const BattleGround = () => {
     console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
-      <body
+      <body className="background-i"
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
@@ -90,6 +95,7 @@ const BattleGround = () => {
             />
           </a.div>
         </div>
+       
       </body>
     );
   }

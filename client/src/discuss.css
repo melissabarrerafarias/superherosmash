@@ -1,168 +1,101 @@
 .title {
-   font-size:30px;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   text-align: left; 
+    font-size:30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left; 
+ }
+
+ .form {
+    width: 60vw;
+    align-self: center;
+    box-shadow: 0px 0px 0px 0.5px rgb(50 50 93 / 10%), 0px 2px 5px 0px rgb(50 50 93 / 10%), 0px 1px 1.5px 0px rgb(0 0 0 / 7%);
+    border-radius: 7px;
+    padding: 40px;
 }
-
-.return-to {
-   margin-top: 20px;
-   margin-left: 10px
-}
-
-.return-a {
-    font-size: 20px;
-    text-decoration: none;
-    color: black; 
-    font-weight: bold;
-    letter-spacing: 1px; 
-}
-
-.return-a:hover {
-    color: black
-}
-
-.commentList-button-div {
-    display: inline;
-}
-
-.my-threads-title {
-    font-size: 16px;
-    margin: auto !important; 
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #03e9f4;
-    overflow: hidden;
-    transition: .5s;
-    margin: auto !important;
-    letter-spacing: 2px; 
-    float: right;
-    background-color: #EFEFEF;
-}
-
-.my-threads-title:hover {
-    color: black;           
-}
-
-#cmt-user {
-    font-size: 14px;
-    margin-top:15px;
-}
-
-#date{ 
-    font-size:13px
-}
-
-
-#st-card {
-    overflow:auto;
-    width: 50%;
-    margin: 0 auto;
-    float: none;
-    color: black;
-    height: 800px;
-    margin-top:100px;
-    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-
-
-
-}
-
-#st-card::before{
-padding-bottom: 0;
-
-}
-
-
-#st-card .content {
-    width:100%
-}
-
-
-
-.background-image{
- background-image: url(../src/img/comicopacity.png);
-  background-position: center;
-  background-size: no-repeat;
-  height:1100px;
-} 
-  
-
-.ui.comment {
-    margin-bottom: 10px;
-}
-
-
-.commentlist{
-    /* margin-bottom: 20px; */
-    padding-bottom: 20px;
-    font-size: 20px;
-}
-
-
-
-
-button {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin: auto !important;
-    letter-spacing: 4px
-}
-
-button:hover {
-    background: #03e9f4;
-    color: black;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4;
-}
-
-button span {
-    position: absolute;
-    display: block;
-  }
-
-  button span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
-    animation: btn-anim1 1s linear infinite;
-  }
-
-
-button span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s
-  }
-
-
-  button span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s
-  }
+ 
+ .return-to {
+    margin-top: 20px;
+    margin-left: 10px
+ }
+ 
+ .return-a {
+     font-size: 20px;
+     text-decoration: none;
+     color: black; 
+     font-weight: bold;
+     letter-spacing: 1px; 
+ }
+ 
+ .return-a:hover {
+     color: black
+ }
+ 
+ .commentList-button-div {
+     display: inline;
+ }
+ 
+ .my-threads-title {
+     font-size: 16px;
+     margin: auto !important; 
+     position: relative;
+     display: inline-block;
+     padding: 10px 20px;
+     text-decoration: none;
+     color: #03e9f4;
+     overflow: hidden;
+     transition: .5s;
+     margin: auto !important;
+     letter-spacing: 2px; 
+     float: right;
+     background-color: #EFEFEF;
+ }
+ 
+ .my-threads-title:hover {
+     color: black;           
+ }
+ 
+ #cmt-user {
+     font-size: 14px;
+     margin-top:15px;
+ }
+ 
+ #date{ 
+     font-size:13px
+ }
+ 
+ 
+ #st-card {
+     overflow:auto;
+     width: 50%;
+     margin: 0 auto;
+     float: none;
+     color: black;
+     height: 800px;
+     margin-top:100px;
+     box-shadow: 0 20px 15px rgba(0, 0, 0, 0.7);
+     border-radius: 10px;
+ 
+ 
+ 
+ }
+ 
+ #st-card::before{
+ padding-bottom: 0;
+ 
+ }
+ 
+ 
+ #st-card .content {
+     width:100%
+ }
+ 
+ 
+ 
+ .background-image{
+  background-image: url(../src/img/comicopacity.png);
+   background-position: center;
+   background-size: no-repeat;
+   height:1100px;
+ } 
    
 
   button span:nth-child(4) {
@@ -177,8 +110,19 @@ button span:nth-child(2) {
 
 
 
+.discussion-dp{
+    width: 260px;
+    position:absolute;
+    right:21%;
+    margin-top:-100px;
+}
 
-
+.mythread-dp{
+    width: 350px;
+    position:absolute;
+    right:25%;
+    margin-top:-965px;
+}
 
 /* ************* Media queries *************************************** */
 @media(max-width: 320px){
@@ -197,6 +141,12 @@ button span:nth-child(2) {
     }
     #cmt-user{
         font-size: 12px;
+    }
+    .mythread-dp {
+        display: none
+    }
+    .discussion-dp{
+        display: none
     }
 }
 
@@ -221,6 +171,12 @@ button span:nth-child(2) {
         font-size: 14px;
         padding: 8px 20px;
     }
+    .mythread-dp {
+        display: none
+    }
+    .discussion-dp{
+        display: none
+    }
 }
 
 @media(max-width: 320px) {
@@ -228,6 +184,12 @@ button span:nth-child(2) {
         text-align: center;
         font-size: 16px
      }
+     .mythread-dp {
+        display: none
+    }
+    .discussion-dp{
+        display: none
+    }
 }
 
 

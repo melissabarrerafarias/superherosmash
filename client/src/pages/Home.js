@@ -1,5 +1,5 @@
 import React from "react";
-import Marvel from "../../src/img/marvel.png";
+import DoctorStrange from '../../src/img/doctor-strange.png';
 import Loki from "../../src/img/loki.png";
 import Antman from "../../src/img/antman.png";
 import Deadpool from "../../src/img/deadpool.png";
@@ -17,7 +17,7 @@ const Home = () => {
             <div className="cgrid">
               <a className="home-card" href="/stats">
                 <div className="cardbg">
-                  <img id="img" alt="captain marvel" src={Marvel}></img>
+                  <img id="img" alt="captain marvel" src={DoctorStrange}></img>
                   <div className="content">
                     <h3 className="textcard">Stats</h3>
                   </div>
