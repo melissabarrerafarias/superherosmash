@@ -13,7 +13,7 @@ const cardStyle = {
             color: "#32325d",
             fontFamily: 'Arial, sans-serif',
             fontSmoothing: "antialiased",
-            fontSize: "16px",
+            fontSize: "12px",
             "::placeholder": {
                 color: "#32325d"
             }
