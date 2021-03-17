@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { QUERY_COMMENTS } from "../utils/queries";
 import Auth from "../utils/auth";
 import "../../src/discuss.css";
+import dpimage from "../../src/img/dp.png"
 
 import CommentForm from "../components/CommentForm";
 import CommentList from "../components/CommentList";
@@ -19,15 +20,16 @@ const DiscussionBoard = () => {
 
   return (
     <body className="background-image">
+
+      <img className="discussion-dp" src={dpimage}></img>
       <div id="st-card" className="ui card">
         <div className="content">
           {Auth.isLoggedIn() && (
             <div>
-              <CommentForm /> <br />
+              <CommentForm /> <br /> 
               <br />
             </div>
           )}
-
           <CommentList comments={comments} title="Discussion Threads" />
         </div>
       </div>

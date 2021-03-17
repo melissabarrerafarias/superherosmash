@@ -177,8 +177,19 @@ button span:nth-child(2) {
 
 
 
+.discussion-dp{
+    width: 260px;
+    position:absolute;
+    right:21%;
+    margin-top:-100px;
+}
 
-
+.mythread-dp{
+    width: 350px;
+    position:absolute;
+    right:25%;
+    margin-top:-965px;
+}
 
 /* ************* Media queries *************************************** */
 @media(max-width: 320px){
@@ -197,6 +208,12 @@ button span:nth-child(2) {
     }
     #cmt-user{
         font-size: 12px;
+    }
+    .mythread-dp {
+        display: none
+    }
+    .discussion-dp{
+        display: none
     }
 }
 
@@ -221,6 +238,12 @@ button span:nth-child(2) {
         font-size: 14px;
         padding: 8px 20px;
     }
+    .mythread-dp {
+        display: none
+    }
+    .discussion-dp{
+        display: none
+    }
 }
 
 @media(max-width: 320px) {
@@ -228,6 +251,12 @@ button span:nth-child(2) {
         text-align: center;
         font-size: 16px
      }
+     .mythread-dp {
+        display: none
+    }
+    .discussion-dp{
+        display: none
+    }
 }
 
 

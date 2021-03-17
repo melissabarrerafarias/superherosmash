@@ -9,6 +9,7 @@ import { QUERY_HERO_BY_ID } from "../../utils/queries";
 import backgroundImage from "../../../src/img/hulk.png";
 import '../../components/BattelgroundMock/style.css';
 
+
 const HEROS = [
   {
     id: "",
@@ -89,8 +90,8 @@ const BattleGround = () => {
               setters={{ setHeroId1: setHero1, setHeroId2: setHero2 }}
             />
           </a.div>
-          
         </div>
+       
       </body>
     );
   }
