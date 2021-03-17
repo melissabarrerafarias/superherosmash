@@ -15,19 +15,19 @@ const Home = () => {
         <div className="fade-in">
           <section className="hero-section">
             <div className="cgrid">
-              <a className="home-card" href="/stats">
-                <div className="cardbg">
-                  <img id="img" alt="captain marvel" src={DoctorStrange}></img>
-                  <div className="content">
-                    <h3 className="textcard">Stats</h3>
-                  </div>
-                </div>
-              </a>
               <a className="home-card" href="/battleground">
                 <div className="cardbg">
                   <img id="img" alt="Loki with a staff" src={Loki}></img>
                   <div className="content">
                     <h3 className="textcard">BattleGround!</h3>
+                  </div>
+                </div>
+              </a>
+              <a className="home-card" href="/stats">
+                <div className="cardbg">
+                  <img id="img" alt="captain marvel" src={DoctorStrange}></img>
+                  <div className="content">
+                    <h3 className="textcard">Stats</h3>
                   </div>
                 </div>
               </a>
