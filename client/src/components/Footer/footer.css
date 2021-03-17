@@ -70,8 +70,7 @@
    float: right;
    font-size: 28px;
    font-weight: bold;
-   background-color: #FEFEFE; 
-   border-top-right-radius: 10px; 
+   background-color: transparent; 
  }
  
  .close:hover,
