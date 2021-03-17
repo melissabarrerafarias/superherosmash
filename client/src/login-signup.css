@@ -155,27 +155,251 @@
   height:1150px;
 }
 
-/* ******************** media queries **************** */
+
+/* ********* new media q- from scratch****** */
 
 
-@media (min-width:320px) and (max-width:700px){
-  .login-box {
-    width: 80%;
-    margin-top: 80px;
-}
 
-  .login-img, .sp-img {
-    height:750px;
-    margin: 0 auto;
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .login-box {
+      width: 30%;
+      margin-top: 50px;
   }
-  .spiderman img {
-    display: none;
-  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      width:30%;
+    }
 }
 
-@media (max-width:320px) {
-  .login-box {
-    width: 80%;
-    margin-top: 120px;
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .login-box {
+      width: 30%;
+      margin-top: 150px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: inline;
+    }
 }
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .login-box {
+      width: 20%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+    .sp-img {
+      height: 920px
+    }
+
 }
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .login-box {
+      width: 50%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height: 1500px;;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+
+}
+
+
+
+/* ----------- iPad Pro 12.9" -----------  Small Laptop */ 
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .login-box {
+      width: 30%;
+      margin-top: 110px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+    .sp-img {
+      height: 900px;
+    }
+}
+/* have questions about this / laptop and ipad are different sizes but same pixel and conflict */
+
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .login-box {
+      width: 80%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .login-box {
+      width: 80%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .login-box {
+      width: 80%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .login-box {
+      width: 80%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+}
+
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 320px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .login-box {
+      width: 80%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 360px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+    .login-box {
+      width: 80%;
+      margin-top: 80px;
+  }
+  
+    .login-img, .sp-img {
+      height:750px;
+      margin: 0 auto;
+    }
+    .spiderman img {
+      display: none;
+    }
+}
+

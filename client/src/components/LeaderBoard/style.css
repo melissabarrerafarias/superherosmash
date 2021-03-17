@@ -1,12 +1,13 @@
 
-.leader_board_container {
+/* .leader_board_container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
   font-family: "Baloo Paaji 2", cursive;
-}
+  text-align: center;
+} */
 
 .votes_bar{
   width:100%
@@ -37,16 +38,18 @@
 
 .scorecard {
   background-color: #222831;
-  height:5rem;
-  border-radius: 5px;
+  height: 80px;
+  border-radius: 10px;
   display: flex;
   padding-left: 1rem;
   align-items: center;
   
   box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
-  margin-top: 1px;
-  width: 70%;
+  margin-top: 10px;
+  width: 100%;
+  /* padding-top: 5px;
+  padding-bottom: 8px; */
 }
 
 .scorecard__name {
@@ -59,6 +62,45 @@
   font-size: 1rem;
 }
 
+#leaderboard-card {
+  width:60%;
+  overflow:scroll;
+  height:30%;
+  margin-top:20px;
+  overflow:auto;
+  box-shadow: 0 20px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+#leaderboard-card-content{
+  width:100%;
+  float: none;
+  margin: 0 auto;
+  padding:40px;
+}
+
+.leader-title{
+  text-align:center;
+  font-size: 35px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  text-align: center;
+  /* font-size: large; */
+  background-color:white;
+  opacity: .7;
+  border-radius: 10px;
+  border-color: #272133;
+  border-style: solid;
+  border-width: 5px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 
 
@@ -67,6 +109,367 @@
 @media (max-width: 500px) {
   .scorecard {
     flex-wrap: wrap;
-
  }
 }
+
+
+
+
+
+/* ********* new media q- from scratch****** */
+
+
+/* ----------- Desktop/Big  Screens ----------- */
+
+@media (min-width:1200px){
+  #leaderboard-card{
+    width:900px;
+    overflow:scroll;
+    height:800px;
+    margin-top:20px;
+    overflow:auto;
+  }
+  #leaderboard-card-content{
+    width:100%;
+    float: none;
+    margin: 0 auto;
+    padding:40px;
+  }
+  .leader-title{
+    text-align:center;
+    font-size: 40px;
+    font-weight: 900;
+  }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+#leaderboard-card{
+  width:900px;
+  overflow:scroll;
+  height:800px;
+  margin-top:20px;
+  overflow:auto;
+}
+#leaderboard-card-content{
+  width:100%;
+  float: none;
+  margin: 0 auto;
+  padding:40px;
+}
+.leader-title{
+  text-align:center;
+  top:50px;
+  font-size: 50px;
+  font-weight: 900;
+}
+  }
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    #leaderboard-card{
+      width:60%;
+      overflow:scroll;
+      height:30%;
+      margin-top:20px;
+      overflow:auto;
+      margin-bottom:30px
+    }
+    #leaderboard-card-content{
+      width:100%;
+      float: none;
+      margin: 0 auto;
+      padding:40px;
+    }
+    .leader-title{
+      text-align:center;
+      top:50px;
+      font-size: 50px;
+      font-weight: 900;
+    }
+      }
+   
+
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
+    #leaderboard-card{
+      width:60%;
+      overflow:scroll;
+      height:30%;
+      margin-top:20px;
+      overflow:auto;
+    }
+    #leaderboard-card-content{
+      width:100%;
+      float: none;
+      margin: 0 auto;
+      padding:40px;
+    }
+    .leader-title{
+      text-align:center;
+      font-size: 20px;
+      font-weight: 900;
+      width: 50%;
+    }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #leaderboard-card{
+      width:60%;
+      overflow:scroll;
+      height:30%;
+      margin-top:20px;
+      overflow:auto;
+    }
+    #leaderboard-card-content{
+      width:100%;
+      float: none;
+      margin: 0 auto;
+      padding:40px;
+    }
+    .leader-title{
+      text-align:center;
+      font-size: 30px;
+      font-weight: 900;
+      width: 50%;
+    }
+}
+
+
+
+/* ----------- iPad Pro 12.9" -----------  Small Laptop */ 
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #leaderboard-card{
+      width: 900px;
+      overflow:scroll;
+      height:600%;
+      margin-top:20px;
+      overflow:auto;
+      margin-bottom:40px;
+    }
+    #leaderboard-card-content{
+      width:100%;
+      float: none;
+      margin: 0 auto;
+      padding:30px;
+    }
+    .leader-title{
+      text-align:center;
+      top:50px;
+      font-size: 40px;
+      font-weight: 800;
+    }
+}
+/* have questions about this / laptop and ipad are different sizes but same pixel and conflict */
+
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #leaderboard-card{
+      width:250px;
+      overflow:scroll;
+      height:700px;
+      /* margin-top:20px; */
+      overflow:auto;
+    }
+    #leaderboard-card-content{
+      width:280px;
+      float: none;
+      margin: 0 auto;
+      padding: 15px;
+      padding-left: 6px;
+    }
+    .leader-title{
+      text-align:center;
+      font-size: 20px;
+      font-weight: 900;
+      width: 270px;
+      padding: 10
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    #leaderboard-card{
+      width:300px;
+      overflow:scroll;
+      height:800px;
+      margin-top:20px;
+      overflow:auto;
+    }
+    #leaderboard-card-content{
+      width: 300px;
+      float: none;
+      margin: 0 auto;
+      padding:15px;
+      padding-left:15px;
+    }
+    .leader-title{
+      text-align:center;
+      top:30px;
+      font-size: 30px;
+      font-weight: 900;
+    }
+  }
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    #leaderboard-card{
+      width:600px;
+      overflow:scroll;
+      height:700px;
+      /* margin-top:20px; */
+      overflow:auto;
+   
+    }
+    #leaderboard-card-content{
+      width: 300px;
+      float: none;
+      margin: 0 auto;
+      padding:15px;
+      padding-left:15px;
+    }
+    .leader-title{
+      text-align:center;
+      top:10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+  }
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    #leaderboard-card{
+      width:300px;
+      overflow:scroll;
+      height:700px;
+      margin-top:20px;
+      overflow:auto;
+    }
+    #leaderboard-card-content{
+      width:100%;
+      float: none;
+      margin: 0 auto;
+      padding:10px;
+    }
+
+    .leader-title{
+      text-align:center;
+      top:20px;
+      font-size: 30px;
+      font-weight: 800;
+      margin-top: 50px;
+    }
+    
+}
+
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 320px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    #leaderboard-card{
+      width:300px;
+      overflow:scroll;
+      height:700px;
+      /* margin-top:20px; */
+      overflow:auto;
+   
+    }
+    #leaderboard-card-content{
+      width: 300px;
+      float: none;
+      margin: 0 auto;
+      padding:15px;
+      padding-left:15px;
+    }
+    .leader-title{
+      text-align:center;
+      top:10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+   
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 360px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+    #leaderboard-card{
+      width:300px;
+      overflow:scroll;
+      height:700px;
+      margin-top:20px;
+      overflow:auto;
+    }
+    #leaderboard-card-content{
+      width:500px;
+      float: none;
+      margin: 0 auto;
+      /* padding:10px; */
+    }
+
+    .leader-title{
+      text-align:center;
+      top:20px;
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 20px;
+    }
+    
+}
+
