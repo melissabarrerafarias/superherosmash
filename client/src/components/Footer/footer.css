@@ -28,3 +28,35 @@
     color: white; 
     opacity: 80%;
  }
+
+ .mobile-github {
+    display: none; 
+    cursor: pointer;
+ }
+
+
+  /* media queries */ 
+
+  
+@media only screen and (max-width: 1024px) {
+    .footer {
+        position: fixed;
+        height: 50px;
+    }
+    .creators {
+        display: none;
+    }
+    .mobile-github {
+        display: block; 
+        font-size: 30px; 
+       justify-content: center;
+       margin-top: 5px
+    }
+  }
+
+  @media only screen and (max-width: 1270px) {
+    .creator {
+        margin: 40px;
+        font-size: 16px;
+    }
+  }
