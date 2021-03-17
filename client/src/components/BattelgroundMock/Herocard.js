@@ -85,7 +85,6 @@ const HeroCard = ({ hero, setNew }) => {
             </div>
           </div>
         </div>
-
         <button onClick={addVoteHandler} className="offsetMove btn draw-border">
           Vote
         </button>

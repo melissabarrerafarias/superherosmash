@@ -9,7 +9,6 @@ import { QUERY_HERO_BY_ID } from "../../utils/queries";
 import backgroundImage from "../../../src/img/hulk.png";
 import "../../components/BattelgroundMock/style.css";
 
-
 const HEROS = [
   {
     id: "",
@@ -43,10 +42,9 @@ const BattleGround = () => {
   // Hooks for hero id generation defaulting to random
   const [heroId1, setHeroId1] = useState(randomHero);
   const [heroId2, setHeroId2] = useState(randomHero);
-  
+
   // keep tally of matched done and their results
-  const [matches, addMatch] = useState([])
-  
+  const [matches, addMatch] = useState([]);
 
   // keeping the randomness to index js by wrapping the set state functions
   const setHero1 = () => {
@@ -83,7 +81,8 @@ const BattleGround = () => {
     // console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
-      <body className="background-i"
+      <body
+        className="background-i"
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
@@ -98,7 +97,6 @@ const BattleGround = () => {
             />
           </a.div>
         </div>
-       
       </body>
     );
   }
@@ -107,7 +105,6 @@ const BattleGround = () => {
 function populateHeroObject(heroNum, heroData) {
   let currentHero = HEROS[heroNum - 1];
   const nullReplace = "Unknown";
-  let doesImageExist = ImageExist(currentHero.imgurl);
   currentHero.id = heroData.getHeroById.id;
   currentHero.name = trimWhiteSpace(heroData.getHeroById.name);
   if (heroData.getHeroById.speed === "null") {
