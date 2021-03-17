@@ -55,20 +55,23 @@
  } */
  
  /* Modal Content */
- .modal-content {
+ /* .modal-content {
    background-color: #fefefe;
    margin: auto;
    padding: 20px;
    border: 1px solid #888;
    width: 80%;
- }
+ } */
  
  /* The Close Button */
+
  .close {
-   color: #aaaaaa;
+   color: black;
    float: right;
    font-size: 28px;
    font-weight: bold;
+   background-color: #FEFEFE; 
+   border-top-right-radius: 10px; 
  }
  
  .close:hover,
@@ -92,7 +95,7 @@
     .mobile-github {
         display: block; 
         border-radius: 15px 15px 15px 15px;
-        font-size: 40px; 
+        font-size: 50px; 
        justify-content: center;
        cursor: pointer;
        color: white; 
