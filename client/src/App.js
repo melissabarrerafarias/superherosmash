@@ -35,19 +35,25 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <div>
+          <NavBar />
           <div>
-            <NavBar />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/battleground" component={BattleGround} />
-            <Route exact path="/discussionboard" component={DiscussionBoard} />
-            <Route exact path="/comment/:id" component={SingleThread} />
-            <Route exact path="/mythreads/:username?" component={MyThreads} />
-            <Route exact path="/checkout" component={Checkout} />
-            <Route exact path="/stats" component={StatsPage} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/battleground" component={BattleGround} />
+              <Route exact path="/discussionboard" component={DiscussionBoard} />
+              <Route exact path="/comment/:id" component={SingleThread} />
+              <Route exact path="/mythreads/:username?" component={MyThreads} />
+              <Route exact path="/checkout" component={Checkout} />
+              <Route exact path="/stats" component={StatsPage} />
+
+              <Route component={NotFound} />
+            </Switch>
           </div>
-          <Route component={NotFound} />
+        </div>
+
       </Router>
     </ApolloProvider>
   );
