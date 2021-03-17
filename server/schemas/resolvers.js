@@ -2,7 +2,7 @@ const { User, Comment, Hero, HeroStats } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 require("dotenv").config(); // environmental variable
 
 const resolvers = {
@@ -64,7 +64,7 @@ const resolvers = {
         combat: heroData.powerstats.combat,
         imgurl: heroData.image.url,
       };
-    }
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -113,7 +113,12 @@ const resolvers = {
         const updatedComment = await Comment.findOneAndUpdate(
           { _id: commentId },
           {
-            $push: { replies: { $each: [ {replyBody, username: context.user.username} ], $sort: { createdAt: -1 } } },
+            $push: {
+              replies: {
+                $each: [{ replyBody, username: context.user.username }],
+                $sort: { createdAt: -1 },
+              },
+            },
           },
           { new: true }
         );
