@@ -1,9 +1,17 @@
 import React from "react";
 import Donation from "../components/Donation";
+import '../checkout.css';
+
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 
 const Checkout = () => {
   return (
-    <Donation></Donation>
+    <Elements stripe={stripePromise}>
+      <Donation></Donation>
+    </Elements>
   ) 
 };
 

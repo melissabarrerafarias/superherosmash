@@ -1,12 +1,12 @@
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 
-const DOMAIN = 'http://localhost:3000/checkout'
+const DOMAIN = 'https://superherosmash.herokuapp.com/checkout'
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -66,8 +66,8 @@ app.post('/api/checkout-session', async (req, res, next) => {
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}?success=true`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    success_url: `${DOMAIN}?success=true`,
+    cancel_url: `${DOMAIN}?canceled=true`,
   });
   res.status(201).json({ id: session.id });
 } catch(err) {
