@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import StatsPage from "./pages/Stats";
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer'; 
+import Modal from './components/Modal';
 //Semantic ui
 import "semantic-ui-css/semantic.min.css";
 
@@ -32,6 +33,11 @@ function App() {
     uri: "/graphql",
   });
 
+  const [openModal, setOpenModal] = useState(false);
+
+  const toggleModal = (newState) => {
+    setOpenModal(newState);
+  }
 
   return (
     <ApolloProvider client={client}>
@@ -53,7 +59,13 @@ function App() {
               <Route component={NotFound} />
             </Switch>
           </div>
-          <Footer/>
+          {!openModal ?
+            <div className="mobile-footer">
+                <button className="mobile-github" type="button" onClick={() => toggleModal(true)}><i className="fab fa-github"></i></button>
+                </div>
+                : <Modal handler={toggleModal}/>
+            }
+          <Footer />
         </div>
 
       </Router>
