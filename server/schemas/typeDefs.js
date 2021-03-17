@@ -35,6 +35,7 @@ const typeDefs = gql`
     biography: String
     imgurl: String
   }
+
   type HeroStats {
     name: String
     id: ID
@@ -54,7 +55,7 @@ const typeDefs = gql`
     user(username: String!): User
     comments(username: String): [Comment]
     comment(_id: ID!): Comment
-    getAllHeros: [Hero]
+    getAllHeros: [HeroStats]
     getHeroById(id: Int): Hero
   }
 
