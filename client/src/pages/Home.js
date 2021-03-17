@@ -23,11 +23,11 @@ const Home = () => {
                   </div>
                 </div>
               </a>
-              <a className="home-card" href="/stats">
+              <a className="home-card" href="/leaderboard">
                 <div className="cardbg">
                   <img id="img" alt="captain marvel" src={DoctorStrange}></img>
                   <div className="content">
-                    <h3 className="textcard">Stats</h3>
+                    <h3 className="textcard">Leaderboard</h3>
                   </div>
                 </div>
               </a>

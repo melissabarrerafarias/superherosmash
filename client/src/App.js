@@ -47,7 +47,7 @@ function App() {
               <Route exact path="/comment/:id" component={SingleThread} />
               <Route exact path="/mythreads/:username?" component={MyThreads} />
               <Route exact path="/checkout" component={Checkout} />
-              <Route exact path="/stats" component={StatsPage} />
+              <Route exact path="/leaderboard" component={StatsPage} />
 
               <Route component={NotFound} />
             </Switch>
