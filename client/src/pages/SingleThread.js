@@ -30,7 +30,7 @@ const SingleThread = () => {
     return (
         <body className="background-image">
             <div className="return-to">
-                <a onClick={goBack} className="return-a"> Return</a>
+                <a onClick={goBack} className="return-a">Return</a>
             </div>
 
             <div id="st-card" className="ui card">
