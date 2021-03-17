@@ -9,6 +9,7 @@ import { QUERY_HERO_BY_ID } from "../../utils/queries";
 import backgroundImage from "../../../src/img/hulk.png";
 import '../../components/BattelgroundMock/style.css';
 
+
 const HEROS = [
   {
     id: "",
@@ -79,7 +80,7 @@ const BattleGround = () => {
     console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
-      <body
+      <body className="background-i"
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${backgroundImage})`,
@@ -94,6 +95,7 @@ const BattleGround = () => {
             />
           </a.div>
         </div>
+       
       </body>
     );
   }

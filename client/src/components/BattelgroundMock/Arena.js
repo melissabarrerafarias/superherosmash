@@ -19,6 +19,7 @@ const Arena = ({ heros, setters }) => {
   }
 
   return (
+    
     <div class="Arena">
       <a.div style={props} class="RingCorner" key={Date.now() + heros[0].id}>
         <HeroCard hero={heros[0]} setNew={setters.setHeroId2} />
