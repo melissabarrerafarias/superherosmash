@@ -28,7 +28,6 @@ const Arena = ({ heros, setters }) => {
       <a.div style={props} class="RingCorner" key={Date.now() + heros[1].id}>
         <HeroCard hero={heros[1]} setNew={setters.setHeroId1} />
       </a.div>
-      )
       {/* {heros.map((hero) => {
         return (
           <a.div style={props} class="RingCorner" key={Date.now() + hero.id}>
