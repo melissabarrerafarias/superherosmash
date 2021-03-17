@@ -1,6 +1,6 @@
 import React from "react";
 import { useSpring, animated as a } from "react-spring";
-import Auth from '../../utils/auth'; 
+import Auth from "../../utils/auth";
 
 import HeroCard from "./Herocard";
 import "./style.css";
@@ -15,7 +15,7 @@ const Arena = ({ heros, setters }) => {
   const loggedIn = Auth.isLoggedIn();
 
   if (!loggedIn) {
-    return <h4 className='notLoggedIn'>You need to be logged in to play!</h4>
+    return <h4 className="notLoggedIn">You need to be logged in to play!</h4>;
   }
 
   return (
