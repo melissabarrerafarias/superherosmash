@@ -2,7 +2,7 @@
   "name": "Superhero Smash",
   "short_name": "Superhero Smash",
   "description": "A battleground to determine the most powerful superhero!",
-  "start_url": "index.html",
+  "start_url": "https://superherosmash.herokuapp.com",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ac0d0d",
