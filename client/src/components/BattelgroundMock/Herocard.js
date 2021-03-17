@@ -39,8 +39,6 @@ const HeroCard = ({ hero, setNew }) => {
       console.error(e);
     }
   };
-  // console.log("This heros name is ");
-  console.log(hero);
   return (
     <div className="wrapper ">
       <a.div style={props} class="card ">
