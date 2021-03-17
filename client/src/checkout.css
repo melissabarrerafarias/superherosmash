@@ -43,7 +43,7 @@
 
   .product-img {
     border-radius: 15px;
-    width: 500px;;
+    width: 500px;
     height: auto;
   }
 
@@ -218,7 +218,7 @@
     }
   }
 
-  @media(max-width: 768px) {
+  @media(max-width: 576px) {
     .product-img {
       max-width: 250px;
     }
