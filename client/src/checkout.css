@@ -221,6 +221,7 @@
   @media(max-width: 576px) {
     .product-img {
       max-width: 250px;
+      max-height: 141px;
     }
     #payment-form {
       width: 90%;
