@@ -8,6 +8,24 @@
   
 }
 
+.battle-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  text-align: center;
+  font-size: large;
+  background-color: white;
+  border-radius: 10px;
+  border-color: #272133;
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* .HeroCard {
   color: red;
   width: 300px;
@@ -138,6 +156,8 @@
   height: 100vh;
   background-color: #f5f5f5;
   font-family: "Baloo Paaji 2", cursive;
+
+
 }
 
 .card {
@@ -231,6 +251,7 @@
   letter-spacing: 0.05rem;
   margin: 1em;
   width: 13rem;
+ 
 }
 
 .btn:focus {
@@ -312,10 +333,217 @@
 
 
 
-/* ****** media queries transform translate ***********************/
 
-@media (max-width: 500px) {
+
+
+
+/* ********* new media q- from scratch****** */
+
+/* ----------- Desktop/Big Screens ----------- */
+
+@media (min-width:1200px){
   .Arena {
+    flex-wrap: wrap;    
+    display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 5%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+    }
+    .background-i {
+      height: 1150px;
+    }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .Arena {
+    flex-wrap: wrap;    
+    display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 5%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+  }
+
+
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .Arena {
+      flex-wrap: wrap;    
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 5%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+      /* PLEASE FIX THIS THIS IS HARD CODED  BUT IT IS 2am*/
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+}
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 25%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 15%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+}
+
+
+
+/* ----------- iPad Pro 12.9" -----------  Small Laptop */ 
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .Arena {
+      flex-wrap: wrap;    
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 5%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+}
+/* have questions about this / laptop and ipad are different sizes but same pixel and conflict */
+
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 0;
+    }
+    .card {
+      width: 250px;
+      height: 350px;
+    }
+    .offsetMove {
+       transform: translate(0px, -340px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+    .grid-container {
+      display: none;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+      .Arena {
     flex-direction: column;
     display: block;
     justify-content: space-around;
@@ -326,7 +554,6 @@
     width: 150%;
   }
   .offsetMove {
-    /* PLEASE FIX THIS THIS IS HARD CODED  BUT IT IS 2am*/
      transform: translate(0px, -400px);
   }
   .RingCorner {
@@ -334,55 +561,123 @@
     flex-direction: column;
     
   }
-}
-
-@media (min-width: 500px) and (max-width: 800px) {
-  .Arena {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    margin-left: 30px;
-    
+  .grid-container {
+    display: none;
   }
-  .card {
-    width: 150%;
-  }
-  .offsetMove {
-    /* PLEASE FIX THIS THIS IS HARD CODED  BUT IT IS 2am*/
-     transform: translate(0px, -400px);
-  }
-  .RingCorner {
-    display:flex;
-    flex-direction: column;
-    
-  }
-  .background-i{
-    height: 800px;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1024px) {
-  .Arena {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    margin-left: 10%;
-  }
-  .card {
-    width: 150%;
-  }
-  .offsetMove {
-    /* PLEASE FIX THIS THIS IS HARD CODED  BUT IT IS 2am*/
-     transform: translate(0px, -400px);
-  }
-  .RingCorner {
-    display:flex;
-    flex-direction: column;
-    
-  }
-  .background-i{
-    height: 900px;
-   
   }
 
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 25%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+    .grid-container {
+      display: none;
+    }
+    }
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 25%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+    .grid-container {
+      display: none;
+    }
 }
+
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 320px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 25%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-device-width: 360px) 
+  and (max-device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+    .Arena {
+      flex-direction: column;
+      display: block;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-right: 25%;
+    }
+    .card {
+      width: 150%;
+    }
+    .offsetMove {
+       transform: translate(0px, -400px);
+    }
+    .RingCorner {
+      display:flex;
+      flex-direction: column;
+      
+    }
+}
+
