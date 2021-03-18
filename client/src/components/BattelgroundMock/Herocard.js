@@ -37,7 +37,7 @@ const HeroCard = ({ hero, setNew }) => {
   };
   return (
     <div className="wrapper ">
-      <div class="card ">
+      <div className="card ">
         <img
           src={defaultImg}
           alt="Person"
@@ -48,36 +48,36 @@ const HeroCard = ({ hero, setNew }) => {
         <p id="heroName" className="offsetMove card__name">
           {hero.name}
         </p>
-        <div class="grid-container offsetMove">
-          <div class="grid-child-posts">Strength:</div>
+        <div className="grid-container offsetMove">
+          <div className="grid-child-posts">Strength:</div>
           <div className="container-bar">
             <div className="skill " style={{ width: `${hero.strength}%` }}>
               {" "}
               <p>Secret</p>
             </div>
           </div>
-          <div class="grid-child-posts">Durability:</div>{" "}
+          <div className="grid-child-posts">Durability:</div>{" "}
           <div className="container-bar">
             <div className="skill " style={{ width: `${hero.durability}%` }}>
               {" "}
               <p>Secret</p>
             </div>
           </div>
-          <div class="grid-child-posts">Speed: </div>
+          <div className="grid-child-posts">Speed: </div>
           <div className="container-bar">
             <div className="skill " style={{ width: `${hero.speed}%` }}>
               {" "}
               <p>Secret</p>
             </div>
           </div>
-          <div class="grid-child-posts">Power:</div>
+          <div className="grid-child-posts">Power:</div>
           <div className="container-bar">
             <div className="skill " style={{ width: `${hero.power}%` }}>
               {" "}
               <p>Secret</p>
             </div>
           </div>
-          <div class="grid-child-posts">Combat:</div>
+          <div className="grid-child-posts">Combat:</div>
           <div className="container-bar">
             <div className="skill " style={{ width: `${hero.combat}%` }}>
               {" "}
