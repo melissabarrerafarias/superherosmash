@@ -250,7 +250,7 @@
   margin: 1em;
   width: 13rem;
   padding: auto;
-  overflow: visible!;
+  overflow: visible !important;
  
 }
 
