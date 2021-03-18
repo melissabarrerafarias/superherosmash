@@ -26,7 +26,7 @@
 
  .creator:hover {
     color: white; 
-    opacity: 80%;
+    /* opacity: 80%; */
  }
 
  .mobile-github {

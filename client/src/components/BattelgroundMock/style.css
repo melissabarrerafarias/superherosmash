@@ -156,8 +156,6 @@
   height: 100vh;
   background-color: #f5f5f5;
   font-family: "Baloo Paaji 2", cursive;
-
-
 }
 
 .card {
@@ -251,6 +249,8 @@
   letter-spacing: 0.05rem;
   margin: 1em;
   width: 13rem;
+  padding: auto;
+  overflow: visible!;
  
 }
 
@@ -534,6 +534,9 @@
     .grid-container {
       display: none;
     }
+    .btn {
+      overflow: visible!important;
+    };
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -564,6 +567,9 @@
   .grid-container {
     display: none;
   }
+  .btn {
+    overflow: visible!important;
+  };
   }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -594,6 +600,9 @@
     .grid-container {
       display: none;
     }
+    .btn {
+      overflow: visible!important;
+    };
     }
 
 /* ----------- iPhone X ----------- */
@@ -624,6 +633,9 @@
     .grid-container {
       display: none;
     }
+    .btn {
+      overflow: visible!important;
+    };
 }
 
 
