@@ -135,15 +135,14 @@ const resolvers = {
 
 
     addVote: async (parent, { id, name }, context) => {
-      console.log("In add vote mutation");
-      console.log(id);
+      
       let newHeroId = id;
       let newHeroName = name;
-      console.log(name);
+      
       // https://docs.mongodb.com/manual/reference/operator/update/inc/
       //add a check to see if the hero exists in the local db
       const heroExists = await Hero.exists({ name: newHeroName });
-      console.log("Hero exists?", heroExists);
+      
       //if hero does not exist, create
       if (!heroExists) {
  
@@ -161,7 +160,7 @@ const resolvers = {
       // Update the hero with vote
 
       //we need to find the hero who has the matching id in the
-      console.log("Updating New Hero " + newHeroName)
+      console.log("Updating Hero " + newHeroName)
       let update = await Hero.findOneAndUpdate(
         { name: newHeroName },
         { 
@@ -171,9 +170,7 @@ const resolvers = {
         { new: true }
       );
 
-      console.log(update)
-
-      console.log(`Hero has this ${update.votes} votes`);
+     
 
       return update;
     },

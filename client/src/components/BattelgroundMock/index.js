@@ -35,7 +35,7 @@ const HEROS = [
 ];
 
 const randomHero = () => {
-  return Math.floor(Math.random() * (10 - 1) + 1);
+  return Math.floor(Math.random() * (730 - 1) + 1);
 };
 
 const BattleGround = () => {
