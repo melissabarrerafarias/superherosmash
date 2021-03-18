@@ -82,6 +82,11 @@ export const QUERY_HEROS = gql`
       votes
       wins
       losses
+      voteObjs {
+        _id
+        username
+      }
+      
     }
   }
 `;

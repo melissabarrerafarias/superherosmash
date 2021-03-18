@@ -1,4 +1,4 @@
-const { User, Comment, Hero, HeroStats } = require("../models");
+const { User, Comment, Hero } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const getHerosPlease = require("./pleaseGetTheHeros");
@@ -33,16 +33,12 @@ const resolvers = {
     comment: async (parent, { _id }) => {
       return Comment.findOne({ _id });
     },
-    // getAllHeros: async () => {
-    //   console.log("In get all heros");
-    //   const data = await User.find();
 
-    //   console.log(data);
-    // },
 
     getAllHeros: async () => {
       console.log("Getting Heros From Db");
-      const data = await Hero.find();
+      const data = await Hero.find()       
+      .populate("voteObjs");
       
       //console.log(data);
       return(data)
@@ -136,41 +132,50 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in to delete!");
     },
-    addVote: async (parent, { id, name }) => {
-      console.log("In add vote mutation");
-      console.log(id);
+
+
+    addVote: async (parent, { id, name }, context) => {
+      
       let newHeroId = id;
       let newHeroName = name;
-      console.log(name);
+      
       // https://docs.mongodb.com/manual/reference/operator/update/inc/
       //add a check to see if the hero exists in the local db
       const heroExists = await Hero.exists({ name: newHeroName });
-      console.log("Hero exists?", heroExists);
-      //if hero exists we can do the same method as usual
-      if (heroExists) {
-        //we need to find the hero who has the matching id in the
-        let update = await Hero.findOneAndUpdate(
-          { name: newHeroName },
-          { $inc: { votes: "1" } },
-          { new: true }
-        );
-        console.log(update);
-        console.log(`Hero has this ${update.votes} votes`);
-      } else {
+      
+      //if hero does not exist, create
+      if (!heroExists) {
+ 
         //need to create the hero, and then run the update
-        console.log("creating new hero");
-        const update = await Hero.create({
+        console.log("creating new hero "+ newHeroName);
+        const create = await Hero.create({
           name: newHeroName,
           id: newHeroId, //<-- THis might need to be added in later TODO
-          votes: 1,
+          votes: 0,
           wins: 0,
           losses: 0,
         });
-        console.log("created new hero: ", newHero);
-      }
+      } 
+      
+      // Update the hero with vote
+
+      //we need to find the hero who has the matching id in the
+      console.log("Updating Hero " + newHeroName)
+      let update = await Hero.findOneAndUpdate(
+        { name: newHeroName },
+        { 
+          $inc: { votes: "1" }, 
+          $push:{ voteObjs:  {username: context.user.username} } 
+        },
+        { new: true }
+      );
+
+     
 
       return update;
     },
+
+    
   },
 };
 

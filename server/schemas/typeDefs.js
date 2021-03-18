@@ -42,11 +42,18 @@ const typeDefs = gql`
     votes: Int
     wins: Int
     losses: Int
+    voteObjs:[Vote]
   }
 
   type Auth {
     token: ID!
     user: User
+  }
+
+  type Vote {
+    _id: ID
+    createdAt:String
+    username:String
   }
 
   type Query {
@@ -60,7 +67,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addVote(id: Int!, name: String!): HeroStats
+   
+    addVote(id: Int!, name: String! heroId:ID): HeroStats
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentBody: String!): Comment
