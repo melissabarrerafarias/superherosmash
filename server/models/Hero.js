@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const voteSchema = require('../models/Vote'); 
 
 const heroSchema = new Schema({
   name: {
@@ -25,6 +26,7 @@ const heroSchema = new Schema({
     required: false,
     default: 0,
   },
+  voteObjs: [voteSchema],
 });
 
 const Hero = model("Hero", heroSchema);

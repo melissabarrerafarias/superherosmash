@@ -11,7 +11,38 @@ const LeaderBoard = () => {
     return <div>L O A D I N G</div>;
   } else {
     const heros = data.getAllHeros.sort((a, b) => (a.votes > b.votes ? -1 : 1));
+   
 
+    const parseVotes = (voteObjs) => {
+      const userNames = voteObjs.map(obj => obj.username)
+
+      const map = userNames.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+      
+      //console.info([...map.keys()])
+      //console.info([...map.values()])
+      //console.info([...map.entries()])
+
+      const res =  [...map.entries()]
+      
+      let str = ""
+      for(let p of res){
+        str += `${p[0]} has given ${p[1]} votes `
+      }
+
+      
+
+      return str
+
+
+    }
+
+  
+    
+
+
+    
+
+    
 
 
     return (
@@ -31,12 +62,12 @@ const LeaderBoard = () => {
               <div className = "votes_bar">
                 <div className="container-bar">
                   <div
-                    className="skill "oi
+                    className="skill "
                     style={{ width: `${hero.votes}%` }}
                   ></div>
                 </div>
                 <p className = "scorecard__score">
-                {hero.votes} votes
+                {hero.votes} votes, {parseVotes(hero.voteObjs)}
                 </p>
               </div>
             </div>
