@@ -8,6 +8,9 @@ import "./style.css";
 
 // Dig the votes out of the hero..
 const parseVotes = (voteObjs) => {
+  
+  console.log("parse votes running")
+
   const userNames = voteObjs.map((obj) => obj.username);
 
   const map = userNames.reduce(
@@ -15,6 +18,7 @@ const parseVotes = (voteObjs) => {
     new Map()
   );
 
+ 
   //console.info([...map.keys()])
   //console.info([...map.values()])
   //console.info([...map.entries()])
@@ -47,9 +51,11 @@ const LeaderBoard = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   // Hooks for modal data
-  const [currentHero, setCurrentHero] = useState({});
+  const [currentHero, setCurrentHero] = useState({voteObjs:[]});
 
   const openModal = (H) => {
+    
+    console.log(H)
     setCurrentHero(H);
 
     setIsOpen(true);
@@ -85,6 +91,9 @@ const LeaderBoard = () => {
           <div>
             <p>Total: {currentHero.votes} votes</p>
             <p className="scorecard__score">
+            {console.log("ConsoleLogging ++++++++++++++++++++")}
+              {console.log(currentHero)}
+              
               {parseVotes(currentHero.voteObjs).map((vote) => (
                 <p>
                   {vote[0]} voted {vote[1]} times
