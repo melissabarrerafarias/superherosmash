@@ -6,9 +6,6 @@ import Auth from '../utils/auth';//for isLoggedIn function
 
 import Loading from '../components/Loading';
 import '../../src/discuss.css';
-
-
-
 import RepliesList from '../components/RepliesList';
 import ReplyForm from '../components/ReplyForm';
 
@@ -30,7 +27,7 @@ const SingleThread = () => {
     return (
         <body className="background-image">
             <div className="return-to">
-                <a onClick={goBack} className="return-a">Return</a>
+                <p onClick={goBack} className="return-a">Return</p>
             </div>
 
             <div id="st-card" className="ui card">
@@ -51,15 +48,7 @@ const SingleThread = () => {
 
                     {comment.replyCount > 0 && <RepliesList replies={comment.replies} />}
                 </div>
-
-
-
             </div>
-
-          
-
-
-
         </body>
     )
 

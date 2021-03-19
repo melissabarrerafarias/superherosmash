@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom"; <-- Import not used
 import Auth from "../../utils/auth";
 import "../../../src/discuss.css";
 

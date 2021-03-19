@@ -10,8 +10,6 @@ import "./style.css";
 // set the setter of hero card 1 to setter for 2 so the opponent is changed when vote is clicked
 const Arena = ({ heros, setters }) => {
   const props = useSpring({ margin: 0, from: { margin: -1000 } });
-  console.log("Arena Rendered");
-  console.log(heros);
   const loggedIn = Auth.isLoggedIn();
 
   if (!loggedIn) {

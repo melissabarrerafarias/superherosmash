@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations"; //mutation for adding a new user
 import Auth from "../utils/auth"; //function to set token to localStorage
-// import backgroundImage from "../../src/img/spcomic.jpg"; <-- Import never used
 import "../../src/login-signup.css";
 
 const Signup = () => {
@@ -24,7 +23,6 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await addUser({ variables: { ...formState } });
-      console.log(data);
       Auth.login(data.addUser.token);
     } catch (e) {
       console.log(e);

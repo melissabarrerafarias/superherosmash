@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth"; //function to save token to localStorage
-// import backgroundImage from "../../src/img/redcomic.jpg"; <-- Import never used
 import "../../src/login-signup.css";
 
-const Login = (props) => {
+const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
 
@@ -22,7 +21,6 @@ const Login = (props) => {
     try {
       const { data } = await login({ variables: { ...formState } });
       setFormState({ email: "", password: "" });
-      console.log(data);
       Auth.login(data.login.token);
     } catch (e) {
       console.log(e);

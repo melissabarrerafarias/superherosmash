@@ -43,9 +43,6 @@ const BattleGround = () => {
   const [heroId1, setHeroId1] = useState(randomHero);
   const [heroId2, setHeroId2] = useState(randomHero);
 
-  // keep tally of matched done and their results
-  const [matches, addMatch] = useState([]);
-
   // keeping the randomness to index js by wrapping the set state functions
   const setHero1 = () => {
     return setHeroId1(randomHero);
@@ -62,7 +59,6 @@ const BattleGround = () => {
     num1++; // Avoid having the same hero twice
   }
 
-  //console.log(num1, num2);
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const { loading, data } = useQuery(QUERY_HERO_BY_ID, {
     variables: { id: num1 },
@@ -75,10 +71,7 @@ const BattleGround = () => {
   if (loading || loadTwo) {
     return <Loading></Loading>;
   } else {
-    //console.log(data);
     populateHeroObject(1, data);
-    //console.log(dataTwo);
-    // console.log("This is data two");
     populateHeroObject(2, dataTwo);
     return (
       <body
@@ -136,7 +129,6 @@ function populateHeroObject(heroNum, heroData) {
   }
   currentHero.imgurl = heroData.getHeroById.imgurl;
   currentHero.biography = heroData.getHeroById.biography;
-  //console.log(heroData.getHeroById.biography); //TODO Data is here on back end but not front for some reason
 }
 function trimWhiteSpace(stringToTrim) {
   return stringToTrim.trim();

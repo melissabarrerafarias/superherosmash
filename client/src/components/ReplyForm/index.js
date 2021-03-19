@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/react-hooks";
 import '../../../src/discuss.css';
 
 const ReplyForm = ({ commentId }) => {
-  const [addReply, { error }] = useMutation(ADD_REPLY);
+  const [addReply] = useMutation(ADD_REPLY);
 
   const [replyBody, setBody] = useState("");
 

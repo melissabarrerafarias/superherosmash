@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_HEROS } from "../../utils/queries";
@@ -8,9 +7,6 @@ import "./style.css";
 
 // Dig the votes out of the hero..
 const parseVotes = (voteObjs) => {
-  
-  console.log("parse votes running")
-
   const userNames = voteObjs.map((obj) => obj.username);
 
   const map = userNames.reduce(
@@ -18,23 +14,11 @@ const parseVotes = (voteObjs) => {
     new Map()
   );
 
- 
-  //console.info([...map.keys()])
-  //console.info([...map.values()])
-  //console.info([...map.entries()])
-
   const res = [...map.entries()];
-
-  // let str = "";
-  // for (let p of res) {
-  //   str += `${p[0]} has given ${p[1]} votes `;
-  // }
-  console.log(res);
   return res;
 };
 
 // Modal Config
-
 const customStyles = {
   content: {
     top: "50%",
@@ -54,8 +38,6 @@ const LeaderBoard = () => {
   const [currentHero, setCurrentHero] = useState({voteObjs:[]});
 
   const openModal = (H) => {
-    
-    console.log(H)
     setCurrentHero(H);
 
     setIsOpen(true);
@@ -72,11 +54,9 @@ const LeaderBoard = () => {
   const { loading, data } = useQuery(QUERY_HEROS);
 
   if (loading) {
-    console.log("Loading ...");
     return <div>L O A D I N G</div>;
   } else {
     const heros = data.getAllHeros.sort((a, b) => (a.votes > b.votes ? -1 : 1));
-    console.log(heros);
     return (
       <div id="leaderBoard">
         <Modal
@@ -91,9 +71,6 @@ const LeaderBoard = () => {
           <div>
             <p>Total: {currentHero.votes} votes</p>
             <p className="scorecard__score">
-            {console.log("ConsoleLogging ++++++++++++++++++++")}
-              {console.log(currentHero)}
-              
               {parseVotes(currentHero.voteObjs).map((vote) => (
                 <p>
                   {vote[0]} voted {vote[1]} times

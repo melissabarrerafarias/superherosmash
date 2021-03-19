@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import Modal from '../Modal';
+import React from 'react';
 import '../Footer/footer.css';
 
 
 const Footer = () => {
 
     return (
-        <div class="footer">
+        <div className="footer">
             <div className="creators">
                 <a href='https://github.com/KJWesthoff' className="creator">Karl-Johan Westhoff</a>
                 <a href='https://github.com/treguv' className="creator">Vladislav Tregubov</a>

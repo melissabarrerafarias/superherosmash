@@ -7,10 +7,7 @@ import "../../src/home.css";
 
 const Home = () => {
   return (
-
     <body className="image">
-
-      {/* <div className="home"> */}
       <div className="buttons">
         <div className="fade-in">
           <section className="hero-section">
@@ -40,11 +37,11 @@ const Home = () => {
                 </div>
               </a>
 
-              <a className="home-card" href="/checkout">{/* /login -- replaced*/}
+              <a className="home-card" href="/checkout">
                 <div className="cardbg">
                   <img id="img" alt="Deadpool" src={Deadpool}></img>
                   <div className="content">
-                    <h3 className="textcard">Donate</h3>{/*Login/Signup -- replaced*/}
+                    <h3 className="textcard">Donate</h3>
                   </div>
                 </div>
               </a>
@@ -52,7 +49,6 @@ const Home = () => {
           </section>
         </div>
       </div>
-      {/* </div> */}
     </body>
   );
 };

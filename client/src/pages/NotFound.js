@@ -1,5 +1,4 @@
 import React from 'react';
-import QuantumRealm from '../img/quantumrealm.jpg';
 import "../../src/NotFound.css";
 
 const NotFound = () => {
