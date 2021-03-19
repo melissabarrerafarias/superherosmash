@@ -28,36 +28,13 @@ const Arena = ({ heros, setters }) => {
       <div class="Arena">
         <a.div style={props} class="RingCorner" key={Date.now() + heros[0].id}>
           <HeroCard hero={heros[0]} setNew={setters.setHeroId2} />
-          {/* <span class="bigRedButton">Vote</span> */}
         </a.div>
         <a.div style={props} class="RingCorner" key={Date.now() + heros[1].id}>
           <HeroCard hero={heros[1]} setNew={setters.setHeroId1} />
         </a.div>
-
-        {/* {heros.map((hero) => {
-          return (
-            <a.div style={props} class="RingCorner" key={Date.now() + hero.id}>
-            <HeroCard hero={hero} setters = {setters} />
-            <span class="bigRedButton">Vote!</span>
-            </a.div>
-            );
-          })} */}
       </div>
     </>
   );
-
-  // return (
-  //   <div className="Arena">
-  //     {heros.map(hero => {
-  //       return (
-  //         <a.div style={props} className="RingCorner" id={hero.name} key = {Date.now() + hero.id}>
-  //           <HeroCard hero = {hero} />
-  //           <span className="bigRedButton" onClick={clickVote}>Vote!</span>
-  //         </a.div>
-  //       );
-  //     })}
-  //   </div>
-  // );
 };
 
 export default Arena;

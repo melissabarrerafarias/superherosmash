@@ -82,14 +82,14 @@ const BattleGround = () => {
           minHeight: "1000px", // added minheight for image full cover of page (can be taken off)
         }}
       >
-        <div>
+       
           <a.div class="battleGround" style={props}>
             <Arena
               heros={HEROS}
               setters={{ setHeroId1: setHero1, setHeroId2: setHero2 }}
             />
           </a.div>
-        </div>
+        
       </body>
     );
   }

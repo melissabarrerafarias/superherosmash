@@ -27,7 +27,7 @@ const HeroCard = ({ hero, setNew }) => {
   };
   return (
     <div className="wrapper ">
-      <div className="card ">
+      <div className="card">
         <img
           src={defaultImg}
           alt="Person"
