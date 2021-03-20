@@ -34,22 +34,14 @@ const resolvers = {
       return Comment.findOne({ _id });
     },
 
-
     getAllHeros: async () => {
-      console.log("Getting Heros From Db");
       const data = await Hero.find()       
       .populate("voteObjs");
-      
-      //console.log(data);
       return(data)
     },
 
     getHeroById: async (parent, { id }) => {
-      console.log("ENTERED RESOLVER");
       let heroData = await getHerosPlease(id);
-      //console.log(heroData);
-
-      //console.log(heroData.powerstats.strength + " IS MY NAME");
       return {
         id: heroData.id,
         name: heroData.name,
@@ -147,7 +139,6 @@ const resolvers = {
       if (!heroExists) {
  
         //need to create the hero, and then run the update
-        console.log("creating new hero "+ newHeroName);
         const create = await Hero.create({
           name: newHeroName,
           id: newHeroId, //<-- THis might need to be added in later TODO
@@ -160,7 +151,6 @@ const resolvers = {
       // Update the hero with vote
 
       //we need to find the hero who has the matching id in the
-      console.log("Updating Hero " + newHeroName)
       let update = await Hero.findOneAndUpdate(
         { name: newHeroName },
         { 

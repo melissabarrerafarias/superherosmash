@@ -18,7 +18,8 @@
 }
 
 .return-a:hover {
-    color: black
+    color: black; 
+    cursor: pointer;
 }
 
 .commentList-button-div {

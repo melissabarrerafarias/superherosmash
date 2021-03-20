@@ -7,7 +7,7 @@ import '../../../src/discuss.css';
 const CommentForm = () => {
     const [commentBody, setBody] = useState('');
 
-    const [addComment, { error }] = useMutation(ADD_COMMENT, {
+    const [addComment] = useMutation(ADD_COMMENT, {
         update(cache, { data: { addComment } }) {
 
             try {
@@ -34,7 +34,6 @@ const CommentForm = () => {
 
     const onSubmit = async event => {
         event.preventDefault();
-        console.log('helli')
 
         try {
             await addComment({

@@ -61,13 +61,12 @@ function App() {
           </div>
           {!openModal ?
             <div className="mobile-footer">
-                <button className="mobile-github" type="button" onClick={() => toggleModal(true)}><i class="fab fa-github-square"></i></button>
+                <button className="mobile-github" type="button" onClick={() => toggleModal(true)}><i className="fab fa-github-square"></i></button>
                 </div>
                 : <Modal handler={toggleModal}/>
             }
           <Footer />
         </div>
-
       </Router>
     </ApolloProvider>
   );

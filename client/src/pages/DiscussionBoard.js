@@ -19,7 +19,6 @@ const DiscussionBoard = () => {
 
   return (
     <body className="background-image">
-
       <div id="st-card" className="ui card">
         <div className="content">
           {Auth.isLoggedIn() && (

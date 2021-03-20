@@ -3,7 +3,6 @@ import backgroundImage from "../../src/img/hulk.png";
 import LeaderBoard from "../components/LeaderBoard"
 
 const StatsPage = () => {
-  
     return (
       <body
         style={{
@@ -12,9 +11,7 @@ const StatsPage = () => {
           minHeight: "1150px", // added minheight for image full cover of page (can be taken off)
         }}
       >
-
       <LeaderBoard></LeaderBoard>
-
       </body>
     );
   
