@@ -44,7 +44,7 @@ body {
   background-position: center;
   background-size: no-repeat;
   background-image: url('img/comicopacity.png');
-  height:800px
+  height:900px
 } 
 
   .hero-section{
@@ -211,7 +211,7 @@ margin-top: 50px;
   and (min-resolution: 192dpi) { 
     /* height was 580px */
     .image { 
-      height: 680px
+      height: 810px
     }
     .cgrid{
       grid-template-columns: repeat(4, 1fr);
