@@ -12,35 +12,35 @@
 
   ### User Story:
   ```
-  AS A super hero fan\
+  AS A super hero fan
   I WANT USERS to compare super heros so we can determine once and for all who the best super hero is\
 
-  WHEN I log in or sign up\
-  THEN I am presented with the home page\
-  WHEN I click on the Battleground option\
-  THEN I am taken to the Battleground page and presented with two super heroes\
-  WHEN I vote for my personal favorite, my favorite hero persists and a new hero is chosen to battle\ 
-  WHEN I am done voting, return to the home page, and click on the LeaderBoard option\
-  THEN I am presented with all the superheroes players have voted for and the amount of votes for each player\
-  WHEN I click on a hero\
-  THEN I can see which players voted for those heroes\
-  WHEN I return to the home page and click on the Discussion option\
-  THEN I am presented with existing threads and the option to create a new one\
-  WHEN I click on an existing thread\
-  THEN I am taken to the discussion where I can view replies and leave one myself\
-  WHEN I return to the Discussion Board and create a new thread\
-  THEN my thread is added to the list of existing discussions\
-  WHEN I click 'My Threads'\
-  THEN I can view my own threads\
-  WHEN I click 'Delete' on one of my threads\
-  THEN that thread is removed from the app\
-  WHEN I return to the home page and click on the Donation option\
-  THEN I am presented with a photo of Tony Stark's Arc Reactor and invited to donate $5 to keep it running\
-  WHEN I try to navigate to a page that doesn't exist\
-  THEN I am shown a 404 error and prompted to return\
-  WHEN I choose to install the application\
-  THEN it is installed on my device with a small superhero logo\
-  WHEN I log out\
+  WHEN I log in or sign up
+  THEN I am presented with the home page
+  WHEN I click on the Battleground option
+  THEN I am taken to the Battleground page and presented with two super heroes
+  WHEN I vote for my personal favorite, my favorite hero persists and a new hero is chosen to battle
+  WHEN I am done voting, return to the home page, and click on the LeaderBoard option
+  THEN I am presented with all the superheroes players have voted for and the amount of votes for each player
+  WHEN I click on a hero
+  THEN I can see which players voted for those heroes
+  WHEN I return to the home page and click on the Discussion option
+  THEN I am presented with existing threads and the option to create a new one
+  WHEN I click on an existing thread
+  THEN I am taken to the discussion where I can view replies and leave one myself
+  WHEN I return to the Discussion Board and create a new thread
+  THEN my thread is added to the list of existing discussions
+  WHEN I click 'My Threads'
+  THEN I can view my own threads
+  WHEN I click 'Delete' on one of my threads
+  THEN that thread is removed from the app
+  WHEN I return to the home page and click on the Donation option
+  THEN I am presented with a photo of Tony Stark's Arc Reactor and invited to donate $5 to keep it running
+  WHEN I try to navigate to a page that doesn't exist
+  THEN I am shown a 404 error and prompted to return
+  WHEN I choose to install the application
+  THEN it is installed on my device with a small superhero logo
+  WHEN I log out
   THEN I can no longer access certain sections of the application
   ```
   ### Here's what our app looks like!:
