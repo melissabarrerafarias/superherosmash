@@ -6,6 +6,8 @@
   1. [Usage](#How-To-Use)
   1. [How to Contribute](#How-to-Contribute)
   1. [Questions](#Questions)
+  1. [Future Development](#Directions-for-future-development)
+  1. [Contact Creators](#Contact-Us)
 
   ## Project Description:
   SuperHeroSmash is a social/entertainment application based around superheroes. Vote for your favorite heroes on the battleground and your vote gets added to the leaderboards! There you can see how your opinion is doing against other players! If you really want to make your opinion known or express your love for a certain hero... head over to the Discussion board and make your point known! The application is also available for download on desktop and mobile. Feel free to checkout our awesome arc reactor and help keep it running on the donate page!
@@ -75,6 +77,15 @@
   Adam Barron
 
   Melissa Barrera
+
+  ## Directions for future development 
+  * Add win tally to superhero card as they populate in Battleground
+  * Add more stats including losses, time voted on, etc.
+  * Allow users to choose donation amount 
+  * Previous voted on hero persists on page reload
+  * Mobile style enhancements 
+  * Add audio for Battleground
+
   
 
   ## How to Contribute:
